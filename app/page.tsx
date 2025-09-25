@@ -1,21 +1,23 @@
 import HeroSection from '@/components/HeroSection'
-import AboutSection from '@/components/AboutSection'
-import ServicesSection from '@/components/ServicesSection'
-import EbookSection from '@/components/EbookSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
-import CTASection from '@/components/CTASection'
-import StatsSection from '@/components/StatsSection'
+import ProblemSection from '@/components/ProblemSection'
+import LabOverviewSection from '@/components/LabOverviewSection'
+import HowItWorksSection from '@/components/HowItWorksSection'
+import BenefitsSection from '@/components/BenefitsSection'
+import AboutGuideSection from '@/components/AboutGuideSection'
+import FAQSection from '@/components/FAQSection'
+import FinalCTASection from '@/components/FinalCTASection'
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <StatsSection />
-      <AboutSection />
-      <EbookSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <CTASection />
+      <ProblemSection />
+      <LabOverviewSection />
+      <HowItWorksSection />
+      <BenefitsSection />
+      <AboutGuideSection />
+      <FAQSection />
+      <FinalCTASection />
     </>
   )
 }

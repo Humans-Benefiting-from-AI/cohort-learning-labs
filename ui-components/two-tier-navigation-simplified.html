@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Tier Navigation (Simplified) - UI Component</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f8fafc;
+            padding: 20px;
+        }
+
+        .component-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .component-header {
+            background: #111827;
+            color: white;
+            padding: 16px 24px;
+            border-bottom: 1px solid #374151;
+        }
+
+        .component-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .component-description {
+            font-size: 14px;
+            color: #d1d5db;
+        }
+
+        .component-preview {
+            padding: 0;
+        }
+
+        /* Top Tier - Utility Bar */
+        .top-tier {
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .top-tier-container {
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+        }
+
+        .top-tier-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .contact-icon {
+            width: 12px;
+            height: 12px;
+        }
+
+        .top-tier-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 14px;
+        }
+
+        .top-tier-link {
+            color: #6b7280;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+
+        .top-tier-link:hover {
+            color: #7c3aed;
+        }
+
+        .top-tier-cta {
+            background: #7c3aed;
+            color: white;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.15s ease;
+        }
+
+        .top-tier-cta:hover {
+            background: #6d28d9;
+        }
+
+        /* Main Tier - Primary Navigation */
+        .main-tier {
+            background: white;
+            padding: 0;
+        }
+
+        .main-tier-container {
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: #7c3aed;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 6px;
+        }
+
+        .chairs-icon {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-text {
+            color: #111827;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .logo-tagline {
+            color: #6b7280;
+            font-size: 11px;
+            font-weight: 400;
+            display: block;
+            margin-top: -1px;
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .main-nav-item {
+            position: relative;
+        }
+
+        .main-nav-link {
+            color: #111827;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 0;
+        }
+
+        .main-nav-link:hover {
+            color: #7c3aed;
+        }
+
+        .dropdown-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
+            width: 256px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all 0.15s ease;
+            z-index: 50;
+        }
+
+        .main-nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 8px 16px;
+            color: #374151;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+
+        .dropdown-link:hover {
+            background: #f9fafb;
+            color: #7c3aed;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: #7c3aed;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.15s ease;
+        }
+
+        .cta-button:hover {
+            background: #6d28d9;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 16px 0;
+        }
+
+        .mobile-nav-item {
+            display: block;
+            padding: 12px 24px;
+            color: #111827;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.15s ease;
+        }
+
+        .mobile-nav-item:hover {
+            color: #7c3aed;
+        }
+
+        .mobile-nav-subitem {
+            display: block;
+            padding: 8px 48px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.15s ease;
+        }
+
+        .mobile-nav-subitem:hover {
+            color: #7c3aed;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-nav,
+            .cta-button {
+                display: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
+
+            .top-tier-container,
+            .main-tier-container {
+                padding: 0 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-tier-left .contact-item:not(:first-child) {
+                display: none;
+            }
+
+            .top-tier-right .top-tier-link:not(:last-child) {
+                display: none;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
+
+            .main-tier-container {
+                height: 64px;
+            }
+        }
+
+        .component-info {
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .code-example {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 13px;
+            margin-top: 12px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="component-container">
+        <div class="component-header">
+            <div class="component-title">Two-Tier Navigation (Simplified)</div>
+            <div class="component-description">Clean two-tier navigation with utility bar and regular dropdowns only</div>
+        </div>
+
+        <div class="component-preview">
+            <!-- Top Tier - Utility Bar -->
+            <div class="top-tier">
+                <div class="top-tier-container">
+                    <!-- Contact Info -->
+                    <div class="top-tier-left">
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span>(516) 206-2480</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span>info@cohortlearninglabs.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Mon-Fri 9AM-5PM EST</span>
+                        </div>
+                    </div>
+
+                    <!-- Utility Links -->
+                    <div class="top-tier-right">
+                        <a href="#" class="top-tier-link">About</a>
+                        <a href="#" class="top-tier-link">Blog</a>
+                        <a href="#" class="top-tier-link">Resources</a>
+                        <a href="#" class="top-tier-cta">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Tier - Primary Navigation -->
+            <div class="main-tier">
+                <div class="main-tier-container">
+                    <!-- Logo -->
+                    <a href="/" class="logo-section">
+                        <div class="logo-icon">
+                            <svg class="chairs-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <!-- Chair 1 (top) -->
+                                <rect x="11" y="2" width="2" height="6" rx="0.5"/>
+                                <rect x="10" y="7" width="4" height="1.5" rx="0.3"/>
+                                <!-- Chair 2 (top-right) -->
+                                <rect x="17.5" y="5" width="2" height="6" rx="0.5" transform="rotate(60 18.5 8)"/>
+                                <rect x="16.8" y="9.8" width="4" height="1.5" rx="0.3" transform="rotate(60 18.8 10.5)"/>
+                                <!-- Chair 3 (bottom-right) -->
+                                <rect x="17.5" y="13" width="2" height="6" rx="0.5" transform="rotate(120 18.5 16)"/>
+                                <rect x="16.8" y="12.7" width="4" height="1.5" rx="0.3" transform="rotate(120 18.8 13.5)"/>
+                                <!-- Chair 4 (bottom) -->
+                                <rect x="11" y="16" width="2" height="6" rx="0.5" transform="rotate(180 12 19)"/>
+                                <rect x="10" y="15.5" width="4" height="1.5" rx="0.3" transform="rotate(180 12 16.25)"/>
+                                <!-- Chair 5 (bottom-left) -->
+                                <rect x="4.5" y="13" width="2" height="6" rx="0.5" transform="rotate(240 5.5 16)"/>
+                                <rect x="3.8" y="12.7" width="4" height="1.5" rx="0.3" transform="rotate(240 5.8 13.5)"/>
+                                <!-- Chair 6 (top-left) -->
+                                <rect x="4.5" y="5" width="2" height="6" rx="0.5" transform="rotate(300 5.5 8)"/>
+                                <rect x="3.8" y="9.8" width="4" height="1.5" rx="0.3" transform="rotate(300 5.8 10.5)"/>
+                                <!-- Center circle (table) -->
+                                <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="logo-text">Cohort Learning Labs</div>
+                            <span class="logo-tagline">Collaborative Learning in the Age of AI</span>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <ul class="main-nav">
+                        <li class="main-nav-item">
+                            <a href="/" class="main-nav-link">Home</a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                About Us
+                                <svg class="dropdown-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-link">Who We Are</a>
+                                <a href="#" class="dropdown-link">Our Approach</a>
+                                <a href="#" class="dropdown-link">Our Impact</a>
+                                <a href="#" class="dropdown-link">Our Team</a>
+                                <a href="#" class="dropdown-link">Media & Press</a>
+                            </div>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                Our Work
+                                <svg class="dropdown-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-link">Events & Opportunities</a>
+                                <a href="#" class="dropdown-link">Our Strategies</a>
+                                <a href="#" class="dropdown-link">Trainings</a>
+                                <a href="#" class="dropdown-link">Facilitation & Convening</a>
+                                <a href="#" class="dropdown-link">Film & Resources</a>
+                            </div>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                Sectors
+                                <svg class="dropdown-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-link">Why These Sectors</a>
+                                <a href="#" class="dropdown-link">Faith Leaders & Communities</a>
+                                <a href="#" class="dropdown-link">Higher Education</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- CTA Button -->
+                    <a href="#" class="cta-button">Get Started</a>
+
+                    <!-- Mobile menu button -->
+                    <button class="mobile-nav-toggle">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div class="mobile-nav">
+                    <a href="/" class="mobile-nav-item">Home</a>
+                    <a href="#" class="mobile-nav-item">About Us</a>
+                    <a href="#" class="mobile-nav-subitem">Who We Are</a>
+                    <a href="#" class="mobile-nav-subitem">Our Approach</a>
+                    <a href="#" class="mobile-nav-subitem">Our Impact</a>
+                    <a href="#" class="mobile-nav-subitem">Our Team</a>
+                    <a href="#" class="mobile-nav-subitem">Media & Press</a>
+                    <a href="#" class="mobile-nav-item">Our Work</a>
+                    <a href="#" class="mobile-nav-subitem">Events & Opportunities</a>
+                    <a href="#" class="mobile-nav-subitem">Our Strategies</a>
+                    <a href="#" class="mobile-nav-subitem">Trainings</a>
+                    <a href="#" class="mobile-nav-subitem">Facilitation & Convening</a>
+                    <a href="#" class="mobile-nav-subitem">Film & Resources</a>
+                    <a href="#" class="mobile-nav-item">Sectors</a>
+                    <a href="#" class="mobile-nav-subitem">Why These Sectors</a>
+                    <a href="#" class="mobile-nav-subitem">Faith Leaders & Communities</a>
+                    <a href="#" class="mobile-nav-subitem">Higher Education</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="component-info">
+            <strong>Usage:</strong> Clean two-tier navigation with utility bar and regular dropdowns. Perfect for organizations that need structured navigation without complexity.
+
+            <div class="code-example">
+&lt;!-- Top Tier with Contact Info --&gt;
+&lt;div class="top-tier"&gt;
+  &lt;div class="top-tier-container"&gt;
+    &lt;div class="top-tier-left"&gt;
+      &lt;!-- Contact info with icons --&gt;
+    &lt;/div&gt;
+    &lt;div class="top-tier-right"&gt;
+      &lt;!-- Utility links and CTA --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Main Navigation with Dropdowns --&gt;
+&lt;div class="main-tier"&gt;
+  &lt;div class="main-tier-container"&gt;
+    &lt;!-- Logo with circular chairs icon --&gt;
+    &lt;ul class="main-nav"&gt;
+      &lt;li class="main-nav-item"&gt;
+        &lt;a href="#" class="main-nav-link"&gt;
+          About Us
+          &lt;svg class="dropdown-icon"&gt;...&lt;/svg&gt;
+        &lt;/a&gt;
+        &lt;div class="dropdown"&gt;
+          &lt;!-- Dropdown items --&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+        </div>
+    </div>
+</body>
+</html>
