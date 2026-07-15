@@ -58,11 +58,11 @@ export default function Header() {
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="w-3 h-3" />
-                <span>info@cohortlearninglabs.org</span>
+                <span>elie@cohortlearninglabs.org</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Clock className="w-3 h-3" />
-                <span>Mon-Fri 9AM-5PM EST</span>
+                <span>Serving teams internationally</span>
               </div>
             </div>
 
