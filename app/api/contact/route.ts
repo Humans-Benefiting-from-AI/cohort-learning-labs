@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     // const resend = new Resend(process.env.RESEND_API_KEY)
     // await resend.emails.send({
     //   from: 'noreply@cohortlearninglabs.com',
-    //   to: 'info@cohortlearninglabs.com',
+    //   to: 'elie@cohortlearninglabs.org',
     //   subject: `New Contact Form Submission from ${name}`,
     //   html: `
     //     <h2>New Contact Form Submission</h2>
