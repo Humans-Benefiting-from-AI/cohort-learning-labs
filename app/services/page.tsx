@@ -1,228 +1,83 @@
 import { Metadata } from 'next'
-import { Brain, Cog, Users, Zap, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Services - Cohort Learning Labs',
-  description: 'Explore our comprehensive AI consulting services including strategy, implementation, training, and custom solutions for small businesses.',
+  title: 'Services — Cohort Learning Labs',
+  description: 'Collaborative AI learning and implementation for professional teams, grounded in human judgment.',
 }
 
-const services = [
+const offerings = [
   {
-    id: 'strategy',
-    icon: Brain,
-    title: 'AI Strategy Consulting',
-    tagline: 'Chart Your AI Journey',
-    description: 'We help you develop a comprehensive AI strategy that aligns with your business goals, resources, and market position.',
-    features: [
-      'Business Process Analysis',
-      'AI Opportunity Assessment',
-      'Technology Stack Recommendations',
-      'ROI Projections',
-      'Implementation Roadmap',
-      'Risk Assessment & Mitigation',
-    ],
-    benefits: [
-      'Clear vision for AI adoption',
-      'Prioritized implementation plan',
-      'Budget optimization',
-      'Competitive advantage',
-    ],
-    deliverables: [
-      'Comprehensive AI Strategy Document',
-      'Implementation Timeline',
-      'Budget Forecast',
-      'Success Metrics Framework',
-    ],
+    title: 'AI workflow audits',
+    description:
+      'Map where time goes, identify bottlenecks and hidden assumptions, and determine where automation can produce meaningful returns.',
   },
   {
-    id: 'implementation',
-    icon: Cog,
-    title: 'Implementation Support',
-    tagline: 'From Planning to Production',
-    description: 'Our hands-on implementation support ensures smooth integration of AI solutions into your existing operations.',
-    features: [
-      'Tool Selection & Procurement',
-      'System Integration',
-      'Data Pipeline Setup',
-      'Process Automation',
-      'Quality Assurance',
-      'Performance Monitoring',
-    ],
-    benefits: [
-      'Reduced implementation time',
-      'Minimized disruption',
-      'Expert guidance throughout',
-      'Immediate productivity gains',
-    ],
-    deliverables: [
-      'Fully Integrated AI Systems',
-      'Documentation & SOPs',
-      'Performance Dashboard',
-      'Support Handover Package',
-    ],
+    title: 'Implementation',
+    description:
+      'Turn selected opportunities into practical, maintainable workflows and systems that fit how the team actually works.',
   },
   {
-    id: 'training',
-    icon: Users,
-    title: 'Team Training',
-    tagline: 'Empower Your Workforce',
-    description: 'Comprehensive training programs to ensure your team can effectively leverage AI tools and technologies.',
-    features: [
-      'Custom Curriculum Development',
-      'Hands-on Workshops',
-      'Role-specific Training',
-      'Best Practices Sessions',
-      'Ongoing Support & Q&A',
-      'Certification Programs',
-    ],
-    benefits: [
-      'Increased team confidence',
-      'Higher adoption rates',
-      'Improved productivity',
-      'Reduced resistance to change',
-    ],
-    deliverables: [
-      'Training Materials & Resources',
-      'Video Tutorials',
-      'Quick Reference Guides',
-      'Competency Assessments',
-    ],
+    title: 'Cohort adoption programs',
+    description:
+      'Facilitate small-group learning that helps professionals understand, test, and actually use AI.',
   },
   {
-    id: 'custom',
-    icon: Zap,
-    title: 'Custom Solutions',
-    tagline: 'Tailored to Your Needs',
-    description: 'When off-the-shelf solutions don\'t fit, we develop custom AI applications designed specifically for your business.',
-    features: [
-      'Requirements Analysis',
-      'Custom AI Model Development',
-      'API Integration',
-      'Workflow Automation',
-      'Chatbot Development',
-      'Predictive Analytics',
-    ],
-    benefits: [
-      'Perfect fit for your needs',
-      'Competitive differentiation',
-      'Scalable solutions',
-      'Full ownership of IP',
-    ],
-    deliverables: [
-      'Custom AI Application',
-      'Source Code & Documentation',
-      'Deployment Support',
-      'Maintenance Plan',
-    ],
+    title: 'Responsible-use practices',
+    description:
+      'Help teams document workflows, decision rights, review points, audit trails, and human-oversight processes. Legal and compliance determinations remain with each organization and its qualified counsel.',
   },
 ]
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-20">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
-            Our <span className="gradient-text">Services</span>
-          </h1>
-          <p className="text-xl text-primary-600 max-w-3xl">
-            Comprehensive AI solutions designed to transform your business operations, 
-            enhance productivity, and drive sustainable growth.
-          </p>
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
+              Collaborative AI learning and implementation
+            </h1>
+            <p className="text-xl text-primary-700">
+              Cohort Learning Labs helps law firms, trusts and estates practices, and other
+              professional-services teams adopt AI thoughtfully and effectively through practical
+              implementation and collaborative learning.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Services Detail */}
-      {services.map((service, index) => (
-        <section
-          key={service.id}
-          id={service.id}
-          className={`section-padding ${index % 2 === 0 ? 'bg-white' : 'bg-primary-50'}`}
-        >
-          <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
-                    <service.icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h2 className="text-3xl font-bold text-primary-900">{service.title}</h2>
-                    <p className="text-accent font-semibold">{service.tagline}</p>
-                  </div>
-                </div>
-                
-                <p className="text-lg text-primary-600 mb-6">
-                  {service.description}
-                </p>
-                
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-primary-900 mb-4">What We Offer</h3>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-accent mt-0.5 mr-2 flex-shrink-0" />
-                        <span className="text-primary-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors group"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-              
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl p-6 shadow-lg border border-primary-100">
-                  <h3 className="text-xl font-semibold text-primary-900 mb-4">Key Benefits</h3>
-                  <ul className="space-y-3">
-                    {service.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-primary-700">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="bg-accent/5 rounded-xl p-6 border border-accent/20">
-                  <h3 className="text-xl font-semibold text-primary-900 mb-4">Deliverables</h3>
-                  <ul className="space-y-3">
-                    {service.deliverables.map((deliverable, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-accent mr-2">✓</span>
-                        <span className="text-primary-700">{deliverable}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {offerings.map((offering) => (
+              <article key={offering.title} className="bg-primary-50 rounded-xl p-7">
+                <h2 className="text-xl font-bold text-primary-900 mb-3">{offering.title}</h2>
+                <p className="text-primary-700">{offering.description}</p>
+              </article>
+            ))}
           </div>
-        </section>
-      ))}
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-accent to-blue-600">
-        <div className="container-custom text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">
-            Not Sure Which Service You Need?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Schedule a free consultation and we'll help you identify the best solutions for your business.
+          <div className="max-w-5xl mx-auto mt-10 border-l-4 border-accent bg-primary-50 p-6">
+            <p className="font-semibold text-primary-900">
+              Cohort Learning Labs does not provide legal advice or legal services.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-primary-900 text-white">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl font-bold mb-4">Start a conversation</h2>
+          <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
+            Tell us about your team, its work, and where AI adoption currently feels difficult or
+            unclear.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-3 bg-white text-accent font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+            className="inline-flex items-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
           >
-            Get Your Free Consultation
+            Start a conversation
           </Link>
         </div>
       </section>

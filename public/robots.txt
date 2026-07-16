@@ -4,4 +4,4 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /404
 
-Sitemap: https://cohortlearninglabs.com/sitemap.xml
+Sitemap: https://www.cohortlearninglabs.org/sitemap.xml
