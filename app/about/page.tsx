@@ -42,7 +42,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-primary-900 mb-5">How We Help</h2>
               <ul className="space-y-4 text-primary-700">
                 <li><strong>AI workflow audits:</strong> Map where time goes, identify bottlenecks and hidden assumptions, and determine where automation can produce meaningful returns.</li>
-                <li><strong>Implementation:</strong> Build practical systems using Make.com, n8n, LLM pipelines, custom GPTs, and document automation.</li>
+                <li><strong>Implementation:</strong> Turn selected opportunities into practical, maintainable workflows and systems that fit how the team actually works.</li>
                 <li><strong>Cohort adoption programs:</strong> Facilitate small-group learning that helps professionals understand, test, and actually use AI.</li>
                 <li><strong>Responsible-use practices:</strong> Help teams document workflows, decision rights, review points, audit trails, and human-oversight processes. Legal and compliance determinations remain with each organization and its qualified counsel.</li>
               </ul>

@@ -59,8 +59,8 @@ export default function HomePage() {
             <div className="bg-primary-50 rounded-xl p-7">
               <h3 className="text-xl font-bold text-primary-900 mb-3">Practical implementation</h3>
               <p className="text-primary-700">
-                Build useful systems with Make.com, n8n, LLM pipelines, custom GPTs, and document
-                automation.
+                Turn selected opportunities into practical, maintainable workflows and systems that
+                fit how the team actually works.
               </p>
             </div>
             <div className="bg-primary-50 rounded-xl p-7">
