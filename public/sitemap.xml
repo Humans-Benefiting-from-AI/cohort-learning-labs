@@ -1,45 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cohortlearninglabs.com/</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://www.cohortlearninglabs.org/</loc>
   </url>
   <url>
-    <loc>https://cohortlearninglabs.com/about</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.cohortlearninglabs.org/about</loc>
   </url>
   <url>
-    <loc>https://cohortlearninglabs.com/services</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.cohortlearninglabs.org/services</loc>
   </url>
   <url>
-    <loc>https://cohortlearninglabs.com/pricing</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.cohortlearninglabs.org/pricing</loc>
   </url>
   <url>
-    <loc>https://cohortlearninglabs.com/testimonials</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cohortlearninglabs.com/blog</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cohortlearninglabs.com/contact</loc>
-    <lastmod>2024-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.cohortlearninglabs.org/contact</loc>
   </url>
 </urlset>
