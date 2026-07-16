@@ -8,13 +8,25 @@ Production: [https://www.cohortlearninglabs.org](https://www.cohortlearninglabs.
 
 This repository contains the Cohort Learning Labs website, built as a Next.js 15 application with TypeScript and Tailwind CSS.
 
-Approved public routes:
+Live route inventory:
+
+Primary public routes:
 
 - `/`
 - `/about`
 - `/services`
 - `/pricing`
 - `/contact`
+
+Retained direct-access routes that are intentionally omitted from the site navigation and sitemap:
+
+- `/our-approach`
+- `/values`
+
+Legacy redirect routes:
+
+- `/about-elie` redirects to `/about`
+- `/testimonials` redirects to `/about`
 
 The previous Blog and ebook materials are intentionally unavailable while their content and publishing details are reviewed. Contact and newsletter APIs are not implemented.
 
