@@ -29,6 +29,29 @@ const offerings = [
   },
 ]
 
+const engagementSteps = [
+  {
+    title: '1. Understand the work',
+    description:
+      'Begin with the team’s goals, responsibilities, existing workflows, constraints, and current experience with AI.',
+  },
+  {
+    title: '2. Choose a useful starting point',
+    description:
+      'Identify a bounded workflow or learning need where practical testing can clarify what is—and is not—worth pursuing.',
+  },
+  {
+    title: '3. Build and learn together',
+    description:
+      'Combine implementation with collaborative learning so the people responsible for the work can understand and evaluate the system.',
+  },
+  {
+    title: '4. Define review and ownership',
+    description:
+      'Document responsibilities, human review points, maintenance needs, and the decisions that remain with the organization.',
+  },
+]
+
 export default function ServicesPage() {
   return (
     <>
@@ -62,6 +85,33 @@ export default function ServicesPage() {
             <p className="font-semibold text-primary-900">
               Cohort Learning Labs does not provide legal advice or legal services.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-primary-50" aria-labelledby="engagement-process-heading">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto mb-10">
+            <h2 id="engagement-process-heading" className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+              How an engagement develops
+            </h2>
+            <p className="text-lg text-primary-700">
+              The sequence is designed to keep the work grounded in a real team, a real workflow,
+              and clearly assigned human judgment.
+            </p>
+          </div>
+          <ol className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {engagementSteps.map((step) => (
+              <li key={step.title} className="bg-white rounded-xl p-7 border border-primary-100">
+                <h3 className="text-xl font-bold text-primary-900 mb-3">{step.title}</h3>
+                <p className="text-primary-700">{step.description}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="max-w-5xl mx-auto mt-8 text-center">
+            <Link href="/pricing" className="font-semibold text-accent hover:text-accent-hover underline underline-offset-4">
+              Learn how engagements are scoped
+            </Link>
           </div>
         </div>
       </section>

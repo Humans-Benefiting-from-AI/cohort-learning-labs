@@ -38,8 +38,11 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
       <body className="min-h-screen bg-primary-50">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow" tabIndex={-1}>
           {children}
         </main>
         <Footer />
