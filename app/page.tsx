@@ -38,6 +38,36 @@ export default function HomePage() {
 
       <section className="section-padding bg-white">
         <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-accent font-semibold mb-4">Our point of view</p>
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-900">
+                The workflow is not the workflow.
+              </h2>
+              <div className="space-y-5 text-lg text-primary-700">
+                <p>
+                  AI adoption often exposes what a team already knows but has not named: the real
+                  handoffs, the hidden judgment calls, the authority patterns, and the places where
+                  responsibility becomes vague.
+                </p>
+                <p>
+                  Cohort Learning Labs uses AI implementation as an opportunity for teams to see and
+                  improve how they learn, exercise judgment, and take responsibility together.
+                </p>
+                <Link
+                  href="/illustrative-engagement"
+                  className="inline-flex items-center font-semibold text-accent hover:text-accent-hover underline underline-offset-4"
+                >
+                  Read an illustrative engagement
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
               Make the hidden structure of work visible

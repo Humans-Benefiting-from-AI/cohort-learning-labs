@@ -161,6 +161,28 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="section-padding bg-white" aria-labelledby="illustrative-engagement-heading">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto border-l-4 border-accent bg-primary-50 p-8">
+            <p className="text-accent font-semibold mb-3">Illustrative engagement</p>
+            <h2 id="illustrative-engagement-heading" className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
+              The workflow is not the workflow.
+            </h2>
+            <p className="text-lg text-primary-700 mb-5">
+              A team may ask for help introducing AI into a recurring process. The harder work is often
+              naming how the group actually decides what counts as good work, who owns review, and where
+              responsibility has become too vague.
+            </p>
+            <Link
+              href="/illustrative-engagement"
+              className="inline-flex items-center font-semibold text-accent hover:text-accent-hover underline underline-offset-4"
+            >
+              Read the clearly labeled illustrative example
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white" aria-labelledby="engagement-formats-heading">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto mb-10">
