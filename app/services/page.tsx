@@ -52,6 +52,34 @@ const engagementSteps = [
   },
 ]
 
+const audienceNeeds = [
+  'AI tools are appearing faster than the team can establish shared review practices.',
+  'A recurring knowledge-work process feels slow, repetitive, or difficult to evaluate.',
+  'Responsibility between professionals, support staff, and AI-assisted systems is unclear.',
+  'The team needs to learn together rather than receive one-time tool training.',
+]
+
+const engagementFormats = [
+  {
+    title: 'Discovery and workflow assessment',
+    problem: 'For teams that need to understand the work before choosing a tool or project.',
+    activities: 'Map a bounded workflow, its language, decisions, handoffs, constraints, and review points.',
+    output: 'A documented view of the current process and a reasoned set of possible next steps.',
+  },
+  {
+    title: 'Facilitated team learning and experimentation',
+    problem: 'For teams that need shared experience evaluating what AI can and cannot do in their context.',
+    activities: 'Work through selected examples together, compare results, and identify practical standards for use.',
+    output: 'A shared vocabulary, documented observations, and a bounded direction for further testing.',
+  },
+  {
+    title: 'Implementation and review support',
+    problem: 'For teams with a selected workflow that are ready to develop and test a practical system.',
+    activities: 'Build iteratively with the people responsible for the work and define ownership and human review.',
+    output: 'A tested workflow, operating documentation, and clearly assigned review and maintenance responsibilities.',
+  },
+]
+
 export default function ServicesPage() {
   return (
     <>
@@ -89,6 +117,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="section-padding bg-primary-900 text-white" aria-labelledby="who-this-is-for-heading">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto mb-10">
+            <h2 id="who-this-is-for-heading" className="text-3xl md:text-4xl font-bold mb-4">Who this work is for</h2>
+            <p className="text-lg text-primary-200">
+              Cohort Learning Labs works with professional teams whose work depends on context,
+              responsibility, and judgment—not simply faster output.
+            </p>
+          </div>
+          <ul className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+            {audienceNeeds.map((need) => (
+              <li key={need} className="rounded-xl border border-primary-700 bg-primary-800 p-6 text-primary-100">{need}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="section-padding bg-primary-50" aria-labelledby="engagement-process-heading">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto mb-10">
@@ -112,6 +157,28 @@ export default function ServicesPage() {
             <Link href="/pricing" className="font-semibold text-accent hover:text-accent-hover underline underline-offset-4">
               Learn how engagements are scoped
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white" aria-labelledby="engagement-formats-heading">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto mb-10">
+            <h2 id="engagement-formats-heading" className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">Ways to begin</h2>
+            <p className="text-lg text-primary-700">
+              These are starting patterns, not fixed packages. Scope follows the team’s actual work,
+              constraints, responsibilities, and learning needs.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {engagementFormats.map((format) => (
+              <article key={format.title} className="rounded-xl border border-primary-100 bg-primary-50 p-7">
+                <h3 className="text-xl font-bold text-primary-900 mb-4">{format.title}</h3>
+                <p className="text-primary-700 mb-4"><strong className="text-primary-900">Useful when: </strong>{format.problem}</p>
+                <p className="text-primary-700 mb-4"><strong className="text-primary-900">Work may include: </strong>{format.activities}</p>
+                <p className="text-primary-700"><strong className="text-primary-900">Possible output: </strong>{format.output}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
