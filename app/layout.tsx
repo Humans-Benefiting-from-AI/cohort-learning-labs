@@ -4,22 +4,27 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
+const title = 'Cohort Learning Labs — Group Learning for Problems That Keep Returning'
+const description =
+  'Cohort Learning Labs helps leaders and groups examine why recurring problems return—especially when rapid change exposes hidden patterns in authority, responsibility, and learning.'
+
 export const metadata: Metadata = {
-  title: 'Cohort Learning Labs — Collaborative AI Learning and Implementation',
-  description: 'Cohort Learning Labs helps professional teams adopt AI thoughtfully through collaborative learning, practical implementation, and responsible human oversight.',
-  keywords: 'collaborative AI learning, AI implementation, AI adoption, professional learning, workflow design, human-centered AI, professional services',
+  title,
+  description,
+  keywords:
+    'group learning, group inquiry, organizational learning, resistance to change, group process, leadership development, AI adaptation, professional judgment, cohort learning',
   authors: [{ name: 'Cohort Learning Labs' }],
   openGraph: {
-    title: 'Cohort Learning Labs — Collaborative AI Learning and Implementation',
-    description: 'Cohort Learning Labs helps professional teams adopt AI thoughtfully through collaborative learning, practical implementation, and responsible human oversight.',
+    title,
+    description,
     type: 'website',
     locale: 'en_US',
     siteName: 'Cohort Learning Labs',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cohort Learning Labs — Collaborative AI Learning and Implementation',
-    description: 'Cohort Learning Labs helps professional teams adopt AI thoughtfully through collaborative learning, practical implementation, and responsible human oversight.',
+    title,
+    description,
   },
   robots: {
     index: true,

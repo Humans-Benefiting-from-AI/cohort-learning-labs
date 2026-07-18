@@ -41,7 +41,7 @@ export default function Header() {
             <div>
               <div className="text-gray-900 text-xl font-semibold">Cohort Learning Labs</div>
               <span className="text-gray-600 text-xs font-normal block -mt-0.5">
-                Collaborative Learning in the Age of AI
+                Group learning for problems that keep returning
               </span>
             </div>
           </Link>
@@ -60,7 +60,7 @@ export default function Header() {
               href="/contact"
               className="bg-purple-600 text-white px-4 py-2 text-sm font-medium rounded-md hover:bg-purple-700 transition-colors duration-150"
             >
-              Start a Conversation
+              Start a fit conversation
             </Link>
           </div>
 
@@ -105,7 +105,7 @@ export default function Header() {
                     className="block w-full bg-purple-600 text-white px-4 py-3 text-base font-medium rounded-md text-center hover:bg-purple-700 transition-colors duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Start a Conversation
+                    Start a fit conversation
                   </Link>
                 </div>
               </div>

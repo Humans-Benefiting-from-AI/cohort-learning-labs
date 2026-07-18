@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="font-bold text-xl">Cohort Learning Labs</span>
             </div>
             <p className="text-primary-300 mb-4">
-              Collaborative AI learning and implementation for professional teams, grounded in human judgment.
+              Cohort Learning Labs helps leaders and groups examine why recurring problems return—especially when rapid change exposes hidden patterns in authority, responsibility, and learning.
             </p>
             <a
               href="https://www.linkedin.com/company/cohort-learning-labs/"
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-primary-800 mt-8 pt-8 text-center space-y-2">
-          <p className="text-primary-400">Cohort Learning Labs does not provide legal advice or legal services.</p>
+          <p className="text-primary-400">Cohort Learning Labs provides educational, facilitative, and organizational learning services. It does not provide psychotherapy, family therapy, mediation, legal advice, or legal representation.</p>
           <p className="text-primary-400">© {currentYear} Cohort Learning Labs. All rights reserved.</p>
         </div>
       </div>
