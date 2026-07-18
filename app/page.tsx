@@ -1,5 +1,28 @@
 import Link from 'next/link'
 
+const settings = [
+  {
+    title: 'Businesses and professional teams',
+    description:
+      'When implementation keeps failing, authority is unclear, or AI exposes how the work is actually done.',
+  },
+  {
+    title: 'Organizations and educational institutions',
+    description:
+      'When new structures and programs are repeatedly absorbed into old patterns.',
+  },
+  {
+    title: 'Families and family enterprises',
+    description:
+      'When practical decisions carry histories, roles, loyalties, and meanings that cannot be addressed as logistics alone.',
+  },
+  {
+    title: 'Leaders and facilitators',
+    description:
+      'When the person responsible for the group wants to become more precise about authority, resistance, participation, and intervention.',
+  },
+]
+
 export default function HomePage() {
   return (
     <>
@@ -8,28 +31,32 @@ export default function HomePage() {
           <div className="max-w-4xl">
             <p className="text-accent font-semibold mb-4">Cohort Learning Labs</p>
             <h1 className="text-4xl md:text-6xl font-bold text-primary-900 mb-6">
-              Collaborative AI learning and implementation for professional teams
+              You have probably already tried to solve the problem.
             </h1>
-            <p className="text-xl text-primary-700 mb-4">
-              Grounded in language, group process, and human judgment.
-            </p>
-            <p className="text-lg text-primary-600 max-w-3xl mb-8">
-              We help law firms, trusts and estates practices, and other professional-services teams
-              understand their work, build practical AI workflows, and develop the shared capacity to
-              use those systems responsibly.
-            </p>
+            <div className="space-y-4 text-lg text-primary-700 max-w-3xl mb-8">
+              <p>
+                You clarified the roles. Changed the structure. Held the retreat. Introduced the
+                technology. Hired the consultant. Everyone agreed that something needed to change.
+              </p>
+              <p>And eventually, the group found its way back to the same place.</p>
+              <p>
+                Cohort Learning Labs works with leaders and groups ready to ask a harder question:
+                not merely “What should we do differently?” but “What are we repeatedly doing
+                together that makes change so difficult?”
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
                 className="inline-flex items-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
               >
-                Start a Conversation
+                Start a fit conversation
               </Link>
               <Link
-                href="/about"
+                href="/services"
                 className="inline-flex items-center px-8 py-3 bg-white text-primary-900 font-semibold rounded-lg border border-primary-200 hover:bg-primary-50 transition-colors"
               >
-                Learn About Our Approach
+                See how the work develops
               </Link>
             </div>
           </div>
@@ -42,24 +69,44 @@ export default function HomePage() {
             <p className="text-accent font-semibold mb-4">Our point of view</p>
             <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-900">
-                The workflow is not the workflow.
+                The group may not need another answer.
               </h2>
               <div className="space-y-5 text-lg text-primary-700">
                 <p>
-                  AI adoption often exposes what a team already knows but has not named: the real
-                  handoffs, the hidden judgment calls, the authority patterns, and the places where
-                  responsibility becomes vague.
+                  Intelligent groups rarely remain stuck because nobody can explain the solution.
+                  They remain stuck when the patterns shaping authority, conflict, responsibility,
+                  expertise, and learning are difficult to see from inside the group.
                 </p>
                 <p>
-                  Cohort Learning Labs uses AI implementation as an opportunity for teams to see and
-                  improve how they learn, exercise judgment, and take responsibility together.
+                  Our work is slow, deliberate, and participatory. We help groups examine what keeps
+                  recurring without pretending that the facilitator already knows the hidden truth—or
+                  that one difficult person explains the whole system.
                 </p>
-                <Link
-                  href="/illustrative-engagement"
-                  className="inline-flex items-center font-semibold text-accent hover:text-accent-hover underline underline-offset-4"
-                >
-                  Read an illustrative engagement
-                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-primary-900 text-white">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <p className="text-accent font-semibold mb-4">The urgent current application</p>
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                AI is moving faster than groups know how to change.
+              </h2>
+              <div className="space-y-5 text-lg text-primary-200">
+                <p>
+                  Artificial intelligence is forcing businesses, institutions, families, and
+                  professional groups to adapt at an unprecedented pace. Buying tools is the easy
+                  part. The harder work is revising how people learn, distribute authority, exercise
+                  judgment, and respond when familiar expertise no longer feels secure.
+                </p>
+                <p className="font-semibold text-white">
+                  When resistance appears, we do not begin by asking how to defeat it. We ask what
+                  the resistance has been protecting.
+                </p>
               </div>
             </div>
           </div>
@@ -70,41 +117,39 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
-              Make the hidden structure of work visible
+              Different settings. The same difficult question.
             </h2>
             <p className="text-lg text-primary-700">
-              Effective AI adoption begins by identifying the language, assumptions, decisions, and
-              group dynamics already shaping a team&apos;s work.
+              Cohort Learning Labs works wherever recurring group problems and rapid change require
+              more than a packaged answer.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="bg-primary-50 rounded-xl p-7">
-              <h3 className="text-xl font-bold text-primary-900 mb-3">AI workflow audits</h3>
-              <p className="text-primary-700">
-                Map where time goes, identify bottlenecks and hidden assumptions, and determine where
-                automation can produce meaningful returns.
+            {settings.map((setting) => (
+              <article key={setting.title} className="bg-primary-50 rounded-xl p-7">
+                <h3 className="text-xl font-bold text-primary-900 mb-3">{setting.title}</h3>
+                <p className="text-primary-700">{setting.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-primary-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-6">
+              This work is not for every group.
+            </h2>
+            <div className="space-y-5 text-lg text-primary-700">
+              <p>
+                It is for groups that suspect the stated problem is not the whole problem—and whose
+                leaders are willing to examine their own participation in what keeps recurring.
               </p>
-            </div>
-            <div className="bg-primary-50 rounded-xl p-7">
-              <h3 className="text-xl font-bold text-primary-900 mb-3">Practical implementation</h3>
-              <p className="text-primary-700">
-                Turn selected opportunities into practical, maintainable workflows and systems that
-                fit how the team actually works.
-              </p>
-            </div>
-            <div className="bg-primary-50 rounded-xl p-7">
-              <h3 className="text-xl font-bold text-primary-900 mb-3">Cohort adoption programs</h3>
-              <p className="text-primary-700">
-                Facilitate small-group learning that helps professionals understand, test, and actually
-                use AI.
-              </p>
-            </div>
-            <div className="bg-primary-50 rounded-xl p-7">
-              <h3 className="text-xl font-bold text-primary-900 mb-3">Responsible-use practices</h3>
-              <p className="text-primary-700">
-                Document workflows, decision rights, review points, audit trails, and human-oversight
-                processes.
+              <p>
+                It is not a motivational event, a packaged training, or a process for proving that
+                one difficult person is to blame. It is not designed for leaders who want everyone
+                else examined while their own authority remains outside the room.
               </p>
             </div>
           </div>
@@ -114,18 +159,15 @@ export default function HomePage() {
       <section className="section-padding bg-primary-900 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-5">Technology in the context of professional judgment</h2>
-            <p className="text-lg text-primary-200 mb-4">
-              Legal and compliance determinations remain with each organization and its qualified counsel.
-            </p>
-            <p className="font-semibold mb-8">
-              Cohort Learning Labs does not provide legal advice or legal services.
+            <h2 className="text-3xl font-bold mb-5">Start a fit conversation.</h2>
+            <p className="text-lg text-primary-200 mb-8">
+              Tell us about a problem your group has tried to solve before—and what keeps returning.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
             >
-              Contact Elie Schulman
+              Start a fit conversation
             </Link>
           </div>
         </div>
