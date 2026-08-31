@@ -4,15 +4,15 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
-const title = 'Cohort Learning Labs — Group Learning for Problems That Keep Returning'
+const title = 'Cohort Learning Labs | Group Learning Through Difference'
 const description =
-  'Cohort Learning Labs helps leaders and groups examine why recurring problems return—especially when rapid change exposes hidden patterns in authority, responsibility, and learning.'
+  'Cohort Learning Labs creates recurring groups where people examine how they communicate, experience, and respond to differences that matter.'
 
 export const metadata: Metadata = {
   title,
   description,
   keywords:
-    'group learning, group inquiry, organizational learning, resistance to change, group process, leadership development, AI adaptation, professional judgment, cohort learning',
+    'group learning, group inquiry, difference of opinion, group process, facilitated groups, organizational learning, professional judgment, cohort learning',
   authors: [{ name: 'Cohort Learning Labs' }],
   openGraph: {
     title,

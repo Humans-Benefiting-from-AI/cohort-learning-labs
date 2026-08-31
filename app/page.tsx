@@ -1,63 +1,41 @@
 import Link from 'next/link'
 
+const practices = [
+  'Say what they actually think without pretending to speak for everyone.',
+  'Identify the precise point of difference rather than opposing an entire person.',
+  'Represent another person’s view accurately before responding to it.',
+  'Notice their own reactions while remaining present to the group.',
+  'Distinguish understanding from agreement.',
+  'Make decisions without erasing what remains unresolved.',
+]
+
 const settings = [
-  {
-    title: 'Businesses and professional teams',
-    description:
-      'When implementation keeps failing, authority is unclear, or AI exposes how the work is actually done.',
-  },
-  {
-    title: 'Organizations and educational institutions',
-    description:
-      'When new structures and programs are repeatedly absorbed into old patterns.',
-  },
-  {
-    title: 'Families and family enterprises',
-    description:
-      'When practical decisions carry histories, roles, loyalties, and meanings that cannot be addressed as logistics alone.',
-  },
-  {
-    title: 'Leaders and facilitators',
-    description:
-      'When the person responsible for the group wants to become more precise about authority, resistance, participation, and intervention.',
-  },
+  { title: 'Professional teams', description: 'Where judgment, responsibility, handoffs, and consequential differences must remain visible.' },
+  { title: 'Leadership groups and boards', description: 'Where dissent and competing responsibilities must survive the pressure to decide.' },
+  { title: 'Educators and learning communities', description: 'Where learning involves inquiry, encounter, and judgment—not only information transfer.' },
+  { title: 'Families and communities', description: 'Where belonging matters deeply and difference can therefore become difficult to express honestly.' },
+  { title: 'AI and organizational change', description: 'Where technology alters roles, authority, risk, and the meaning of good work faster than a group can absorb.' },
 ]
 
 export default function HomePage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-24">
-        <div className="container-custom">
-          <div className="max-w-4xl">
-            <p className="text-accent font-semibold mb-4">Cohort Learning Labs</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-primary-900 mb-6">
-              You have probably already tried to solve the problem.
+      <section className="relative overflow-hidden bg-primary-50 py-24 md:py-32">
+        <div className="pointer-events-none absolute -right-32 -top-40 h-[34rem] w-[34rem] rounded-full border border-primary-200" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-12 -top-8 h-80 w-80 rounded-full border border-accent/30" aria-hidden="true" />
+        <div className="container-custom relative">
+          <div className="max-w-5xl">
+            <p className="eyebrow">Cohort Learning Labs</p>
+            <h1 className="max-w-4xl text-4xl font-bold leading-[1.08] text-primary-900 md:text-6xl lg:text-7xl">
+              What happens between us when we do not see things the same way?
             </h1>
-            <div className="space-y-4 text-lg text-primary-700 max-w-3xl mb-8">
-              <p>
-                You clarified the roles. Changed the structure. Held the retreat. Introduced the
-                technology. Hired the consultant. Everyone agreed that something needed to change.
-              </p>
-              <p>And eventually, the group found its way back to the same place.</p>
-              <p>
-                Cohort Learning Labs works with leaders and groups ready to ask a harder question:
-                not merely “What should we do differently?” but “What are we repeatedly doing
-                together that makes change so difficult?”
-              </p>
+            <div className="mt-8 max-w-3xl space-y-4 text-xl leading-8 text-primary-700">
+              <p>Cohort Learning Labs creates recurring groups in which people learn from the differences already present among them.</p>
+              <p>We do not begin by trying to eliminate disagreement. We begin by asking how each person communicates difference—and what happens in the group when they do.</p>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
-              >
-                Start a fit conversation
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center px-8 py-3 bg-white text-primary-900 font-semibold rounded-lg border border-primary-200 hover:bg-primary-50 transition-colors"
-              >
-                See how the work develops
-              </Link>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href="/contact" className="inline-flex items-center rounded-md bg-accent px-7 py-3 font-semibold text-white transition-colors hover:bg-accent-hover">Start a Conversation</Link>
+              <Link href="/the-question" className="inline-flex items-center rounded-md border border-primary-300 bg-white px-7 py-3 font-semibold text-primary-900 transition-colors hover:bg-primary-100">Explore the Question</Link>
             </div>
           </div>
         </div>
@@ -65,24 +43,16 @@ export default function HomePage() {
 
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-accent font-semibold mb-4">Our point of view</p>
-            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-900">
-                The group may not need another answer.
-              </h2>
-              <div className="space-y-5 text-lg text-primary-700">
-                <p>
-                  Intelligent groups rarely remain stuck because nobody can explain the solution.
-                  They remain stuck when the patterns shaping authority, conflict, responsibility,
-                  expertise, and learning are difficult to see from inside the group.
-                </p>
-                <p>
-                  Our work is slow, deliberate, and participatory. We help groups examine what keeps
-                  recurring without pretending that the facilitator already knows the hidden truth—or
-                  that one difficult person explains the whole system.
-                </p>
-              </div>
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="eyebrow">The central practice</p>
+              <h2 className="text-3xl font-bold leading-tight text-primary-900 md:text-5xl">Difference is not an interruption of the work.</h2>
+              <p className="mt-5 text-2xl font-semibold text-accent">It is the material of the work.</p>
+            </div>
+            <div className="prose-copy">
+              <p>Every group contains differences: differences of judgment, experience, language, desire, responsibility, risk, timing, and power.</p>
+              <p>Some are stated directly. Some are softened until they are difficult to recognize. Some appear as silence, compliance, persuasion, withdrawal, irritation, humor, or the formation of sides.</p>
+              <p>Cohort Learning Labs helps a group pause inside those moments and examine what each person thinks, where the views differ, how the difference is being communicated, and what becomes possible once it appears.</p>
             </div>
           </div>
         </div>
@@ -90,85 +60,87 @@ export default function HomePage() {
 
       <section className="section-padding bg-primary-900 text-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-accent font-semibold mb-4">The urgent current application</p>
-            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                AI is moving faster than groups know how to change.
-              </h2>
-              <div className="space-y-5 text-lg text-primary-200">
-                <p>
-                  Artificial intelligence is forcing businesses, institutions, families, and
-                  professional groups to adapt at an unprecedented pace. Buying tools is the easy
-                  part. The harder work is revising how people learn, distribute authority, exercise
-                  judgment, and respond when familiar expertise no longer feels secure.
-                </p>
-                <p className="font-semibold text-white">
-                  When resistance appears, we do not begin by asking how to defeat it. We ask what
-                  the resistance has been protecting.
-                </p>
-              </div>
+          <div className="mx-auto max-w-5xl">
+            <p className="eyebrow">Why a group?</p>
+            <h2 className="text-3xl font-bold md:text-5xl">A third person changes the conversation.</h2>
+            <div className="mt-8 grid gap-8 text-lg leading-8 text-primary-200 md:grid-cols-2">
+              <p>Between two people, disagreement can look like a contest between opposing positions. With three or more people, the fuller structure becomes visible.</p>
+              <p>One person speaks. Another agrees for a different reason. A third remains quiet. A majority begins to form. The person in the minority decides whether it is still safe—or worthwhile—to speak.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
-              Different settings. The same difficult question.
-            </h2>
-            <p className="text-lg text-primary-700">
-              Cohort Learning Labs works wherever recurring group problems and rapid change require
-              more than a packaged answer.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {settings.map((setting) => (
-              <article key={setting.title} className="bg-primary-50 rounded-xl p-7">
-                <h3 className="text-xl font-bold text-primary-900 mb-3">{setting.title}</h3>
-                <p className="text-primary-700">{setting.description}</p>
-              </article>
-            ))}
+            <p className="mt-10 border-l-4 border-accent pl-6 text-2xl font-semibold leading-relaxed">The group reveals patterns that no individual can produce or examine alone.</p>
           </div>
         </div>
       </section>
 
       <section className="section-padding bg-primary-50">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-6">
-              This work is not for every group.
-            </h2>
-            <div className="space-y-5 text-lg text-primary-700">
-              <p>
-                It is for groups that suspect the stated problem is not the whole problem—and whose
-                leaders are willing to examine their own participation in what keeps recurring.
-              </p>
-              <p>
-                It is not a motivational event, a packaged training, or a process for proving that
-                one difficult person is to blame. It is not designed for leaders who want everyone
-                else examined while their own authority remains outside the room.
-              </p>
+          <div className="mx-auto max-w-5xl">
+            <p className="eyebrow">What happens in the room</p>
+            <h2 className="text-3xl font-bold text-primary-900 md:text-5xl">The group slows down enough to study itself.</h2>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-primary-700">Participants bring real questions, recurring situations, decisions, texts, work, and relationships. The content matters. But so does what begins happening among the people trying to engage with it.</p>
+            <blockquote className="question-mark mt-10">How is each individual communicating a difference of opinion right now?</blockquote>
+            <p className="mt-8 text-lg leading-8 text-primary-700">Nothing artificial needs to be introduced. The group itself supplies the material.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">What participants practice</p>
+            <h2 className="max-w-3xl text-3xl font-bold text-primary-900 md:text-5xl">Not a formula for agreement. A greater capacity for relationship and judgment.</h2>
+            <ul className="mt-10 grid gap-5 md:grid-cols-2">
+              {practices.map((practice, index) => (
+                <li key={practice} className="flex gap-4 border-t border-primary-200 py-5 text-lg leading-7 text-primary-700">
+                  <span className="font-semibold text-accent">0{index + 1}</span><span>{practice}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-primary-100">
+        <div className="container-custom">
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">Where the work applies</p>
+            <h2 className="text-3xl font-bold text-primary-900 md:text-5xl">Wherever people must think together without becoming the same.</h2>
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {settings.map((setting) => (
+                <article key={setting.title} className="border border-primary-200 bg-white p-7">
+                  <h3 className="text-xl font-bold text-primary-900">{setting.title}</h3>
+                  <p className="mt-3 leading-7 text-primary-700">{setting.description}</p>
+                </article>
+              ))}
+            </div>
+            <Link href="/where-it-applies" className="mt-8 inline-flex font-semibold text-accent underline decoration-primary-300 underline-offset-4 hover:text-accent-hover">See where the work applies</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
+            <div>
+              <p className="eyebrow">The facilitator’s role</p>
+              <h2 className="text-3xl font-bold text-primary-900 md:text-5xl">Elie does not resolve the group’s differences for it.</h2>
+            </div>
+            <div className="prose-copy">
+              <p>His role is to protect the conditions in which the group can encounter and investigate them.</p>
+              <p>He listens for what has been said, what has not been said, and what the group is doing with the difference as it emerges.</p>
+              <p>The facilitator is responsible for the inquiry. The participants remain responsible for their positions, choices, relationships, and decisions.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="section-padding bg-primary-900 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-5">Start a fit conversation.</h2>
-            <p className="text-lg text-primary-200 mb-8">
-              Tell us about a problem your group has tried to solve before—and what keeps returning.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
-            >
-              Start a fit conversation
-            </Link>
+        <div className="container-custom text-center">
+          <div className="mx-auto max-w-4xl">
+            <p className="eyebrow">Begin here</p>
+            <h2 className="text-3xl font-bold md:text-5xl">What difference does your group keep encountering without fully examining?</h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-primary-200">A first conversation will explore who is in the group, what keeps returning, and whether a recurring inquiry process would be useful.</p>
+            <Link href="/contact" className="mt-8 inline-flex rounded-md bg-accent px-8 py-3 font-semibold text-white transition-colors hover:bg-accent-hover">Start a Conversation</Link>
           </div>
         </div>
       </section>
