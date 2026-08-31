@@ -6,11 +6,11 @@ import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Engagements', href: '/pricing' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'The Question', href: '/the-question' },
+  { name: 'How It Works', href: '/services' },
+  { name: 'Where It Applies', href: '/where-it-applies' },
+  { name: 'About Elie', href: '/about' },
+  { name: 'Writing', href: '/writing' },
 ]
 
 export default function Header() {
@@ -21,7 +21,7 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-[72px]">
           <Link href="/" className="flex items-center gap-3 text-decoration-none">
-            <div className="w-9 h-9 bg-purple-600 rounded-md flex items-center justify-center text-white p-1.5">
+            <div className="w-9 h-9 bg-accent rounded-md flex items-center justify-center text-white p-1.5">
               <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <rect x="11" y="2" width="2" height="6" rx="0.5" />
                 <rect x="10" y="7" width="4" height="1.5" rx="0.3" />
@@ -41,26 +41,26 @@ export default function Header() {
             <div>
               <div className="text-gray-900 text-xl font-semibold">Cohort Learning Labs</div>
               <span className="text-gray-600 text-xs font-normal block -mt-0.5">
-                Group learning for problems that keep returning
+                Group learning for differences that matter
               </span>
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-900 hover:text-purple-600 transition-colors duration-150 py-2"
+                className="text-sm font-medium text-gray-900 hover:text-accent transition-colors duration-150 py-2"
               >
                 {item.name}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="bg-purple-600 text-white px-4 py-2 text-sm font-medium rounded-md hover:bg-purple-700 transition-colors duration-150"
+              className="bg-accent text-white px-4 py-2 text-sm font-medium rounded-md hover:bg-accent-hover transition-colors duration-150"
             >
-              Start a fit conversation
+              Start a Conversation
             </Link>
           </div>
 
@@ -69,7 +69,7 @@ export default function Header() {
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={mobileMenuOpen}
             className="lg:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen((open) => !open)}
           >
             {mobileMenuOpen ? (
               <X className="w-5 h-5 text-gray-900" />
@@ -93,7 +93,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-4 py-3 text-base font-medium text-gray-900 hover:text-purple-600 transition-colors duration-150"
+                    className="block px-4 py-3 text-base font-medium text-gray-900 hover:text-accent transition-colors duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -102,10 +102,10 @@ export default function Header() {
                 <div className="px-4 pt-4">
                   <Link
                     href="/contact"
-                    className="block w-full bg-purple-600 text-white px-4 py-3 text-base font-medium rounded-md text-center hover:bg-purple-700 transition-colors duration-150"
+                    className="block w-full bg-accent text-white px-4 py-3 text-base font-medium rounded-md text-center hover:bg-accent-hover transition-colors duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Start a fit conversation
+                    Start a Conversation
                   </Link>
                 </div>
               </div>

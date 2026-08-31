@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 
-const requiredRoutes = ['/', '/about', '/services', '/pricing', '/contact']
+const requiredRoutes = ['/', '/the-question', '/services', '/where-it-applies', '/about', '/writing', '/faq', '/pricing', '/contact', '/privacy']
 const sitemap = readFileSync('public/sitemap.xml', 'utf8')
 const header = readFileSync('components/Header.tsx', 'utf8')
 const layout = readFileSync('app/layout.tsx', 'utf8')
@@ -11,7 +11,8 @@ const failures = []
 for (const route of requiredRoutes) {
   const url = `https://www.cohortlearninglabs.org${route === '/' ? '/' : route}`
   if (!sitemap.includes(`<loc>${url}</loc>`)) failures.push(`sitemap is missing ${route}`)
-  if (route !== '/' && !header.includes(`href: '${route}'`)) failures.push(`navigation is missing ${route}`)
+  const footerOnly = ['/faq', '/privacy', '/pricing', '/contact']
+  if (route !== '/' && !footerOnly.includes(route) && !header.includes(`href: '${route}'`)) failures.push(`navigation is missing ${route}`)
 }
 
 if (!layout.includes('href="#main-content"') || !layout.includes('id="main-content"')) {

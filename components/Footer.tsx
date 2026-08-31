@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="font-bold text-xl">Cohort Learning Labs</span>
             </div>
             <p className="text-primary-300 mb-4">
-              Cohort Learning Labs helps leaders and groups examine why recurring problems return—especially when rapid change exposes hidden patterns in authority, responsibility, and learning.
+              Helping people learn what happens between them when they do not see things the same way.
             </p>
             <a
               href="https://www.linkedin.com/company/cohort-learning-labs/"
@@ -31,9 +31,13 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-primary-300 hover:text-accent transition-colors">About</Link></li>
-              <li><Link href="/services" className="text-primary-300 hover:text-accent transition-colors">Services</Link></li>
-              <li><Link href="/contact" className="text-primary-300 hover:text-accent transition-colors">Contact</Link></li>
+              <li><Link href="/the-question" className="text-primary-300 hover:text-accent transition-colors">The Question</Link></li>
+              <li><Link href="/services" className="text-primary-300 hover:text-accent transition-colors">How It Works</Link></li>
+              <li><Link href="/where-it-applies" className="text-primary-300 hover:text-accent transition-colors">Where It Applies</Link></li>
+              <li><Link href="/about" className="text-primary-300 hover:text-accent transition-colors">About Elie</Link></li>
+              <li><Link href="/writing" className="text-primary-300 hover:text-accent transition-colors">Writing</Link></li>
+              <li><Link href="/faq" className="text-primary-300 hover:text-accent transition-colors">FAQ</Link></li>
+              <li><Link href="/contact" className="text-primary-300 hover:text-accent transition-colors">Start a Conversation</Link></li>
             </ul>
           </div>
 
@@ -54,15 +58,16 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary-400 mt-0.5" />
-                <span className="text-primary-300">Based in Beit Shemesh, Israel<br />Serving teams internationally</span>
+                <span className="text-primary-300">Based in Beit Shemesh, Israel<br />Serving groups internationally</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-800 mt-8 pt-8 text-center space-y-2">
-          <p className="text-primary-400">Cohort Learning Labs provides educational, facilitative, and organizational learning services. It does not provide psychotherapy, family therapy, mediation, legal advice, or legal representation.</p>
+          <p className="text-primary-400">Cohort Learning Labs provides facilitated learning and group inquiry. It does not provide legal advice, legal representation, psychotherapy, crisis services, or mental-health treatment.</p>
           <p className="text-primary-400">© {currentYear} Cohort Learning Labs. All rights reserved.</p>
+          <p><Link href="/privacy" className="text-primary-400 hover:text-accent transition-colors">Privacy</Link></p>
         </div>
       </div>
     </footer>
