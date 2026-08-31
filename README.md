@@ -52,4 +52,6 @@ npm run build
 
 The GitHub repository is connected to Vercel. Pull requests may receive automatic preview deployments. Changes merged to `main` are deployed through the connected production workflow.
 
+The repository is owned by the Humans-Benefiting-from-AI organization. The main branch is protected by the Protect main ruleset, so changes require a pull request and a passing Vercel check.
+
 Do not trigger a manual production deployment for ordinary content changes.
