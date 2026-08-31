@@ -11,7 +11,9 @@ const failures = []
 for (const route of requiredRoutes) {
   const url = `https://www.cohortlearninglabs.org${route === '/' ? '/' : route}`
   if (!sitemap.includes(`<loc>${url}</loc>`)) failures.push(`sitemap is missing ${route}`)
-  const footerOnly = ['/faq', '/privacy', '/pricing', '/contact']
+  // Reachable from the footer rather than the header nav. '/writing' joined
+  // this list with the inquiry redesign, which trims the header to five items.
+  const footerOnly = ['/faq', '/privacy', '/pricing', '/contact', '/writing']
   if (route !== '/' && !footerOnly.includes(route) && !header.includes(`href: '${route}'`)) failures.push(`navigation is missing ${route}`)
 }
 

@@ -1,73 +1,104 @@
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Linkedin } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
+import Mark from '@/components/Mark'
+
+const pages = [
+  { name: 'The question', href: '/the-question' },
+  { name: 'A session', href: '/services' },
+  { name: 'Ways to join', href: '/where-it-applies' },
+  { name: 'Elie Schulman', href: '/about' },
+  { name: 'Writing', href: '/writing' },
+  { name: 'FAQ', href: '/faq' },
+]
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-primary-900 text-white">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-ink text-onink">
+      <div className="mx-auto max-w-container px-6 pb-10 pt-16 lg:px-10">
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-[2fr_1fr_1.2fr]">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">CL</span>
-              </div>
-              <span className="font-bold text-xl">Cohort Learning Labs</span>
+            <div className="flex items-center gap-[14px]">
+              <Mark className="h-[26px] w-[26px] shrink-0 text-accent-light" />
+              <span className="font-serif text-[22px] font-medium leading-[1.15] text-paper">
+                Cohort Learning Labs
+              </span>
             </div>
-            <p className="text-primary-300 mb-4">
-              Helping people learn what happens between them when they do not see things the same way.
+            <p className="mt-6 max-w-[38ch] font-serif text-[19px] leading-[1.6]">
+              Learning about yourself, in the presence of others. Virtual groups of six to
+              eight, facilitated by Elie Schulman.
             </p>
-            <a
-              href="https://www.linkedin.com/company/cohort-learning-labs/"
-              className="inline-flex items-center text-primary-300 hover:text-accent transition-colors"
-              aria-label="Cohort Learning Labs on LinkedIn"
-            >
-              <Linkedin className="w-5 h-5 mr-2" />
-              LinkedIn
-            </a>
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link href="/the-question" className="text-primary-300 hover:text-accent transition-colors">The Question</Link></li>
-              <li><Link href="/services" className="text-primary-300 hover:text-accent transition-colors">How It Works</Link></li>
-              <li><Link href="/where-it-applies" className="text-primary-300 hover:text-accent transition-colors">Where It Applies</Link></li>
-              <li><Link href="/about" className="text-primary-300 hover:text-accent transition-colors">About Elie</Link></li>
-              <li><Link href="/writing" className="text-primary-300 hover:text-accent transition-colors">Writing</Link></li>
-              <li><Link href="/faq" className="text-primary-300 hover:text-accent transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="text-primary-300 hover:text-accent transition-colors">Start a Conversation</Link></li>
+            <h2 className="font-sans text-[11px] uppercase tracking-[0.18em] text-faint">
+              Pages
+            </h2>
+            <ul className="mt-6 space-y-3">
+              {pages.map((page) => (
+                <li key={page.name}>
+                  <Link
+                    href={page.href}
+                    className="font-sans text-[13.5px] transition-colors duration-150 hover:text-accent-light"
+                  >
+                    {page.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <Mail className="w-5 h-5 text-primary-400 mt-0.5" />
-                <a href="mailto:elie@cohortlearninglabs.org" className="text-primary-300 hover:text-accent">
+            <h2 className="font-sans text-[11px] uppercase tracking-[0.18em] text-faint">
+              Contact
+            </h2>
+            <ul className="mt-6 space-y-3">
+              <li>
+                <a
+                  href="mailto:elie@cohortlearninglabs.org"
+                  className="font-sans text-[13.5px] transition-colors duration-150 hover:text-accent-light"
+                >
                   elie@cohortlearninglabs.org
                 </a>
               </li>
-              <li className="flex items-start space-x-3">
-                <Phone className="w-5 h-5 text-primary-400 mt-0.5" />
-                <a href="tel:+15162062480" className="text-primary-300 hover:text-accent">
-                  US phone / Google Voice: +1 (516) 206-2480
+              <li>
+                <a
+                  href="tel:+15162062480"
+                  className="font-sans text-[13.5px] transition-colors duration-150 hover:text-accent-light"
+                >
+                  +1 (516) 206-2480
                 </a>
               </li>
-              <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-primary-400 mt-0.5" />
-                <span className="text-primary-300">Based in Beit Shemesh, Israel<br />Serving groups internationally</span>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/cohort-learning-labs/"
+                  className="inline-flex items-center gap-2 font-sans text-[13.5px] transition-colors duration-150 hover:text-accent-light"
+                  aria-label="Cohort Learning Labs on LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                </a>
+              </li>
+              <li className="max-w-[30ch] pt-1 font-sans text-[13.5px] leading-[1.6] text-faint">
+                Beit Shemesh, Israel · groups meet by video, worldwide
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-primary-800 mt-8 pt-8 text-center space-y-2">
-          <p className="text-primary-400">Cohort Learning Labs provides facilitated learning and group inquiry. It does not provide legal advice, legal representation, psychotherapy, crisis services, or mental-health treatment.</p>
-          <p className="text-primary-400">© {currentYear} Cohort Learning Labs. All rights reserved.</p>
-          <p><Link href="/privacy" className="text-primary-400 hover:text-accent transition-colors">Privacy</Link></p>
+        <div className="mt-14 flex flex-col gap-4 border-t border-rule-dark pt-6 font-sans text-[12px] text-faint sm:flex-row sm:items-start sm:justify-between">
+          <p className="max-w-[70ch]">
+            Cohort Learning Labs provides facilitated learning and group inquiry. It does not
+            provide legal advice, legal representation, psychotherapy, crisis services, or
+            mental-health treatment.
+          </p>
+          <div className="flex gap-5 whitespace-nowrap">
+            <Link href="/privacy" className="transition-colors duration-150 hover:text-accent-light">
+              Privacy
+            </Link>
+            <span>© {currentYear} Cohort Learning Labs</span>
+          </div>
         </div>
       </div>
     </footer>

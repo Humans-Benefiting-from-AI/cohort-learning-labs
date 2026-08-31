@@ -1,8 +1,22 @@
 import type { Metadata } from 'next'
+import { EB_Garamond, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+
+const serif = EB_Garamond({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
+  display: 'swap',
+})
+
+const sans = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 const title = 'Cohort Learning Labs | Group Learning Through Difference'
 const description =
@@ -38,11 +52,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <head>
         <GoogleAnalytics />
       </head>
-      <body className="min-h-screen bg-primary-50">
+      <body className="min-h-screen bg-ground">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

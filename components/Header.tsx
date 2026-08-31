@@ -4,63 +4,49 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Mark from '@/components/Mark'
 
 const navigation = [
-  { name: 'The Question', href: '/the-question' },
-  { name: 'How It Works', href: '/services' },
-  { name: 'Where It Applies', href: '/where-it-applies' },
-  { name: 'About Elie', href: '/about' },
-  { name: 'Writing', href: '/writing' },
+  { name: 'The question', href: '/the-question' },
+  { name: 'A session', href: '/services' },
+  { name: 'Ways to join', href: '/where-it-applies' },
+  { name: 'Elie Schulman', href: '/about' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white border-b border-gray-100">
-      <nav className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-[72px]">
-          <Link href="/" className="flex items-center gap-3 text-decoration-none">
-            <div className="w-9 h-9 bg-accent rounded-md flex items-center justify-center text-white p-1.5">
-              <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <rect x="11" y="2" width="2" height="6" rx="0.5" />
-                <rect x="10" y="7" width="4" height="1.5" rx="0.3" />
-                <rect x="17.5" y="5" width="2" height="6" rx="0.5" transform="rotate(60 18.5 8)" />
-                <rect x="16.8" y="9.8" width="4" height="1.5" rx="0.3" transform="rotate(60 18.8 10.5)" />
-                <rect x="17.5" y="13" width="2" height="6" rx="0.5" transform="rotate(120 18.5 16)" />
-                <rect x="16.8" y="12.7" width="4" height="1.5" rx="0.3" transform="rotate(120 18.8 13.5)" />
-                <rect x="11" y="16" width="2" height="6" rx="0.5" transform="rotate(180 12 19)" />
-                <rect x="10" y="15.5" width="4" height="1.5" rx="0.3" transform="rotate(180 12 16.25)" />
-                <rect x="4.5" y="13" width="2" height="6" rx="0.5" transform="rotate(240 5.5 16)" />
-                <rect x="3.8" y="12.7" width="4" height="1.5" rx="0.3" transform="rotate(240 5.8 13.5)" />
-                <rect x="4.5" y="5" width="2" height="6" rx="0.5" transform="rotate(300 5.5 8)" />
-                <rect x="3.8" y="9.8" width="4" height="1.5" rx="0.3" transform="rotate(300 5.8 10.5)" />
-                <circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.6" />
-              </svg>
-            </div>
+    <header className="border-b border-rule bg-ground">
+      <nav className="container-custom">
+        <div className="flex h-[88px] items-center justify-between">
+          <Link href="/" className="flex items-center gap-[14px]">
+            <Mark className="h-[30px] w-[30px] shrink-0 text-accent" />
             <div>
-              <div className="text-gray-900 text-xl font-semibold">Cohort Learning Labs</div>
-              <span className="text-gray-600 text-xs font-normal block -mt-0.5">
-                Group learning for differences that matter
+              <div className="font-serif text-[23px] font-medium leading-[1.15] tracking-[0.01em] text-ink">
+                Cohort Learning Labs
+              </div>
+              <span className="mt-[3px] block font-sans text-[10.5px] uppercase tracking-[0.2em] text-faint">
+                Six to eight people, thinking out loud
               </span>
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden items-center gap-[30px] lg:flex">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-900 hover:text-accent transition-colors duration-150 py-2"
+                className="font-sans text-[13px] tracking-[0.02em] text-ink-muted transition-colors duration-150 hover:text-accent-hover"
               >
                 {item.name}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="bg-accent text-white px-4 py-2 text-sm font-medium rounded-md hover:bg-accent-hover transition-colors duration-150"
+              className="border-b border-accent pb-[3px] font-sans text-[13px] tracking-[0.02em] text-accent transition-colors duration-150 hover:border-accent-hover hover:text-accent-hover"
             >
-              Start a Conversation
+              Schedule a consultation
             </Link>
           </div>
 
@@ -68,13 +54,13 @@ export default function Header() {
             type="button"
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={mobileMenuOpen}
-            className="lg:hidden p-2"
+            className="p-2 lg:hidden"
             onClick={() => setMobileMenuOpen((open) => !open)}
           >
             {mobileMenuOpen ? (
-              <X className="w-5 h-5 text-gray-900" />
+              <X className="h-5 w-5 text-ink" />
             ) : (
-              <Menu className="w-5 h-5 text-gray-900" />
+              <Menu className="h-5 w-5 text-ink" />
             )}
           </button>
         </div>
@@ -86,14 +72,14 @@ export default function Header() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="lg:hidden overflow-hidden border-t border-gray-100"
+              className="overflow-hidden border-t border-rule lg:hidden"
             >
-              <div className="py-4 space-y-1">
+              <div className="space-y-1 py-4">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-4 py-3 text-base font-medium text-gray-900 hover:text-accent transition-colors duration-150"
+                    className="block px-4 py-3 font-sans text-[15px] text-ink-muted transition-colors duration-150 hover:text-accent-hover"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -102,10 +88,10 @@ export default function Header() {
                 <div className="px-4 pt-4">
                   <Link
                     href="/contact"
-                    className="block w-full bg-accent text-white px-4 py-3 text-base font-medium rounded-md text-center hover:bg-accent-hover transition-colors duration-150"
+                    className="block w-full bg-accent px-4 py-3 text-center font-sans text-[15px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Start a Conversation
+                    Schedule a consultation
                   </Link>
                 </div>
               </div>
