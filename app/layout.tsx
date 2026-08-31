@@ -52,7 +52,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable}`}>
+    <html
+      lang="en"
+      className={`${serif.variable} ${sans.variable}`}
+      // Next 16 no longer suppresses `scroll-behavior: smooth` (set in
+      // globals.css) during route transitions unless this opts in.
+      data-scroll-behavior="smooth"
+    >
       <head>
         <GoogleAnalytics />
       </head>
