@@ -259,11 +259,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 05 — What changes */}
+      {/* 05 — Problems and struggles */}
       <section className="section-padding border-b border-rule bg-ground">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">05 — What changes</p>
+            <p className="rail-label">05 — Problems and struggles</p>
+            <div>
+              <p className="max-w-[52ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
+                The most unconventional thing asked of you here is to stop trying to get rid of
+                the problem.
+              </p>
+              <div className="mt-8 flex max-w-[66ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
+                <p>
+                  The ordinary instinct with a struggle is to solve it quickly or route around
+                  it. That instinct is reasonable and it works often enough. It also throws away
+                  the one thing the struggle was carrying: information about where you are not
+                  looking.
+                </p>
+                <p>
+                  A disagreement that keeps coming back, a conversation the group keeps not
+                  having, the moment you go quiet and cannot say why — none of these are
+                  obstacles standing in front of the work. They are the work pointing at itself.
+                </p>
+                <p>
+                  So the struggle becomes the path. Data to read, and a teacher telling you where
+                  to look and what to ask next.
+                </p>
+              </div>
+              <p className="mt-9 max-w-[46ch] border-l border-accent pl-6 font-serif text-[22px] italic leading-[1.4] text-ink lg:text-[26px]">
+                Nothing has to be fixed before the inquiry can start. The difficulty is where it
+                starts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 06 — What changes */}
+      <section className="section-padding border-b border-rule bg-paper">
+        <div className="container-custom">
+          <div className="rail">
+            <p className="rail-label">06 — What changes</p>
             <div>
               <p className="max-w-[44ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
                 Not a technique for winning agreement. A wider range of things you are able to do
@@ -289,11 +325,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 06 — Facilitation */}
-      <section className="section-padding border-b border-rule bg-paper">
+      {/* 07 — Facilitation */}
+      <section className="section-padding border-b border-rule bg-ground">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">06 — Facilitation</p>
+            <p className="rail-label">07 — Facilitation</p>
             <div className="grid items-start gap-10 lg:grid-cols-[280px_1fr] lg:gap-12">
               <Image
                 src="/images/elie-schulman.jpg"
@@ -331,11 +367,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 07 — Ways to join */}
-      <section className="section-padding border-b border-rule bg-ground">
+      {/* 08 — Ways to join */}
+      <section className="section-padding border-b border-rule bg-paper">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">07 — Ways to join</p>
+            <p className="rail-label">08 — Ways to join</p>
             <div className="grid gap-12 md:grid-cols-2 md:gap-14">
               <div className="border-t-2 border-ink pt-6">
                 <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-accent">
@@ -381,12 +417,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 08 — Begin */}
+      {/* 09 — What is at stake */}
+      <section className="section-padding border-b border-rule bg-ground">
+        <div className="container-custom">
+          <div className="rail">
+            <p className="rail-label">09 — What is at stake</p>
+            <div>
+              <h2 className="max-w-[24ch] font-serif text-[36px] leading-[1.1] tracking-[-0.01em] text-ink lg:text-[52px]">
+                “The important thing is to connect.”
+              </h2>
+              <p className="mt-5 font-sans text-[12px] uppercase tracking-[0.18em] text-faint">
+                E.M. Forster
+              </p>
+              <div className="mt-8 flex max-w-[62ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
+                <p>
+                  Forster wrote it about people kept apart by class, temperament, and a shortage
+                  of imagination for each other’s lives.
+                </p>
+                <p>
+                  The failure he named is not dramatic. It is ordinary. Two people talk and
+                  something does not carry across. A group decides and one person was never
+                  actually reached. People sit beside each other for years without being known.
+                </p>
+                <p>
+                  Nothing has caused more suffering over the millennia than the inability to do
+                  that one thing. Not the differences themselves — the failure to make contact
+                  across them.
+                </p>
+              </div>
+              <p className="mt-9 max-w-[40ch] font-serif text-[26px] leading-[1.3] text-ink lg:text-[30px]">
+                That is what the group is for. Not agreement. Contact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 10 — Begin */}
       <section className="bg-accent py-14 text-accent-on lg:py-[104px]">
         <div className="container-custom">
           <div className="rail">
             <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-accent-pale">
-              08 — Begin
+              10 — Begin
             </p>
             <div>
               <h2 className="max-w-[20ch] font-serif text-[36px] leading-[1.05] tracking-[-0.015em] text-accent-on lg:text-[64px]">
