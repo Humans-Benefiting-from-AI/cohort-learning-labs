@@ -3,7 +3,8 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Where Group Inquiry Applies | Cohort Learning Labs',
-  description: 'Applications of facilitated group inquiry for teams, leaders, educators, families, communities, and AI-driven change.',
+  description:
+    'Applications of facilitated group inquiry for teams, leaders, educators, families, communities, and AI-driven change.',
 }
 
 const applications = [
@@ -31,8 +32,13 @@ export default function WhereItAppliesPage() {
       <section className="bg-primary-50 py-20 md:py-28">
         <div className="container-custom">
           <p className="eyebrow">Where it applies</p>
-          <h1 className="max-w-5xl text-4xl font-bold text-primary-900 md:text-6xl">Different settings. The same human question.</h1>
-          <p className="mt-7 max-w-3xl text-xl leading-8 text-primary-700">Every group develops informal rules about who may differ, how difference may be expressed, and what happens to a person who does not join the emerging consensus.</p>
+          <h1 className="max-w-5xl text-4xl font-bold text-primary-900 md:text-6xl">
+            Different settings. The same human question.
+          </h1>
+          <p className="mt-7 max-w-3xl text-xl leading-8 text-primary-700">
+            Every group develops informal rules about who may differ, how difference may be
+            expressed, and what happens to a person who does not join the emerging consensus.
+          </p>
         </div>
       </section>
 
@@ -40,7 +46,10 @@ export default function WhereItAppliesPage() {
         <div className="container-custom">
           <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
             {applications.map((application) => (
-              <article key={application.title} className="border-t-4 border-accent bg-primary-50 p-8">
+              <article
+                key={application.title}
+                className="border-t-4 border-accent bg-primary-50 p-8"
+              >
                 <h2 className="text-2xl font-bold text-primary-900">{application.title}</h2>
                 <p className="mt-5 text-lg leading-8 text-primary-700">{application.body}</p>
               </article>
@@ -53,13 +62,29 @@ export default function WhereItAppliesPage() {
         <div className="container-custom">
           <div className="mx-auto max-w-5xl">
             <p className="eyebrow">AI and organizational change</p>
-            <h2 className="text-3xl font-bold md:text-5xl">AI does not enter an organization as a tool alone.</h2>
+            <h2 className="text-3xl font-bold md:text-5xl">
+              AI does not enter an organization as a tool alone.
+            </h2>
             <div className="mt-8 space-y-5 text-lg leading-8 text-primary-200">
-              <p>It changes conversations about expertise, authorship, judgment, efficiency, supervision, status, and responsibility.</p>
-              <p>One person sees an opportunity. Another sees a threat to quality. A third worries about confidentiality. Someone fears becoming unnecessary. Someone else fears the organization will become irrelevant if it moves too slowly.</p>
-              <p>The technical question—what can the system do?—cannot answer the group question: how will these people decide what they are willing to delegate, what they must review, and what good work now means?</p>
+              <p>
+                It changes conversations about expertise, authorship, judgment, efficiency,
+                supervision, status, and responsibility.
+              </p>
+              <p>
+                One person sees an opportunity. Another sees a threat to quality. A third
+                worries about confidentiality. Someone fears becoming unnecessary. Someone else
+                fears the organization will become irrelevant if it moves too slowly.
+              </p>
+              <p>
+                The technical question—what can the system do?—cannot answer the group question:
+                how will these people decide what they are willing to delegate, what they must
+                review, and what good work now means?
+              </p>
             </div>
-            <p className="mt-8 border-l-4 border-accent pl-6 text-xl font-semibold">AI is one setting for the work. The deeper subject remains how people learn and decide together when consequential differences emerge.</p>
+            <p className="mt-8 border-l-4 border-accent pl-6 text-xl font-semibold">
+              AI is one setting for the work. The deeper subject remains how people learn and
+              decide together when consequential differences emerge.
+            </p>
           </div>
         </div>
       </section>
@@ -68,12 +93,26 @@ export default function WhereItAppliesPage() {
         <div className="container-custom">
           <div className="mx-auto max-w-5xl">
             <p className="eyebrow">Recurring problems</p>
-            <h2 className="text-3xl font-bold text-primary-900 md:text-5xl">What keeps returning may be what the group has not yet learned.</h2>
+            <h2 className="text-3xl font-bold text-primary-900 md:text-5xl">
+              What keeps returning may be what the group has not yet learned.
+            </h2>
             <div className="prose-copy mt-7">
-              <p>Some problems return because the proposed solution addressed the visible event but left the group’s way of relating to the problem untouched.</p>
-              <p>The names and circumstances change. The same structures recur: who may speak, who must carry uncertainty, who is expected to accommodate, who decides, and what the group does with information it does not want.</p>
+              <p>
+                Some problems return because the proposed solution addressed the visible event
+                but left the group’s way of relating to the problem untouched.
+              </p>
+              <p>
+                The names and circumstances change. The same structures recur: who may speak,
+                who must carry uncertainty, who is expected to accommodate, who decides, and
+                what the group does with information it does not want.
+              </p>
             </div>
-            <Link href="/contact" className="mt-8 inline-flex rounded-md bg-accent px-7 py-3 font-semibold text-white hover:bg-accent-hover">Discuss Your Group</Link>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex rounded-md bg-accent px-7 py-3 font-semibold text-white hover:bg-accent-hover"
+            >
+              Discuss Your Group
+            </Link>
           </div>
         </div>
       </section>
