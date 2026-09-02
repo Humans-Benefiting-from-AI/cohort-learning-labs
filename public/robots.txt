@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-Disallow: /404
-
-Sitemap: https://www.cohortlearninglabs.org/sitemap.xml

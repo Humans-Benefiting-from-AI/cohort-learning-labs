@@ -1,37 +1,52 @@
-import { readFileSync } from 'node:fs'
+/**
+ * Structural checks that the type system and the route inventory cannot make
+ * on their own. The route list itself lives in lib/routes.ts and feeds the
+ * header, the footer and the generated sitemap, so this script no longer
+ * compares copies of it — it guards the invariants around it.
+ */
+import { existsSync, readFileSync } from 'node:fs'
 
-const requiredRoutes = ['/', '/the-question', '/services', '/where-it-applies', '/about', '/writing', '/faq', '/pricing', '/contact', '/privacy']
-const sitemap = readFileSync('public/sitemap.xml', 'utf8')
-const header = readFileSync('components/Header.tsx', 'utf8')
-const layout = readFileSync('app/layout.tsx', 'utf8')
-const contained = ['app/our-approach/page.tsx', 'app/values/page.tsx']
-
+const read = (file) => readFileSync(file, 'utf8')
 const failures = []
+const fail = (message) => failures.push(message)
 
-for (const route of requiredRoutes) {
-  const url = `https://www.cohortlearninglabs.org${route === '/' ? '/' : route}`
-  if (!sitemap.includes(`<loc>${url}</loc>`)) failures.push(`sitemap is missing ${route}`)
-  // Reachable from the footer rather than the header nav. '/writing' joined
-  // this list with the inquiry redesign, which trims the header to five items.
-  const footerOnly = ['/faq', '/privacy', '/pricing', '/contact', '/writing']
-  if (route !== '/' && !footerOnly.includes(route) && !header.includes(`href: '${route}'`)) failures.push(`navigation is missing ${route}`)
+const routes = read('lib/routes.ts')
+const layout = read('app/layout.tsx')
+const header = read('components/Header.tsx')
+const footer = read('components/Footer.tsx')
+
+// A static file in public/ shadows the generated route of the same name, which
+// would silently pin the sitemap or robots rules to whatever was committed.
+for (const shadow of ['public/sitemap.xml', 'public/robots.txt']) {
+  if (existsSync(shadow)) {
+    fail(`${shadow} would shadow the generated route — delete it`)
+  }
 }
 
-if (!layout.includes('href="#main-content"') || !layout.includes('id="main-content"')) {
-  failures.push('skip link and semantic main target must remain present')
+// The nav and footer must read the inventory rather than keep their own lists.
+if (!header.includes("from '@/lib/routes'") || /const navigation = \[/.test(header)) {
+  fail('components/Header.tsx must take its navigation from lib/routes.ts')
+}
+if (!footer.includes("from '@/lib/routes'") || /const pages = \[/.test(footer)) {
+  fail('components/Footer.tsx must take its page list from lib/routes.ts')
 }
 
-for (const file of contained) {
-  const source = readFileSync(file, 'utf8')
+// Contained pages stay reachable by direct link but out of navigation, out of
+// the sitemap, and out of the index.
+for (const contained of ['/our-approach', '/values']) {
+  const file = `app${contained}/page.tsx`
+  const source = read(file)
   if (!source.includes('notFound()') || !source.includes('index: false')) {
-    failures.push(`${file} must remain contained and unindexed`)
+    fail(`${file} must remain contained and unindexed`)
+  }
+  if (routes.includes(`href: '${contained}'`)) {
+    fail(`${contained} must not be listed as a site route in lib/routes.ts`)
   }
 }
 
-for (const legacy of ['/our-approach', '/values']) {
-  if (sitemap.includes(legacy) || header.includes(`href: '${legacy}'`)) {
-    failures.push(`${legacy} must not appear in navigation or sitemap`)
-  }
+// Keyboard users need the skip link and its target to survive every redesign.
+if (!layout.includes('href="#main-content"') || !layout.includes('id="main-content"')) {
+  fail('the skip link and its semantic main target must remain present')
 }
 
 if (failures.length) {

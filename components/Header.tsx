@@ -5,13 +5,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Mark from '@/components/Mark'
-
-const navigation = [
-  { name: 'The question', href: '/the-question' },
-  { name: 'A session', href: '/services' },
-  { name: 'Ways to join', href: '/where-it-applies' },
-  { name: 'Elie Schulman', href: '/about' },
-]
+import { headerRoutes } from '@/lib/routes'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -33,7 +27,7 @@ export default function Header() {
           </Link>
 
           <div className="hidden items-center gap-[30px] lg:flex">
-            {navigation.map((item) => (
+            {headerRoutes.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -75,7 +69,7 @@ export default function Header() {
               className="overflow-hidden border-t border-rule lg:hidden"
             >
               <div className="space-y-1 py-4">
-                {navigation.map((item) => (
+                {headerRoutes.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
