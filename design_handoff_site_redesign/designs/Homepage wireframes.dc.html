@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Space+Grotesk:wght@400;500;600&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f0eee9;font-family:'Space Grotesk',system-ui,sans-serif}
+a{color:#9a4f36;text-decoration:none}a:hover{color:#773b29}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 'Space Grotesk',sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 'Space Grotesk',sans-serif;color:rgba(0,0,0,.55);max-width:472px;flex-wrap:wrap}
+.dv-card{max-width:100%;background:#fbfaf7;border:1px solid rgba(0,0,0,.18);border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 'Space Grotesk',sans-serif;color:rgba(0,0,0,.5)}
+</style></helmet>
+
+<section class="dv-turn" id="t5">
+<div class="dv-thd"><a class="dv-tid" href="#t5">5</a><span class="dv-tname">With the agreed stimulus — the cohort picks what it will react to, and the reactions become the curriculum</span></div>
+
+<div class="dv-opts">
+
+<div class="dv-opt" id="5a">
+<div class="dv-olabel"><a class="dv-oid" href="#5a">5a</a>Session zero — the first thing the six of you do is agree on the stimulus; everything after that is your own reactions</div>
+<div class="dv-card" style="width:470px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="width:52px;height:7px;background:#9a4f36"></div>
+  </div>
+
+  <div style="padding:44px 24px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a4f36">session zero</div>
+    <div style="margin-top:16px;font-family:'Architects Daughter',cursive;font-size:29px;line-height:1.12;color:#1a1a1a">You choose what the group will react to.</div>
+    <div style="margin-top:14px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.45;color:#5c5850">Six people, one agreement. It is always a relationship — marriage, parent and child, employee and employer. Then your reactions to it, and to each other, are the whole curriculum.</div>
+    <div style="margin-top:22px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Join a cohort</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">30 min with Elie</div></div>
+  </div>
+
+  <div style="padding:28px 24px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">always a relationship · a text, a topic, or a skill about one</div>
+    <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="border:1.5px solid #9a4f36;background:#fbfaf7;padding:14px 12px"><div style="font-family:'Architects Daughter',cursive;font-size:16px;color:#1a1a1a">marriage</div><div style="margin-top:3px;font-size:9.5px;color:#8a8377">a text about it</div></div>
+      <div style="border:1px solid #cfc9bc;background:#fbfaf7;padding:14px 12px"><div style="font-family:'Architects Daughter',cursive;font-size:16px;color:#1a1a1a">parent to child</div><div style="margin-top:3px;font-size:9.5px;color:#8a8377">a topic</div></div>
+      <div style="border:1px solid #cfc9bc;background:#fbfaf7;padding:14px 12px"><div style="font-family:'Architects Daughter',cursive;font-size:16px;color:#1a1a1a">child to parent</div><div style="margin-top:3px;font-size:9.5px;color:#8a8377">a topic</div></div>
+      <div style="border:1px solid #cfc9bc;background:#fbfaf7;padding:14px 12px"><div style="font-family:'Architects Daughter',cursive;font-size:16px;color:#1a1a1a">employee to employer</div><div style="margin-top:3px;font-size:9.5px;color:#8a8377">a skill</div></div>
+    </div>
+    <div style="margin-top:12px;display:flex;align-items:center;gap:10px"><div style="font-size:10px;color:#8a8377">agreed by six</div><div style="flex:1;height:1px;background:#cfc9bc"></div><div style="display:flex;gap:5px"><div style="width:9px;height:9px;border-radius:50%;background:#9a4f36"></div><div style="width:9px;height:9px;border-radius:50%;background:#9a4f36"></div><div style="width:9px;height:9px;border-radius:50%;background:#9a4f36"></div><div style="width:9px;height:9px;border-radius:50%;background:#9a4f36"></div><div style="width:9px;height:9px;border-radius:50%;background:#9a4f36"></div><div style="width:9px;height:9px;border-radius:50%;border:1.5px solid #9a4f36"></div></div></div>
+  </div>
+
+  <div style="padding:36px 24px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="border:1px solid #383a35;padding:12px 12px;flex:1"><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#8a8377">stimulus</div><div style="margin-top:5px;font-family:'Architects Daughter',cursive;font-size:14px;color:#f6f4ee">a relationship you agreed on</div></div>
+      <div style="color:#c98a6f">→</div>
+      <div style="border:1px solid #383a35;padding:12px 12px;flex:1"><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#8a8377">reactions</div><div style="margin-top:5px;font-family:'Architects Daughter',cursive;font-size:14px;color:#f6f4ee">yours, and to each other</div></div>
+      <div style="color:#c98a6f">→</div>
+      <div style="border:1.5px solid #c98a6f;padding:12px 12px;flex:1"><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#c98a6f">curriculum</div><div style="margin-top:5px;font-family:'Architects Daughter',cursive;font-size:14px;color:#c98a6f">what we then study</div></div>
+    </div>
+  </div>
+
+  <div style="padding:32px 24px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">one cohort chose a text on marriage</div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:12</div><div style="font-family:'Architects Daughter',cursive;font-size:14px">“I found it manipulative.”</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:13</div><div style="font-family:'Architects Daughter',cursive;font-size:14px">“I found it moving.”</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:21</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#9a4f36">the text stops being the subject</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:24px 20px;border-right:1px solid #cfc9bc"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.3">Impact, not intent.</div></div>
+    <div style="padding:24px 20px;background:#faf8f4"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.3">Confidentiality, not negotiable.</div></div>
+  </div>
+
+  <div style="padding:32px 24px;border-bottom:1px solid #cfc9bc;display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:center">
+    <div style="border:1px solid #cfc9bc;height:80px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:20px">×</div>
+    <div><div style="font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.25">Elie does not choose the stimulus and will not hurry the agreement.</div><div style="margin-top:6px;font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#9a4f36;direction:rtl">ולא הקפדן מלמד</div></div>
+  </div>
+
+  <div style="padding:24px;border-bottom:1px solid #cfc9bc;display:flex;flex-direction:column">
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue · 19:00 Israel</div><div style="font-size:10px;color:#9a4f36">2 seats</div></div>
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu · 08:30 ET</div><div style="font-size:10px;color:#5c5850">4 seats</div></div>
+    <div style="margin-top:16px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Apply</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">Talk to Elie</div></div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Email me</div></div>
+
+  <div style="background:#1a1a1a;padding:20px 24px;display:flex;gap:20px"><div style="height:7px;background:#383a35;width:120px"></div><div style="height:7px;background:#2b2d2b;width:60px"></div><div style="height:7px;background:#2b2d2b;width:70px"></div></div>
+</div>
+</div>
+
+<div class="dv-opt" id="5b">
+<div class="dv-olabel"><a class="dv-oid" href="#5b">5b</a>Stimulus as step zero — <a class="dv-oid" href="#3b">3b</a>’s loop re-cut so the agreement comes first and the reactions feed the same four stages</div>
+<div class="dv-card" style="width:470px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="width:52px;height:7px;background:#9a4f36"></div>
+  </div>
+
+  <div style="padding:40px 24px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Architects Daughter',cursive;font-size:29px;line-height:1.12;color:#1a1a1a">Agree on one relationship. React to it. Study the reactions.</div>
+    <div style="margin-top:20px;display:flex;gap:6px;align-items:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9a4f36"><span>Stimulus</span><span>→</span><span>Reaction</span><span>→</span><span>Data</span><span>→</span><span>Experiment</span></div>
+    <div style="margin-top:20px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Join a cohort</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">30 min with Elie</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 14px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">00 Stimulus</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">chosen by the six, not by us</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.2">A text, a topic, or a skill — always about a relationship.</div>
+      <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px"><div style="border:1.5px solid #9a4f36;padding:8px 12px;font-family:'Architects Daughter',cursive;font-size:13px">marriage</div><div style="border:1px solid #cfc9bc;padding:8px 12px;font-family:'Architects Daughter',cursive;font-size:13px;color:#8a8377">parent · child</div><div style="border:1px solid #cfc9bc;padding:8px 12px;font-family:'Architects Daughter',cursive;font-size:13px;color:#8a8377">employee · employer</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="border-right:1px solid #383a35;padding:22px 14px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#c98a6f">01 Reaction</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">to it, and to each other</div></div>
+    <div style="padding:22px 20px">
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:12</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#e5e0d5">“I found it manipulative.”</div></div>
+        <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:13</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#e5e0d5">“I found it moving.”</div></div>
+        <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:21</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#c98a6f">now we are the subject</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 14px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">02 Data</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">named in the room</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.2">“When you called it manipulative, I stopped talking.”</div>
+      <div style="margin-top:10px;display:flex;gap:8px"><div style="border:1px solid #cfc9bc;padding:6px 9px;font-size:9.5px;color:#5c5850">impact over intent</div><div style="border:1px solid #cfc9bc;padding:6px 9px;font-size:9.5px;color:#5c5850">speak from the I</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 14px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">03 Experiment</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">then round again</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.2">Next week, same stimulus, different move.</div>
+      <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:12.5px;color:#9a4f36">↺ twelve weeks of this</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 14px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Facilitator</div></div>
+    <div style="padding:22px 20px;display:grid;grid-template-columns:76px 1fr;gap:14px;align-items:center">
+      <div style="border:1px solid #cfc9bc;height:80px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:20px">×</div>
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.3">Elie holds the process. The group holds the subject.</div><div style="margin-top:6px;font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#9a4f36;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 14px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Join</div></div>
+    <div style="padding:20px">
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue · 19:00 Israel</div><div style="font-size:10px;color:#9a4f36">2 seats</div></div>
+        <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu · 08:30 ET</div><div style="font-size:10px;color:#5c5850">4 seats</div></div>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:8px;align-items:center"><div style="border:1px solid #2a2a28;padding:8px 12px;font-size:10.5px">Apply</div><div style="flex:1;height:28px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:8px 10px">Email me</div></div>
+    </div>
+  </div>
+
+  <div style="background:#1a1a1a;padding:20px 24px;display:flex;gap:20px"><div style="height:7px;background:#383a35;width:120px"></div><div style="height:7px;background:#2b2d2b;width:60px"></div><div style="height:7px;background:#2b2d2b;width:70px"></div></div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “take <a class="dv-oid" href="#5a">5a</a> to hi-fi” · “show three example stimuli a cohort actually picked” · “put session zero into <a class="dv-oid" href="#4a">4a</a>’s sparse layout”</p>
+</section>
+
+<section class="dv-turn" id="t4">
+<div class="dv-thd"><a class="dv-tid" href="#t4">4</a><span class="dv-tname">Experiential — almost no prose; the page makes you feel the thing instead of describing it</span></div>
+
+<div class="dv-opts">
+
+<div class="dv-opt" id="4a">
+<div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a>The pause — the hero withholds. A live counter runs for nine seconds before the second line appears; nobody fills the silence for you</div>
+<div class="dv-card" style="width:470px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="width:52px;height:7px;background:#9a4f36"></div>
+  </div>
+
+  <div style="padding:66px 24px 72px;border-bottom:1px solid #cfc9bc;min-height:240px">
+    <div style="font-family:'Architects Daughter',cursive;font-size:32px;line-height:1.1;color:#1a1a1a">Say the thing you didn’t say.</div>
+    <div style="margin-top:34px;display:flex;align-items:center;gap:12px">
+      <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">silence</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;color:#9a4f36">{{ secs }}s</div>
+      <div style="flex:1;height:2px;background:#e4dfd5"></div>
+    </div>
+    <sc-if value="{{ revealed }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:30px;font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.3;color:#5c5850">Nine seconds. Nobody filled it. That is the whole offer.</div>
+      <div style="margin-top:24px;display:flex;gap:10px;align-items:center">
+        <div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Sit in a cohort</div>
+        <div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px;cursor:pointer" onClick="{{ restart }}">again</div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:26px 18px;border-right:1px solid #cfc9bc"><div style="font-family:'Architects Daughter',cursive;font-size:17px;color:#1a1a1a">6</div><div style="margin-top:6px;font-size:10px;color:#8a8377">people</div></div>
+    <div style="padding:26px 18px;border-right:1px solid #cfc9bc"><div style="font-family:'Architects Daughter',cursive;font-size:17px;color:#1a1a1a">90</div><div style="margin-top:6px;font-size:10px;color:#8a8377">minutes</div></div>
+    <div style="padding:26px 18px"><div style="font-family:'Architects Daughter',cursive;font-size:17px;color:#1a1a1a">0</div><div style="margin-top:6px;font-size:10px;color:#8a8377">agenda</div></div>
+  </div>
+
+  <div style="padding:44px 24px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;gap:14px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">31:03</div><div style="font-family:'Architects Daughter',cursive;font-size:15px;color:#e5e0d5">“No — we’ve had three weeks.”</div></div>
+      <div style="display:flex;gap:14px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">31:12</div><div style="font-family:'Architects Daughter',cursive;font-size:15px;color:#c98a6f">—</div></div>
+      <div style="display:flex;gap:14px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">31:21</div><div style="font-family:'Architects Daughter',cursive;font-size:15px;color:#e5e0d5">“Actually, I don’t agree.”</div></div>
+    </div>
+  </div>
+
+  <div style="padding:40px 24px;border-bottom:1px solid #cfc9bc">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:20px;color:#1a1a1a;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div>
+    <div style="margin-top:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8a8377">Avot 2:6</div>
+  </div>
+
+  <div style="padding:24px;border-bottom:1px solid #cfc9bc;display:flex;flex-direction:column;gap:8px">
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue · 19:00 Israel</div><div style="font-size:10px;color:#9a4f36">2 seats</div></div>
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu · 08:30 ET</div><div style="font-size:10px;color:#5c5850">4 seats</div></div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Email me</div></div>
+
+  <div style="background:#1a1a1a;padding:20px 24px;display:flex;gap:20px"><div style="height:7px;background:#383a35;width:120px"></div><div style="height:7px;background:#2b2d2b;width:60px"></div><div style="height:7px;background:#2b2d2b;width:70px"></div></div>
+</div>
+</div>
+
+<div class="dv-opt" id="4b">
+<div class="dv-olabel"><a class="dv-oid" href="#4b">4b</a>One line per screen — the whole homepage is a transcript you scroll through; each section is one exchange and one word of commentary</div>
+<div class="dv-card" style="width:470px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #383a35;padding:12px 20px;background:#1a1a1a">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #c98a6f;border-radius:50%"></div><div style="width:96px;height:9px;background:#383a35"></div></div>
+    <div style="width:52px;height:7px;background:#c98a6f"></div>
+  </div>
+
+  <div style="background:#1a1a1a;padding:56px 24px 60px">
+    <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">minute 31</div>
+    <div style="margin-top:20px;font-family:'Architects Daughter',cursive;font-size:26px;line-height:1.25;color:#f6f4ee">“I think we’re deciding this too fast.”</div>
+    <div style="margin-top:44px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#c98a6f">scroll</div>
+  </div>
+
+  <div style="background:#171a1c;padding:56px 24px;border-top:1px solid #262825">
+    <div style="font-family:'Architects Daughter',cursive;font-size:26px;line-height:1.25;color:#f6f4ee">“No — we’ve had three weeks.”</div>
+    <div style="margin-top:16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#c98a6f">one second later</div>
+  </div>
+
+  <div style="background:#1a1a1a;padding:70px 24px;border-top:1px solid #262825;text-align:center">
+    <div style="font-family:'Architects Daughter',cursive;font-size:15px;color:#c98a6f">[ nine seconds ]</div>
+  </div>
+
+  <div style="background:#171a1c;padding:56px 24px;border-top:1px solid #262825">
+    <div style="font-family:'Architects Daughter',cursive;font-size:26px;line-height:1.25;color:#f6f4ee">“Sorry — probably just me, but…”</div>
+    <div style="margin-top:16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#c98a6f">the apology came first</div>
+  </div>
+
+  <div style="background:#f4f1ea;padding:56px 24px">
+    <div style="font-family:'Architects Daughter',cursive;font-size:27px;line-height:1.15;color:#1a1a1a">Six people. Ninety minutes. This is the material.</div>
+    <div style="margin-top:22px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Join a cohort</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">30 min with Elie</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #cfc9bc;border-bottom:1px solid #cfc9bc">
+    <div style="padding:24px 20px;border-right:1px solid #cfc9bc"><div style="font-family:'Architects Daughter',cursive;font-size:15px">Nobody hurries you.</div></div>
+    <div style="padding:24px 20px;background:#faf8f4"><div style="font-family:'Architects Daughter',cursive;font-size:15px">Nobody answers for you.</div></div>
+  </div>
+
+  <div style="padding:24px;border-bottom:1px solid #cfc9bc;display:flex;flex-direction:column">
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue · 19:00 Israel</div><div style="font-size:10px;color:#9a4f36">2 seats</div></div>
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu · 08:30 ET</div><div style="font-size:10px;color:#5c5850">4 seats</div></div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#9a4f36;color:#f7f2ec;font-size:10px;padding:9px 12px">Email me</div></div>
+
+  <div style="background:#1a1a1a;padding:20px 24px;display:flex;gap:20px"><div style="height:7px;background:#383a35;width:120px"></div><div style="height:7px;background:#2b2d2b;width:60px"></div><div style="height:7px;background:#2b2d2b;width:70px"></div></div>
+</div>
+</div>
+
+<div class="dv-opt" id="4c">
+<div class="dv-olabel"><a class="dv-oid" href="#4c">4c</a>One move, on the page — a single micro-experiment the visitor performs before anything is explained; the loop is shown, not described</div>
+<div class="dv-card" style="width:470px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="width:52px;height:7px;background:#9a4f36"></div>
+  </div>
+
+  <div style="padding:44px 24px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9a4f36">try one thing</div>
+    <div style="margin-top:16px;font-family:'Architects Daughter',cursive;font-size:26px;line-height:1.18;color:#1a1a1a">Someone talks over you. Wait five seconds before you answer.</div>
+    <div style="margin-top:26px;display:flex;gap:8px;align-items:center">
+      <div style="border:1.5px solid #2a2a28;padding:10px 16px;font-size:10.5px;cursor:pointer" onClick="{{ startFive }}">Start the five seconds</div>
+      <div style="font-size:10px;color:#8a8377">{{ five }}s</div>
+    </div>
+    <sc-if value="{{ fiveDone }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:18px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.4;color:#9a4f36">Longer than it sounds. Now imagine doing it while five people watch.</div>
+    </sc-if>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:22px 14px;border-right:1px solid #cfc9bc"><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#9a4f36">happened</div></div>
+    <div style="padding:22px 14px;border-right:1px solid #cfc9bc"><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#9a4f36">named</div></div>
+    <div style="padding:22px 14px;border-right:1px solid #cfc9bc"><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#9a4f36">read</div></div>
+    <div style="padding:22px 14px;background:#faf1ec"><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#9a4f36">tried</div></div>
+  </div>
+
+  <div style="padding:44px 24px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="font-family:'Architects Daughter',cursive;font-size:24px;line-height:1.2;color:#f6f4ee">In a cohort, five other people tell you what those five seconds did.</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:24px 20px;border-right:1px solid #cfc9bc"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.3">Impact, not intent.</div></div>
+    <div style="padding:24px 20px;background:#faf8f4"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.3">What I saw, not good or bad.</div></div>
+  </div>
+
+  <div style="padding:36px 24px;border-bottom:1px solid #cfc9bc;display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:center">
+    <div style="border:1px solid #cfc9bc;height:80px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:20px">×</div>
+    <div><div style="font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.25">Elie holds the pace. He will not hurry you.</div><div style="margin-top:6px;font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#9a4f36;direction:rtl">ולא הקפדן מלמד</div></div>
+  </div>
+
+  <div style="padding:24px;border-bottom:1px solid #cfc9bc;display:flex;flex-direction:column">
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue · 19:00 Israel</div><div style="font-size:10px;color:#9a4f36">2 seats</div></div>
+    <div style="display:grid;grid-template-columns:1fr 60px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:10px 0"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu · 08:30 ET</div><div style="font-size:10px;color:#5c5850">4 seats</div></div>
+    <div style="margin-top:16px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Apply</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">Talk to Elie</div></div>
+  </div>
+
+  <div style="padding:20px 24px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Email me</div></div>
+
+  <div style="background:#1a1a1a;padding:20px 24px;display:flex;gap:20px"><div style="height:7px;background:#383a35;width:120px"></div><div style="height:7px;background:#2b2d2b;width:60px"></div><div style="height:7px;background:#2b2d2b;width:70px"></div></div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “take <a class="dv-oid" href="#4a">4a</a> to hi-fi” · “make <a class="dv-oid" href="#4b">4b</a> one full screen per line” · “strip <a class="dv-oid" href="#3a">3a</a> down to this word count”</p>
+</section>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">With the T-Group method in it — the loop, impact over intent, the norms, the session arc, what it is not</span></div>
+
+<div class="dv-opts">
+
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>The method, named — the page states plainly that this is a T-Group, and the maxim is the ethic the facilitator works under</div>
+<div class="dv-card" style="width:470px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="display:flex;gap:10px"><div style="width:34px;height:7px;background:#e4dfd5"></div><div style="width:28px;height:7px;background:#e4dfd5"></div><div style="width:52px;height:7px;background:#9a4f36"></div></div>
+  </div>
+
+  <div style="padding:28px 20px 30px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#9a4f36">T-Group · training group · live interpersonal laboratory</div>
+    <div style="margin-top:14px;font-family:'Architects Daughter',cursive;font-size:30px;line-height:1.12;color:#1a1a1a">The subject is the six of you, in the room, right now.</div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.5;color:#5c5850">No lecture, no case study, no hypothetical. The method has been around for decades and it has one move: turn what is happening between us into data you can use the same day.</div>
+    <div style="margin-top:18px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Apply for a cohort</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">What ninety minutes looks like</div></div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">The loop · tight cycles, not post-hoc analysis</div>
+    <div style="margin-top:14px;display:flex;align-items:stretch;gap:6px">
+      <div style="flex:1;border:1px solid #383a35;padding:12px 10px"><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#f6f4ee">Experience</div><div style="margin-top:6px;font-size:9.5px;line-height:1.35;color:#8a8377">something happens</div></div>
+      <div style="align-self:center;color:#c98a6f;font-size:12px">→</div>
+      <div style="flex:1;border:1px solid #383a35;padding:12px 10px"><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#f6f4ee">Data</div><div style="margin-top:6px;font-size:9.5px;line-height:1.35;color:#8a8377">name it out loud</div></div>
+      <div style="align-self:center;color:#c98a6f;font-size:12px">→</div>
+      <div style="flex:1;border:1px solid #383a35;padding:12px 10px"><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#f6f4ee">Insight</div><div style="margin-top:6px;font-size:9.5px;line-height:1.35;color:#8a8377">test the reading</div></div>
+      <div style="align-self:center;color:#c98a6f;font-size:12px">→</div>
+      <div style="flex:1;border:1.5px solid #c98a6f;padding:12px 10px"><div style="font-family:'Architects Daughter',cursive;font-size:14px;color:#c98a6f">Experiment</div><div style="margin-top:6px;font-size:9.5px;line-height:1.35;color:#8a8377">try a new move</div></div>
+    </div>
+    <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:12.5px;color:#c9c3b6">↺ many times an hour, not once a quarter</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:20px;border-right:1px solid #cfc9bc">
+      <div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Impact over intent</div>
+      <div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.35">What you meant is interesting. Where it landed is the data.</div>
+    </div>
+    <div style="padding:20px;background:#f4f1ea">
+      <div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Feedback as instrument</div>
+      <div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.35">Not good or bad. “Here is what I saw and felt when you did that.”</div>
+    </div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Norms that increase signal</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-size:10px;color:#9a4f36">01</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Speak from the “I”.</div></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-size:10px;color:#9a4f36">02</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Name feelings as data.</div></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-size:10px;color:#9a4f36">03</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Check your stories and attributions.</div></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-size:10px;color:#9a4f36">04</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Ask before giving advice.</div></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-size:10px;color:#9a4f36">05</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Confidentiality and consent are not negotiable.</div></div>
+    </div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">A session, in order</div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:0">
+      <div style="display:grid;grid-template-columns:74px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;color:#8a8377">00:00</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Contract and check-in. Short, clear agreements.</div></div>
+      <div style="display:grid;grid-template-columns:74px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;color:#8a8377">00:10</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Emergent focus. Follow the energy, name what is live.</div></div>
+      <div style="display:grid;grid-template-columns:74px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;color:#8a8377">00:35</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Micro-experiments. Try a behaviour, watch the impact.</div></div>
+      <div style="display:grid;grid-template-columns:74px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;color:#8a8377">01:05</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Feedback loops. Give, receive, refine.</div></div>
+      <div style="display:grid;grid-template-columns:74px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;color:#8a8377">01:20</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Meta-reflection. How were we learning just now, and what will I practise?</div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;display:grid;grid-template-columns:84px 1fr;gap:14px">
+    <div style="border:1px solid #cfc9bc;height:100px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:22px">×</div>
+    <div>
+      <div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Facilitator as process consultant</div>
+      <div style="margin-top:6px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.3">Elie Schulman intervenes on process, protects the container, and does not rescue, lecture, or supply the answer.</div>
+      <div style="margin-top:10px;font-family:'Frank Ruhl Libre',serif;font-size:14px;color:#9a4f36;direction:rtl">ולא הקפדן מלמד</div>
+      <div style="font-size:10px;color:#8a8377">an impatient teacher teaches nothing · Avot 2:6</div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a8377">What it is not</div>
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#8a8377;text-decoration:line-through">therapy</div>
+          <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#8a8377;text-decoration:line-through">a debate club</div>
+          <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#8a8377;text-decoration:line-through">networking, or a leadership lecture</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">What you leave with</div>
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'Architects Daughter',cursive;font-size:13.5px">presence under pressure</div>
+          <div style="font-family:'Architects Daughter',cursive;font-size:13.5px">briefer, more candid speech</div>
+          <div style="font-family:'Architects Daughter',cursive;font-size:13.5px">conflict you can repair</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.35;color:#1a1a1a">“I used something from week two in a board meeting on the Thursday.”</div>
+    <div style="margin-top:8px;display:flex;gap:8px;align-items:center"><div style="width:22px;height:22px;border-radius:50%;background:#ded9cf"></div><div style="height:7px;background:#ded9cf;width:110px"></div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Cohorts forming</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Tue 19:00 Israel · 12 weeks</div><div style="font-size:10px;color:#5c5850">2 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Thu 08:30 ET · 12 weeks</div><div style="font-size:10px;color:#5c5850">4 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+    </div>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:8px"><div style="flex:1;border:1px solid #2a2a28;padding:8px;font-size:10.5px;text-align:center">Apply</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Consultation</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Placed</div></div>
+  </div>
+
+  <div style="padding:20px;border-bottom:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">FAQ</div><div style="margin-top:10px;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Is a T-Group therapy?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">How is feedback kept safe?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:52%"></div><div style="color:#8a8377">+</div></div></div></div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Notes by email</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>One loop, four turns — the page IS the cycle: each section is a stage, evidenced by a transcript excerpt, with the norms running down the rail</div>
+<div class="dv-card" style="width:470px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="width:52px;height:7px;background:#9a4f36"></div>
+  </div>
+
+  <div style="padding:30px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Architects Daughter',cursive;font-size:31px;line-height:1.1;color:#1a1a1a">Something happens. We stop and read it.</div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.5;color:#5c5850">A T-Group runs one loop, many times an hour. Scroll and you walk it once: experience, data, insight, experiment.</div>
+    <div style="margin-top:18px;display:flex;gap:6px;align-items:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9a4f36"><span>Experience</span><span>→</span><span>Data</span><span>→</span><span>Insight</span><span>→</span><span>Experiment</span></div>
+    <div style="margin-top:18px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Apply for a cohort</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">30 minutes with Elie</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Experience</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">here and now is the curriculum</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:20px;line-height:1.2">Minute 31. Two people answer at once; three go quiet.</div>
+      <div style="margin-top:12px;border:1px solid #cfc9bc;background:#faf8f4;padding:12px;display:flex;flex-direction:column;gap:7px">
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:02</div><div style="font-family:'Architects Daughter',cursive;font-size:13px">“I think we’re deciding this too fast.”</div></div>
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:03</div><div style="font-family:'Architects Daughter',cursive;font-size:13px">“No — we’ve had three weeks.”</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="border-right:1px solid #383a35;padding:22px 12px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#c98a6f">Data</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">named out loud, in the room</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:20px;line-height:1.2;color:#f6f4ee">“When you cut in, I stopped working on my sentence.”</div>
+      <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.45;color:#c9c3b6">Behaviour-specific, consented to, and separated from evaluation. Not “you’re aggressive” — what I saw, and what it did in me.</div>
+      <div style="margin-top:12px;display:flex;gap:8px"><div style="border:1px solid #383a35;padding:6px 9px;font-size:9.5px;color:#8a8377">impact over intent</div><div style="border:1px solid #383a35;padding:6px 9px;font-size:9.5px;color:#8a8377">feelings are data</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Insight</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">a reading you can test</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:20px;line-height:1.2">“I speak fastest when I am least sure.”</div>
+      <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px"><div style="height:8px;background:#e4dfd5;width:94%"></div><div style="height:8px;background:#e4dfd5;width:78%"></div></div>
+      <div style="margin-top:12px;border-left:2px solid #9a4f36;padding-left:10px;font-family:'Architects Daughter',cursive;font-size:13px;line-height:1.4;color:#5c5850">Checked against the room, not accepted because it sounded good.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Experiment</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">a new move, and its impact</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:20px;line-height:1.2">Next time: wait five seconds, then speak.</div>
+      <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="border:1px solid #cfc9bc;padding:10px;background:#fbfaf7"><div style="font-size:9.5px;color:#8a8377">tried it</div><div style="margin-top:4px;font-family:'Architects Daughter',cursive;font-size:13px">week 5, minute 12</div></div>
+        <div style="border:1px solid #cfc9bc;padding:10px;background:#fbfaf7"><div style="font-size:9.5px;color:#8a8377">what happened</div><div style="margin-top:4px;font-family:'Architects Daughter',cursive;font-size:13px">two people who never answer, answered</div></div>
+      </div>
+      <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:12.5px;color:#9a4f36">↺ and the loop starts again</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Meta</div><div style="margin-top:8px;font-size:9px;line-height:1.35;color:#8a8377">how we were learning</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.22">We stop and ask how we just learned that — not only what we felt.</div>
+      <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.45;color:#5c5850">This is the part that transfers. Awareness, then choice, then skill — in your team, your board, your kitchen table.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="border-right:1px solid #383a35;padding:22px 12px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#c98a6f">Norms</div></div>
+    <div style="padding:20px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#e5e0d5">Speak from the “I”.</div>
+        <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#e5e0d5">Name feelings as data.</div>
+        <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#e5e0d5">Check your stories and attributions.</div>
+        <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#e5e0d5">Ask before giving advice.</div>
+        <div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#c98a6f">Confidentiality and consent are not negotiable.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Facilitator</div></div>
+    <div style="padding:22px 20px;display:grid;grid-template-columns:76px 1fr;gap:14px">
+      <div style="border:1px solid #cfc9bc;height:92px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:20px">×</div>
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.3">Elie works on process, not content. He will not hurry you and will not hand you the answer.</div><div style="margin-top:8px;font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#9a4f36;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:112px 1fr;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Join</div></div>
+    <div style="padding:20px">
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:1fr 78px 50px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Tue 19:00 Israel</div><div style="font-size:10px;color:#5c5850">2 seats</div><div style="font-size:10px;color:#9a4f36">$—</div></div>
+        <div style="display:grid;grid-template-columns:1fr 78px 50px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Thu 08:30 ET</div><div style="font-size:10px;color:#5c5850">4 seats</div><div style="font-size:10px;color:#9a4f36">$—</div></div>
+      </div>
+      <div style="margin-top:12px;display:flex;align-items:center;gap:8px"><div style="flex:1;border:1px solid #2a2a28;padding:8px;font-size:10.5px;text-align:center">Apply</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Talk</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Start</div></div>
+      <div style="margin-top:12px;display:flex;gap:8px;align-items:center"><div style="flex:1;height:28px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:8px 10px">Notes by email</div></div>
+    </div>
+  </div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “take <a class="dv-oid" href="#3b">3b</a> to hi-fi” · “put <a class="dv-oid" href="#3a">3a</a>’s norms and ‘what it is not’ into <a class="dv-oid" href="#2b">2b</a>” · “make the loop an interactive walkthrough”</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Reframed: the maxim as Elie’s commitment — nobody is hurried here — and the member’s invitation to learn how they learn</span></div>
+
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Two promises — the impatient clause is what Elie holds himself to; the bashful clause is what the room removes for you</div>
+<div class="dv-card" style="width:460px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="display:flex;gap:10px"><div style="width:34px;height:7px;background:#e4dfd5"></div><div style="width:28px;height:7px;background:#e4dfd5"></div><div style="width:52px;height:7px;background:#9a4f36"></div></div>
+  </div>
+
+  <div style="padding:28px 20px 30px;border-bottom:1px solid #cfc9bc">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:15px;color:#9a4f36;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div>
+    <div style="margin-top:6px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Pirkei Avot 2:6</div>
+    <div style="margin-top:16px;font-family:'Architects Daughter',cursive;font-size:29px;line-height:1.14;color:#1a1a1a">Nobody here is going to hurry you.</div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.5;color:#5c5850">That is the facilitator’s side of the sentence. Yours is the question underneath it: how do you actually learn — what has to happen in a room before something reaches you?</div>
+    <div style="margin-top:18px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Talk to Elie for 30 minutes</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">See how a session runs</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:20px;border-right:1px solid #cfc9bc">
+      <div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">What Elie holds to</div>
+      <div style="margin-top:8px;font-family:'Frank Ruhl Libre',serif;font-size:17px;color:#1a1a1a;direction:rtl">ולא הקפדן מלמד</div>
+      <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.45;color:#33312b">An impatient teacher teaches nothing. So he waits, lets a silence run long, and does not finish your sentence for you.</div>
+    </div>
+    <div style="padding:20px;background:#f4f1ea">
+      <div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">What that makes possible</div>
+      <div style="margin-top:8px;font-family:'Frank Ruhl Libre',serif;font-size:17px;color:#1a1a1a;direction:rtl">לא הביישן למד</div>
+      <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.45;color:#33312b">You do not have to arrive with a clean sentence. Half a thought, said early, is the material.</div>
+    </div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">The invitation · learn how you learn</div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:20px;line-height:1.2;color:#1a1a1a">Six people learn six different ways. You get to watch yours work.</div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:0">
+      <div style="display:grid;grid-template-columns:112px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9a4f36">By hearing it back</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">You need someone to repeat what you said before you know what you meant.</div></div>
+      <div style="display:grid;grid-template-columns:112px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9a4f36">By being contradicted</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">Nothing lands until someone you respect disagrees and stays.</div></div>
+      <div style="display:grid;grid-template-columns:112px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9a4f36">In the silence after</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">You need the ten seconds nobody usually gives you.</div></div>
+      <div style="display:grid;grid-template-columns:112px 1fr;gap:10px;border-top:1px solid #cfc9bc;padding:10px 0;align-items:baseline"><div style="height:8px;background:#e4dfd5;width:80%"></div><div style="height:8px;background:#e4dfd5;width:64%"></div></div>
+    </div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:12.5px;color:#9a4f36">→ nobody is asked to pick one. The group shows you yours.</div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Ninety minutes · minute 31</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">31:18</div><div style="font-family:'Architects Daughter',cursive;font-size:13px;color:#e5e0d5">“Sorry — this is probably just me, but…”</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">31:27</div><div style="font-family:'Architects Daughter',cursive;font-size:13px;color:#c98a6f">[ Elie says nothing for nine seconds ]</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">31:36</div><div style="font-family:'Architects Daughter',cursive;font-size:13px;color:#e5e0d5">She says the whole thing, without the apology.</div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;display:grid;grid-template-columns:84px 1fr;gap:14px">
+    <div style="border:1px solid #cfc9bc;height:104px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:22px">×</div>
+    <div><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Facilitator</div><div style="margin-top:6px;font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.25">Elie Schulman. Responsible for the patience in the room, not for your conclusions.</div><div style="margin-top:10px;height:7px;background:#e4dfd5;width:88%"></div><div style="margin-top:6px;height:7px;background:#e4dfd5;width:62%"></div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.35;color:#1a1a1a">“He never once moved it along. That is the only reason I ever finished a thought.”</div>
+    <div style="margin-top:8px;display:flex;gap:8px;align-items:center"><div style="width:22px;height:22px;border-radius:50%;background:#ded9cf"></div><div style="height:7px;background:#ded9cf;width:110px"></div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Cohorts forming</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Tue 19:00 Israel · 12 weeks</div><div style="font-size:10px;color:#5c5850">2 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Thu 08:30 ET · 12 weeks</div><div style="font-size:10px;color:#5c5850">4 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+    </div>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:8px"><div style="flex:1;border:1px solid #2a2a28;padding:8px;font-size:10.5px;text-align:center">Write a few lines</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Talk to Elie</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Join a cohort</div></div>
+  </div>
+
+  <div style="padding:20px;border-bottom:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">FAQ</div><div style="margin-top:10px;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">What if I need weeks before I speak?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Is this therapy?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:52%"></div><div style="color:#8a8377">+</div></div></div></div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Notes by email</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a><a class="dv-oid" href="#1b">1b</a> re-cut — same live transcript, but the margin now marks where the facilitator waited, and what each member needed in order to learn</div>
+<div class="dv-card" style="width:460px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #383a35;padding:12px 20px;background:#1a1a1a">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #c98a6f;border-radius:50%"></div><div style="width:96px;height:9px;background:#383a35"></div></div>
+    <div style="display:flex;gap:10px"><div style="width:34px;height:7px;background:#2f312e"></div><div style="width:28px;height:7px;background:#2f312e"></div><div style="width:52px;height:7px;background:#c98a6f"></div></div>
+  </div>
+
+  <div style="background:#1a1a1a;padding:24px 20px 28px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Session 6 · minute 31 · six members</div>
+      <div style="font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#c98a6f;direction:rtl">אבות ב:ו</div>
+    </div>
+    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 104px;gap:14px">
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:02</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#e5e0d5">“I think we’re deciding this too fast.”</div></div>
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:03</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#e5e0d5">“No — we’ve had three weeks.”</div></div>
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:09</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#c98a6f">[ the silence is not filled ]</div></div>
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:18</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#e5e0d5">“Sorry — probably just me, but…”<span style="display:inline-block;width:7px;height:15px;background:#c98a6f;vertical-align:-3px;margin-left:3px"></span></div></div>
+      </div>
+      <div style="border-left:1px solid #383a35;padding-left:12px;display:flex;flex-direction:column;gap:13px">
+        <div><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#c98a6f">Facilitator</div><div style="font-size:9.5px;line-height:1.35;color:#8a8377">did not move it along</div></div>
+        <div><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#c98a6f">She learns</div><div style="font-size:9.5px;line-height:1.35;color:#8a8377">by finishing out loud</div></div>
+        <div><div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#c98a6f">He learns</div><div style="font-size:9.5px;line-height:1.35;color:#8a8377">by being left in the pause</div></div>
+      </div>
+    </div>
+    <div style="margin-top:22px;font-family:'Architects Daughter',cursive;font-size:23px;line-height:1.2;color:#f6f4ee">Nine seconds nobody filled. That is the whole method.</div>
+    <div style="margin-top:14px;display:flex;gap:10px;align-items:center"><div style="background:#c98a6f;color:#1a1a1a;font-size:10.5px;padding:9px 14px">Apply for a cohort</div><div style="font-size:10.5px;color:#c9c3b6;border-bottom:1px solid #4a4c47;padding-bottom:2px">Read the rest of the hour</div></div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:15px;color:#9a4f36;direction:rtl">ולא הקפדן מלמד</div>
+    <div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.3;color:#1a1a1a">An impatient teacher teaches nothing. So the room runs slower than you are used to.</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px"><div style="height:8px;background:#e4dfd5;width:96%"></div><div style="height:8px;background:#e4dfd5;width:84%"></div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:20px;border-right:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Elie’s job</div><div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.45">Hold the pace. Never hurry a member. Never supply the ending.</div></div>
+    <div style="padding:20px;background:#f4f1ea"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Your job</div><div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.45">Notice what you needed before it reached you. That is how you learn.</div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Six people, six ways in</div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="border:1px solid #cfc9bc;padding:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13px;line-height:1.35">needs to hear it repeated back</div></div>
+      <div style="border:1px solid #cfc9bc;padding:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13px;line-height:1.35">needs to be contradicted</div></div>
+      <div style="border:1px solid #cfc9bc;padding:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13px;line-height:1.35">needs the pause</div></div>
+      <div style="border:1px solid #cfc9bc;padding:10px"><div style="height:8px;background:#e4dfd5;width:70%"></div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Members</div>
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="border-left:2px solid #9a4f36;padding-left:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">“I learned that I only understand things after I’ve said them badly once.”</div></div>
+      <div style="border-left:2px solid #ded9cf;padding-left:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">“Nobody rescued me from the silence. It turned out I had something.”</div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Next cohorts</div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="border:1px solid #cfc9bc;padding:12px"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue · 19:00 Israel</div><div style="margin-top:4px;font-size:10px;color:#5c5850">starts 14 Oct · 2 seats</div><div style="margin-top:8px;font-size:10px;color:#9a4f36">$— / month</div></div>
+      <div style="border:1px solid #cfc9bc;padding:12px"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu · 08:30 ET</div><div style="margin-top:4px;font-size:10px;color:#5c5850">starts 16 Oct · 4 seats</div><div style="margin-top:8px;font-size:10px;color:#9a4f36">$— / month</div></div>
+    </div>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:8px"><div style="flex:1;border:1px solid #2a2a28;padding:8px;font-size:10.5px;text-align:center">Apply</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Consultation</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Placed</div></div>
+  </div>
+
+  <div style="padding:20px;border-bottom:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">FAQ</div><div style="margin-top:10px;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Will I be put on the spot?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">What is confidential?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:50%"></div><div style="color:#8a8377">+</div></div></div></div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#9a4f36;color:#f7f2ec;font-size:10px;padding:9px 12px">One note a month</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>“How do you learn?” — the whole page is one question asked of the visitor; the maxim sits at the foot as the condition that makes answering it possible</div>
+<div class="dv-card" style="width:460px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="width:52px;height:7px;background:#9a4f36"></div>
+  </div>
+
+  <div style="padding:34px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Architects Daughter',cursive;font-size:34px;line-height:1.08;color:#1a1a1a">How do you learn?</div>
+    <div style="margin-top:14px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.5;color:#5c5850">Not what you want to learn. How. Which conditions have to be in the room before anything reaches you — and which ones you have never had.</div>
+    <div style="margin-top:18px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Find out in a cohort</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">30 minutes with Elie</div></div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Four answers people arrive with</div>
+    <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="border:1px solid #cfc9bc;padding:14px"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.25">“I learn once someone argues with me.”</div><div style="margin-top:10px;height:7px;background:#e4dfd5;width:80%"></div></div>
+      <div style="border:1px solid #cfc9bc;padding:14px"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.25">“I learn by hearing myself say it out loud.”</div><div style="margin-top:10px;height:7px;background:#e4dfd5;width:70%"></div></div>
+      <div style="border:1px solid #cfc9bc;padding:14px"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.25">“I learn when nobody is waiting on me.”</div><div style="margin-top:10px;height:7px;background:#e4dfd5;width:76%"></div></div>
+      <div style="border:1px solid #cfc9bc;padding:14px"><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.25">“I have no idea. That is why I am here.”</div><div style="margin-top:10px;height:7px;background:#e4dfd5;width:66%"></div></div>
+    </div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Where the answer shows up</div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:21px;line-height:1.2;color:#f6f4ee">Ninety minutes, six people, nothing on the agenda.</div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:19</div><div style="font-family:'Architects Daughter',cursive;font-size:13px;color:#e5e0d5">She disagrees, then apologises for disagreeing.</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:28</div><div style="font-family:'Architects Daughter',cursive;font-size:13px;color:#c98a6f">[ nobody hurries her ]</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:34px;flex:none">00:41</div><div style="height:8px;background:#383a35;width:82%;margin-top:5px"></div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;display:grid;grid-template-columns:84px 1fr;gap:14px">
+    <div style="border:1px solid #cfc9bc;height:96px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:22px">×</div>
+    <div><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Who keeps it open</div><div style="margin-top:6px;font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.25">Elie Schulman. You will not experience him as impatient — that is the condition, not a courtesy.</div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:22px;line-height:1.5;color:#1a1a1a;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div>
+    <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.35;color:#33312b">A bashful person cannot learn, nor can an impatient person teach. Two thousand years old, and still the entire design brief.</div>
+    <div style="margin-top:8px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Pirkei Avot 2:6</div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Join · dates and price</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Tue 19:00 Israel · 12 weeks</div><div style="font-size:10px;color:#5c5850">2 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Thu 08:30 ET · 12 weeks</div><div style="font-size:10px;color:#5c5850">4 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Private group</div><div style="font-size:10px;color:#5c5850">arranged</div><div style="font-size:10px;color:#9a4f36">—</div></div>
+    </div>
+    <div style="margin-top:14px;display:flex;align-items:center;gap:8px"><div style="flex:1;border:1px solid #2a2a28;padding:8px;font-size:10.5px;text-align:center">Apply</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Talk</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Start</div></div>
+  </div>
+
+  <div style="padding:20px;border-bottom:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">FAQ</div><div style="margin-top:10px;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Do I have to know how I learn already?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Is this therapy?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:48%"></div><div style="color:#8a8377">+</div></div></div></div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Tell me when seats open</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “take <a class="dv-oid" href="#2b">2b</a> to hi-fi” · “merge <a class="dv-oid" href="#2a">2a</a>’s two-promises hero with <a class="dv-oid" href="#2c">2c</a>’s question” · “drop the self-diagnosis framing from turn 1 entirely”</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Homepage directions — themed on Pirkei Avot 2:6, “A bashful person cannot learn, nor can an impatient person teach”</span></div>
+
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Two failure modes — the site names the two ways you stay out of the learning, and asks which is yours</div>
+<div class="dv-card" style="width:460px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="display:flex;gap:10px"><div style="width:34px;height:7px;background:#e4dfd5"></div><div style="width:28px;height:7px;background:#e4dfd5"></div><div style="width:40px;height:7px;background:#e4dfd5"></div><div style="width:52px;height:7px;background:#9a4f36"></div></div>
+  </div>
+
+  <div style="padding:26px 20px 30px;border-bottom:1px solid #cfc9bc">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:15px;color:#9a4f36;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div>
+    <div style="margin-top:6px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Pirkei Avot 2:6</div>
+    <div style="margin-top:16px;font-family:'Architects Daughter',cursive;font-size:31px;line-height:1.12;color:#1a1a1a">Two people never learn anything in a group.</div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.5;color:#5c5850">One of them is too careful to speak. The other is too quick to wait. Most of us are one of them under pressure. This is where you find out which.</div>
+    <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
+      <div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Find out which one you are</div>
+      <div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">See a real session note</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:20px;border-right:1px solid #cfc9bc">
+      <div style="font-family:'Frank Ruhl Libre',serif;font-size:19px;color:#1a1a1a;direction:rtl">הביישן</div>
+      <div style="margin-top:2px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">The bashful</div>
+      <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.45;color:#33312b">Waits for the sentence to be clean. The moment passes. Nobody ever finds out what he thought.</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+        <div style="height:7px;background:#e4dfd5;width:92%"></div><div style="height:7px;background:#e4dfd5;width:78%"></div><div style="height:7px;background:#e4dfd5;width:86%"></div>
+      </div>
+    </div>
+    <div style="padding:20px;background:#f4f1ea">
+      <div style="font-family:'Frank Ruhl Libre',serif;font-size:19px;color:#1a1a1a;direction:rtl">הקפדן</div>
+      <div style="margin-top:2px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">The impatient</div>
+      <div style="margin-top:10px;font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.45;color:#33312b">Answers before the sentence lands. Is right, often. Teaches no one anything.</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+        <div style="height:7px;background:#ded9cf;width:88%"></div><div style="height:7px;background:#ded9cf;width:95%"></div><div style="height:7px;background:#ded9cf;width:70%"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Self-check · six statements</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:9px">
+      <div style="display:flex;gap:10px;align-items:center"><div style="width:12px;height:12px;border:1.5px solid #2a2a28;flex:none"></div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#33312b">I rehearse it, then the topic has moved on.</div></div>
+      <div style="display:flex;gap:10px;align-items:center"><div style="width:12px;height:12px;border:1.5px solid #2a2a28;background:#9a4f36;flex:none"></div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#33312b">I finish other people’s sentences for them.</div></div>
+      <div style="display:flex;gap:10px;align-items:center"><div style="width:12px;height:12px;border:1.5px solid #2a2a28;flex:none"></div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#33312b">I apologise before anyone has objected.</div></div>
+      <div style="display:flex;gap:10px;align-items:center"><div style="width:12px;height:12px;border:1.5px solid #2a2a28;flex:none"></div><div style="height:8px;background:#e4dfd5;width:60%"></div></div>
+      <div style="display:flex;gap:10px;align-items:center"><div style="width:12px;height:12px;border:1.5px solid #2a2a28;flex:none"></div><div style="height:8px;background:#e4dfd5;width:72%"></div></div>
+    </div>
+    <div style="margin-top:14px;font-family:'Architects Daughter',cursive;font-size:12.5px;color:#9a4f36">→ result routes you to the cohort that suits you</div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Ninety minutes · one hour of one group</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:32px;flex:none">00:19</div><div style="font-family:'Architects Daughter',cursive;font-size:13px;color:#e5e0d5">She disagrees, then apologises for disagreeing.</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:32px;flex:none">00:24</div><div style="font-family:'Architects Daughter',cursive;font-size:13px;color:#c98a6f">[ eleven seconds of nobody speaking ]</div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:32px;flex:none">00:31</div><div style="height:8px;background:#383a35;width:74%;margin-top:5px"></div></div>
+      <div style="display:flex;gap:12px"><div style="font-size:10px;color:#8a8377;width:32px;flex:none">00:48</div><div style="height:8px;background:#383a35;width:88%;margin-top:5px"></div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Cohorts forming</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:0">
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Tue 19:00 Israel · 12 weeks</div><div style="font-size:10px;color:#5c5850">2 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Thu 08:30 ET · 12 weeks</div><div style="font-size:10px;color:#5c5850">4 seats</div><div style="font-size:10px;color:#9a4f36">$—/mo</div></div>
+      <div style="display:grid;grid-template-columns:1fr 62px 54px;gap:8px;align-items:center;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:70%"></div><div style="height:8px;background:#e4dfd5"></div><div style="height:8px;background:#e4dfd5"></div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Architects Daughter',cursive;font-size:17px;line-height:1.35;color:#1a1a1a">“I found out I was the kapdan. Nobody at work was ever going to tell me.”</div>
+    <div style="margin-top:8px;display:flex;gap:8px;align-items:center"><div style="width:22px;height:22px;border-radius:50%;background:#ded9cf"></div><div style="height:7px;background:#ded9cf;width:110px"></div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">How to join</div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:20px;color:#9a4f36">1</div><div style="font-size:11px;line-height:1.4;color:#33312b">Short written application</div></div>
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:20px;color:#9a4f36">2</div><div style="font-size:11px;line-height:1.4;color:#33312b">30 min with Elie</div></div>
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:20px;color:#9a4f36">3</div><div style="font-size:11px;line-height:1.4;color:#33312b">Placed in a cohort</div></div>
+    </div>
+  </div>
+
+  <div style="padding:20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Questions people ask</div>
+    <div style="margin-top:10px;display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Is this therapy?</div><div style="color:#8a8377;font-size:13px">+</div></div>
+      <div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">What if I say nothing for weeks?</div><div style="color:#8a8377;font-size:13px">+</div></div>
+      <div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:55%"></div><div style="color:#8a8377;font-size:13px">+</div></div>
+    </div>
+  </div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Notes by email</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div><div style="height:7px;background:#2b2d2b;width:60%;margin-top:6px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div><div style="height:6px;background:#2b2d2b;width:70%;margin-top:5px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div><div style="height:6px;background:#2b2d2b;width:65%;margin-top:5px"></div></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Live transcript — the page opens inside a session in progress, with the two failure modes annotated in the margin</div>
+<div class="dv-card" style="width:460px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #383a35;padding:12px 20px;background:#1a1a1a">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #c98a6f;border-radius:50%"></div><div style="width:96px;height:9px;background:#383a35"></div></div>
+    <div style="display:flex;gap:10px"><div style="width:34px;height:7px;background:#2f312e"></div><div style="width:28px;height:7px;background:#2f312e"></div><div style="width:52px;height:7px;background:#c98a6f"></div></div>
+  </div>
+
+  <div style="background:#1a1a1a;padding:24px 20px 28px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Session 6 · minute 31 · six members</div>
+      <div style="font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#c98a6f;direction:rtl">אבות ב:ו</div>
+    </div>
+    <div style="margin-top:16px;display:grid;grid-template-columns:1fr 96px;gap:14px">
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:02</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#e5e0d5">“I think we’re deciding this too fast.”</div></div>
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:03</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#e5e0d5">“No — we’ve had three weeks.”</div></div>
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:09</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#c98a6f">[ nobody speaks for nine seconds ]</div></div>
+        <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:18</div><div style="font-family:'Architects Daughter',cursive;font-size:14px;line-height:1.4;color:#e5e0d5">“Sorry — this is probably just me, but…”<span style="display:inline-block;width:7px;height:15px;background:#c98a6f;vertical-align:-3px;margin-left:3px"></span></div></div>
+      </div>
+      <div style="border-left:1px solid #383a35;padding-left:12px;display:flex;flex-direction:column;gap:14px">
+        <div><div style="font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#c98a6f;direction:rtl">הקפדן</div><div style="font-size:9.5px;line-height:1.35;color:#8a8377">answered in one second</div></div>
+        <div><div style="font-family:'Frank Ruhl Libre',serif;font-size:13px;color:#c98a6f;direction:rtl">הביישן</div><div style="font-size:9.5px;line-height:1.35;color:#8a8377">apologised first</div></div>
+      </div>
+    </div>
+    <div style="margin-top:22px;font-family:'Architects Daughter',cursive;font-size:24px;line-height:1.2;color:#f6f4ee">You are about to find out which of these you are.</div>
+    <div style="margin-top:14px;display:flex;gap:10px;align-items:center"><div style="background:#c98a6f;color:#1a1a1a;font-size:10.5px;padding:9px 14px">Apply for a cohort</div><div style="font-size:10.5px;color:#c9c3b6;border-bottom:1px solid #4a4c47;padding-bottom:2px">Keep reading the transcript</div></div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:15px;color:#9a4f36;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div>
+    <div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:18px;line-height:1.35;color:#1a1a1a">The bashful cannot learn. The impatient cannot teach. A group of six is where both get caught.</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px"><div style="height:8px;background:#e4dfd5;width:96%"></div><div style="height:8px;background:#e4dfd5;width:88%"></div><div style="height:8px;background:#e4dfd5;width:64%"></div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="padding:18px;border-right:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Watch</div><div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:13px;line-height:1.4">live, not from memory</div></div>
+    <div style="padding:18px;border-right:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Try</div><div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:13px;line-height:1.4">something you wouldn’t risk at work</div></div>
+    <div style="padding:18px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Repeat</div><div style="margin-top:8px;font-family:'Architects Daughter',cursive;font-size:13px;line-height:1.4">same six faces, twelve weeks</div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Who this is for</div>
+    <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="border-left:2px solid #9a4f36;padding-left:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">People who want to be told what they’re like.</div></div>
+      <div style="border-left:2px solid #ded9cf;padding-left:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4;color:#8a8377">Not for anyone looking for a technique to win.</div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Next cohorts · price</div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="border:1px solid #cfc9bc;padding:12px"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue · 19:00 Israel</div><div style="margin-top:4px;font-size:10px;color:#5c5850">starts 14 Oct · 2 seats</div><div style="margin-top:8px;font-size:10px;color:#9a4f36">$— / month</div></div>
+      <div style="border:1px solid #cfc9bc;padding:12px"><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu · 08:30 ET</div><div style="margin-top:4px;font-size:10px;color:#5c5850">starts 16 Oct · 4 seats</div><div style="margin-top:8px;font-size:10px;color:#9a4f36">$— / month</div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Three steps to a seat</div>
+    <div style="margin-top:12px;display:flex;align-items:center;gap:8px">
+      <div style="flex:1;border:1px solid #2a2a28;padding:8px;font-size:10.5px;text-align:center">Apply</div>
+      <div style="color:#9a4f36">→</div>
+      <div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Consultation</div>
+      <div style="color:#9a4f36">→</div>
+      <div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Placed</div>
+    </div>
+  </div>
+
+  <div style="padding:20px;border-bottom:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">FAQ</div><div style="margin-top:10px;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Who else is in the room?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">What is confidential?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:52%"></div><div style="color:#8a8377">+</div></div></div></div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#9a4f36;color:#f7f2ec;font-size:10px;padding:9px 12px">One note a month</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>The maxim as spine — the sentence itself is the page; each clause opens into a section, with the rail carrying the Hebrew</div>
+<div class="dv-card" style="width:460px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="display:flex;gap:10px"><div style="width:34px;height:7px;background:#e4dfd5"></div><div style="width:28px;height:7px;background:#e4dfd5"></div><div style="width:52px;height:7px;background:#9a4f36"></div></div>
+  </div>
+
+  <div style="padding:30px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:27px;line-height:1.5;color:#1a1a1a;direction:rtl">לא ה<span style="border:1.5px solid #9a4f36;border-radius:40%;padding:0 4px">ביישן</span> למד, ולא ה<span style="border:1.5px solid #9a4f36;border-radius:40%;padding:0 4px">קפדן</span> מלמד</div>
+    <div style="margin-top:14px;font-family:'Architects Daughter',cursive;font-size:20px;line-height:1.3;color:#33312b">A bashful person cannot learn, nor can an impatient person teach.</div>
+    <div style="margin-top:10px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Pirkei Avot 2:6 · the whole method, in one line</div>
+    <div style="margin-top:18px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Apply for a cohort</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">What a session looks like</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-family:'Frank Ruhl Libre',serif;font-size:17px;color:#9a4f36;direction:rtl">הביישן</div><div style="margin-top:6px;font-size:9px;line-height:1.3;color:#8a8377">clause one</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:22px;line-height:1.2;color:#1a1a1a">If you protect yourself, there is nothing to learn from.</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px"><div style="height:8px;background:#e4dfd5;width:96%"></div><div style="height:8px;background:#e4dfd5;width:90%"></div><div style="height:8px;background:#e4dfd5;width:72%"></div></div>
+      <div style="margin-top:14px;border-left:2px solid #9a4f36;padding-left:10px;font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4;color:#5c5850">“I had the thought at 00:19. I said it at 01:04.”</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="border-right:1px solid #383a35;padding:22px 12px"><div style="font-family:'Frank Ruhl Libre',serif;font-size:17px;color:#c98a6f;direction:rtl">הקפדן</div><div style="margin-top:6px;font-size:9px;line-height:1.3;color:#8a8377">clause two</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:22px;line-height:1.2;color:#f6f4ee">If you cannot wait, nobody learns from you either.</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px"><div style="height:8px;background:#383a35;width:94%"></div><div style="height:8px;background:#383a35;width:86%"></div><div style="height:8px;background:#383a35;width:68%"></div></div>
+      <div style="margin-top:14px;border-left:2px solid #c98a6f;padding-left:10px;font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4;color:#c9c3b6">“Three people stopped bringing things to me. I never noticed.”</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">The room</div></div>
+    <div style="padding:22px 20px">
+      <div style="font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.25">Six people, ninety minutes, no curriculum.</div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div style="border:1px solid #cfc9bc;height:44px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:16px">×</div>
+        <div style="border:1px solid #cfc9bc;height:44px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:16px">×</div>
+        <div style="border:1px solid #cfc9bc;height:44px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:16px">×</div>
+        <div style="border:1px solid #cfc9bc;height:44px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:16px">×</div>
+        <div style="border:1.5px solid #9a4f36;height:44px;display:flex;align-items:center;justify-content:center;color:#9a4f36;font-size:16px">×</div>
+        <div style="border:1px solid #cfc9bc;height:44px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:16px">×</div>
+      </div>
+      <div style="margin-top:8px;font-size:10px;color:#8a8377">placeholder · six members on video, one facilitator</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Facilitator</div></div>
+    <div style="padding:22px 20px;display:grid;grid-template-columns:84px 1fr;gap:14px">
+      <div style="border:1px solid #cfc9bc;height:104px;display:flex;align-items:center;justify-content:center;color:#cfc9bc;font-size:22px">×</div>
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:16px;line-height:1.25">Elie Schulman keeps the room patient enough to be honest in.</div><div style="margin-top:10px;display:flex;flex-direction:column;gap:6px"><div style="height:7px;background:#e4dfd5;width:92%"></div><div style="height:7px;background:#e4dfd5;width:74%"></div></div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Members</div></div>
+    <div style="padding:22px 20px;display:flex;flex-direction:column;gap:14px">
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.35">“Week four was the first time I said the actual thing.”</div><div style="margin-top:6px;height:7px;background:#ded9cf;width:100px"></div></div>
+      <div><div style="font-family:'Architects Daughter',cursive;font-size:15px;line-height:1.35">“I stopped finishing people’s sentences. My team noticed before I did.”</div><div style="margin-top:6px;height:7px;background:#ded9cf;width:120px"></div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:22px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">Join</div></div>
+    <div style="padding:22px 20px">
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:1fr 78px 50px;gap:8px;border-top:1px solid #cfc9bc;padding:9px 0;align-items:center"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Tue 19:00 Israel</div><div style="font-size:10px;color:#5c5850">2 seats</div><div style="font-size:10px;color:#9a4f36">$—</div></div>
+        <div style="display:grid;grid-template-columns:1fr 78px 50px;gap:8px;border-top:1px solid #cfc9bc;padding:9px 0;align-items:center"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Thu 08:30 ET</div><div style="font-size:10px;color:#5c5850">4 seats</div><div style="font-size:10px;color:#9a4f36">$—</div></div>
+        <div style="display:grid;grid-template-columns:1fr 78px 50px;gap:8px;border-top:1px solid #cfc9bc;padding:9px 0;align-items:center"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Private group</div><div style="font-size:10px;color:#5c5850">by arrangement</div><div style="font-size:10px;color:#9a4f36">—</div></div>
+      </div>
+      <div style="margin-top:14px;display:flex;align-items:center;gap:8px"><div style="flex:1;border:1px solid #2a2a28;padding:8px;font-size:10.5px;text-align:center">Apply</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Talk</div><div style="color:#9a4f36">→</div><div style="flex:1;border:1px solid #cfc9bc;padding:8px;font-size:10.5px;text-align:center;color:#5c5850">Start</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc9bc">
+    <div style="border-right:1px solid #cfc9bc;padding:20px 12px;background:#faf8f4"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#9a4f36">FAQ</div></div>
+    <div style="padding:14px 20px"><div style="display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Is this therapy?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Do I have to talk?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="height:8px;background:#e4dfd5;width:50%"></div><div style="color:#8a8377">+</div></div></div></div>
+  </div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="font-size:10px;color:#5c5850;flex:none">A note when a cohort opens</div><div style="flex:1;height:28px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:8px 10px">Send</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Admission by self-diagnosis — the homepage is the filter: a few forced choices, then a verdict, a cohort and a price</div>
+<div class="dv-card" style="width:460px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bc;padding:12px 20px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;border:1.5px solid #2a2a28;border-radius:50%"></div><div style="width:96px;height:9px;background:#ded9cf"></div></div>
+    <div style="width:52px;height:7px;background:#9a4f36"></div>
+  </div>
+
+  <div style="padding:28px 20px 30px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-family:'Frank Ruhl Libre',serif;font-size:14px;color:#9a4f36;direction:rtl">לא הביישן למד, ולא הקפדן מלמד</div>
+    <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:28px;line-height:1.15;color:#1a1a1a">Six questions. Then we both know if this is for you.</div>
+    <div style="margin-top:20px;border:1.5px solid #2a2a28;background:#fff;padding:18px">
+      <div style="display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a8377"><span>Question 1 of 6</span><span>·—————</span></div>
+      <div style="margin-top:12px;font-family:'Architects Daughter',cursive;font-size:19px;line-height:1.25">Someone talks over you in a meeting. What actually happens next?</div>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+        <div style="border:1px solid #cfc9bc;padding:10px 12px;font-family:'Architects Daughter',cursive;font-size:14px">I let it go and bring it up later. Or never.</div>
+        <div style="border:1.5px solid #9a4f36;padding:10px 12px;font-family:'Architects Daughter',cursive;font-size:14px;background:#faf1ec">I talk straight back over them.</div>
+        <div style="border:1px solid #cfc9bc;padding:10px 12px;font-family:'Architects Daughter',cursive;font-size:14px">I go quiet for the rest of the hour.</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:10px;color:#8a8377">No email until the end. Nothing is scored against you.</div>
+  </div>
+
+  <div style="padding:24px 20px;border-bottom:1px solid #cfc9bc;background:#1a1a1a">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Your result · placeholder state</div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start">
+      <div><div style="font-family:'Frank Ruhl Libre',serif;font-size:24px;color:#c98a6f;direction:rtl">הקפדן</div><div style="margin-top:4px;font-family:'Architects Daughter',cursive;font-size:17px;line-height:1.25;color:#f6f4ee">You are quick, and people have stopped telling you things.</div></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div><div style="font-size:9.5px;color:#8a8377">Bashful</div><div style="height:9px;background:#383a35;margin-top:4px"><div style="width:28%;height:9px;background:#c9c3b6"></div></div></div>
+        <div><div style="font-size:9.5px;color:#8a8377">Impatient</div><div style="height:9px;background:#383a35;margin-top:4px"><div style="width:74%;height:9px;background:#c98a6f"></div></div></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.45;color:#c9c3b6">What a group does with someone like you: it slows you down in front of five people who will say what that was like. Ninety minutes, twelve weeks.</div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Cohorts that fit your answer</div>
+    <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+      <div style="border:1.5px solid #2a2a28;padding:12px;display:grid;grid-template-columns:1fr 70px 56px;gap:8px;align-items:center"><div><div style="font-family:'Architects Daughter',cursive;font-size:14px">Tue 19:00 Israel</div><div style="font-size:10px;color:#5c5850">starts 14 Oct</div></div><div style="font-size:10px;color:#9a4f36">2 seats left</div><div style="font-size:10px">$— /mo</div></div>
+      <div style="border:1px solid #cfc9bc;padding:12px;display:grid;grid-template-columns:1fr 70px 56px;gap:8px;align-items:center"><div><div style="font-family:'Architects Daughter',cursive;font-size:14px">Thu 08:30 ET</div><div style="font-size:10px;color:#5c5850">starts 16 Oct</div></div><div style="font-size:10px;color:#5c5850">4 seats</div><div style="font-size:10px">$— /mo</div></div>
+    </div>
+    <div style="margin-top:14px;display:flex;gap:10px;align-items:center"><div style="background:#9a4f36;color:#f7f2ec;font-size:10.5px;padding:9px 14px">Hold a seat</div><div style="font-size:10.5px;color:#5c5850;border-bottom:1px solid #b9b1a2;padding-bottom:2px">Talk to Elie first</div></div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc;background:#f4f1ea">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">People who answered like you</div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="border-left:2px solid #9a4f36;padding-left:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">“I was told, kindly, that I win arguments and lose people.”</div><div style="margin-top:6px;height:7px;background:#ded9cf;width:90px"></div></div>
+      <div style="border-left:2px solid #ded9cf;padding-left:10px"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;line-height:1.4">“Twelve weeks later I can sit through a silence.”</div><div style="margin-top:6px;height:7px;background:#ded9cf;width:78px"></div></div>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px;border-bottom:1px solid #cfc9bc">
+    <div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">A minute of a real session</div>
+    <div style="margin-top:12px;border:1px solid #cfc9bc;background:#faf8f4;padding:14px;display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:03</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">“No — we’ve had three weeks.”</div></div>
+      <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:09</div><div style="font-family:'Architects Daughter',cursive;font-size:13.5px;color:#9a4f36">[ nine seconds of nobody speaking ]</div></div>
+      <div style="display:flex;gap:10px"><div style="font-size:10px;color:#8a8377;width:30px;flex:none">31:18</div><div style="height:8px;background:#e4dfd5;width:80%;margin-top:5px"></div></div>
+    </div>
+  </div>
+
+  <div style="padding:20px;border-bottom:1px solid #cfc9bc"><div style="font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8377">Before you apply</div><div style="margin-top:10px;display:flex;flex-direction:column"><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Is this therapy?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">Who sees my answers?</div><div style="color:#8a8377">+</div></div><div style="display:flex;justify-content:space-between;border-top:1px solid #cfc9bc;padding:9px 0"><div style="font-family:'Architects Daughter',cursive;font-size:13.5px">What if I’m turned down?</div><div style="color:#8a8377">+</div></div></div></div>
+
+  <div style="padding:18px 20px;display:flex;gap:8px;align-items:center;border-bottom:1px solid #cfc9bc"><div style="flex:1;height:30px;border:1px solid #cfc9bc;background:#fff"></div><div style="background:#1a1a1a;color:#f6f4ee;font-size:10px;padding:9px 12px">Tell me when seats open</div></div>
+
+  <div style="background:#1a1a1a;padding:22px 20px;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px">
+    <div><div style="height:8px;background:#383a35;width:80%"></div><div style="height:7px;background:#2b2d2b;width:95%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:80%;margin-top:8px"></div></div>
+    <div><div style="height:7px;background:#383a35;width:60%"></div><div style="height:6px;background:#2b2d2b;width:85%;margin-top:8px"></div></div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: “take <a class="dv-oid" href="#1b">1b</a> to hi-fi” · “combine the transcript hero of <a class="dv-oid" href="#1b">1b</a> with the self-check from <a class="dv-oid" href="#1a">1a</a>” · “more directions, push the Hebrew harder”</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { secs: 0, revealed: false, five: 0, fiveRunning: false };
+  componentDidMount() {
+    this.t = setInterval(() => {
+      this.setState((s) => {
+        const next = s.secs >= 9 ? { secs: 9, revealed: true } : { secs: s.secs + 1 };
+        if (s.fiveRunning) {
+          next.five = s.five + 1;
+          if (next.five >= 5) { next.five = 5; next.fiveRunning = false; }
+        }
+        return next;
+      });
+    }, 1000);
+  }
+  componentWillUnmount() { clearInterval(this.t); }
+  renderVals() {
+    return {
+      secs: this.state.secs,
+      revealed: this.state.revealed,
+      five: this.state.five,
+      fiveDone: this.state.five >= 5,
+      startFive: () => this.setState({ five: 0, fiveRunning: true }),
+      restart: () => this.setState({ secs: 0, revealed: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>
