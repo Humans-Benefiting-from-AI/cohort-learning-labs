@@ -65,10 +65,16 @@ const sessionNotes = [
 
 const practices = [
   { n: '01', text: 'Say what you actually think, without pretending to speak for everyone.' },
-  { n: '02', text: 'Name the precise point of difference instead of opposing an entire person.' },
+  {
+    n: '02',
+    text: 'Name the precise point of difference instead of opposing an entire person.',
+  },
   { n: '03', text: 'Represent someone else’s view accurately before you answer it.' },
   { n: '04', text: 'Notice your own reaction and stay in the room anyway.' },
-  { n: '05', text: 'Tell the difference between understanding someone and agreeing with them.' },
+  {
+    n: '05',
+    text: 'Tell the difference between understanding someone and agreeing with them.',
+  },
   { n: '06', text: 'Reach a decision without erasing what is still unresolved.' },
 ]
 
@@ -140,8 +146,8 @@ export default function Home() {
                 </p>
                 <p>
                   Reading about it changes nothing. One person’s feedback is easy to file away.
-                  What actually moves is watching it happen, live, among people curious enough to
-                  say what they noticed and unattached enough to be honest about it.
+                  What actually moves is watching it happen, live, among people curious enough
+                  to say what they noticed and unattached enough to be honest about it.
                 </p>
                 <p>
                   So the work starts with you and your own difference of opinion. The group is
@@ -282,8 +288,8 @@ export default function Home() {
                   obstacles standing in front of the work. They are the work pointing at itself.
                 </p>
                 <p>
-                  So the struggle becomes the path. Data to read, and a teacher telling you where
-                  to look and what to ask next.
+                  So the struggle becomes the path. Data to read, and a teacher telling you
+                  where to look and what to ask next.
                 </p>
               </div>
               <p className="mt-9 max-w-[46ch] border-l border-accent pl-6 font-serif text-[22px] italic leading-[1.4] text-ink lg:text-[26px]">
@@ -302,8 +308,8 @@ export default function Home() {
             <p className="rail-label">06 — What changes</p>
             <div>
               <p className="max-w-[44ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
-                Not a technique for winning agreement. A wider range of things you are able to do
-                with people.
+                Not a technique for winning agreement. A wider range of things you are able to
+                do with people.
               </p>
               <ul className="mt-10 grid md:grid-cols-2 md:gap-x-14">
                 {practices.map((practice) => (
@@ -346,8 +352,8 @@ export default function Home() {
                 <div className="mt-7 flex max-w-[56ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
                   <p>
                     His work is to protect the conditions in which a group can meet its
-                    differences and stay curious about them a little longer than is comfortable —
-                    including the ones nobody planned to raise.
+                    differences and stay curious about them a little longer than is comfortable
+                    — including the ones nobody planned to raise.
                   </p>
                   <p>
                     He listens for what was said, what was avoided, and what the group is doing
@@ -381,9 +387,9 @@ export default function Home() {
                   You join six or seven people you have never met.
                 </h2>
                 <p className="mt-4 font-serif text-[19px] leading-[1.6] text-ink-soft lg:text-[20px]">
-                  No shared employer, no shared history, no stake in each other’s next promotion.
-                  Nothing you try has to be managed for the rest of the week, which is precisely
-                  what makes trying anything possible.
+                  No shared employer, no shared history, no stake in each other’s next
+                  promotion. Nothing you try has to be managed for the rest of the week, which
+                  is precisely what makes trying anything possible.
                 </p>
                 <Link
                   href="/contact"
@@ -401,9 +407,9 @@ export default function Home() {
                   Or you bring the group you are already in.
                 </h2>
                 <p className="mt-4 font-serif text-[19px] leading-[1.6] text-ink-soft lg:text-[20px]">
-                  A team, a leadership group, a board, a faculty. The differences are live and the
-                  consequences are real, so the work is making what already happens between you
-                  examinable instead of only survivable.
+                  A team, a leadership group, a board, a faculty. The differences are live and
+                  the consequences are real, so the work is making what already happens between
+                  you examinable instead of only survivable.
                 </p>
                 <Link
                   href="/contact"

@@ -1,16 +1,16 @@
 {
   "name": "cohort-learning-labs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Website for Cohort Learning Labs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "node scripts/validate-site.mjs",
-    "lint": "node scripts/validate-site.mjs"
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "node scripts/validate-site.mjs"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -27,6 +27,9 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5"
+    "@types/react-dom": "^19.2.5",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.4",
+    "prettier": "^3.9.6"
   }
 }

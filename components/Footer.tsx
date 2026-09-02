@@ -1,15 +1,7 @@
 import Link from 'next/link'
 import { Linkedin } from 'lucide-react'
 import Mark from '@/components/Mark'
-
-const pages = [
-  { name: 'The question', href: '/the-question' },
-  { name: 'A session', href: '/services' },
-  { name: 'Ways to join', href: '/where-it-applies' },
-  { name: 'Elie Schulman', href: '/about' },
-  { name: 'Writing', href: '/writing' },
-  { name: 'FAQ', href: '/faq' },
-]
+import { footerRoutes } from '@/lib/routes'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -36,7 +28,7 @@ export default function Footer() {
               Pages
             </h2>
             <ul className="mt-6 space-y-3">
-              {pages.map((page) => (
+              {footerRoutes.map((page) => (
                 <li key={page.name}>
                   <Link
                     href={page.href}
@@ -94,7 +86,10 @@ export default function Footer() {
             mental-health treatment.
           </p>
           <div className="flex gap-5 whitespace-nowrap">
-            <Link href="/privacy" className="transition-colors duration-150 hover:text-accent-light">
+            <Link
+              href="/privacy"
+              className="transition-colors duration-150 hover:text-accent-light"
+            >
               Privacy
             </Link>
             <span>© {currentYear} Cohort Learning Labs</span>
