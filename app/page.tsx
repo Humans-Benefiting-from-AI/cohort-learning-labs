@@ -1,107 +1,72 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
-const questions = [
-  { n: '01', text: 'What do I do with a difference of opinion when it first appears?' },
-  { n: '02', text: 'Do I soften what I think, and who taught me to?' },
-  { n: '03', text: 'Am I heard the way I intend to be heard?' },
-  { n: '04', text: 'What happens in me when someone disagrees and does not back down?' },
-  { n: '05', text: 'Which people make me quieter, and what is that about?' },
-  { n: '06', text: 'Can I understand a position without moving toward agreeing with it?' },
-  { n: '07', text: 'What do I do when the group starts forming a side?' },
-  { n: '08', text: 'What am I like to be in a group with?' },
-]
-
-const lab = [
-  {
-    title: 'Observation',
-    body: 'You watch it happen while it is happening, instead of reconstructing it afterward from memory.',
-  },
-  {
-    title: 'Experiment',
-    body: 'You try a way of speaking you would not risk at work, and find out what it actually does to people.',
-  },
-  {
-    title: 'Evidence',
-    body: 'Five other people notice things about you that you cannot generate on your own, in any quantity.',
-  },
-  {
-    title: 'Practice',
-    body: 'The same faces, week after week, so a new behavior has somewhere to become ordinary.',
-  },
-  {
-    title: 'Container',
-    body: 'Consequences are suspended. Nothing said here has to be managed for the rest of the week.',
-  },
-]
+import CohortTable from '@/components/CohortTable'
 
 const sessionNotes = [
   {
-    time: '00:07',
-    event: 'Someone raises a decision they are stuck on.',
-    observation: 'Two people answer immediately. Three do not.',
+    time: '00:12',
+    event: 'Two members read the same paragraph in opposite ways.',
+    observation: 'One found it manipulative. One found it moving.',
+    accent: false,
   },
   {
     time: '00:19',
-    event: 'A second member disagrees, then apologizes for disagreeing.',
+    event: 'One of them apologises for disagreeing.',
     observation: 'The apology arrives before anyone objected.',
+    accent: false,
   },
   {
-    time: '00:31',
-    event: 'A third agrees with the first — for an entirely different reason.',
-    observation: 'Now it looks like a majority. It is not one.',
+    time: '00:28',
+    event: 'Nine seconds in which nobody speaks.',
+    observation: 'The facilitator does not fill it.',
+    accent: true,
   },
   {
-    time: '00:48',
-    event: 'The quietest member says the thing everyone was circling.',
-    observation: 'The room reorganizes around it.',
+    time: '00:37',
+    event: 'Someone says what the room was circling.',
+    observation: 'It is the person who had not spoken yet.',
+    accent: false,
   },
   {
     time: '01:14',
-    event: 'The group notices what it just did.',
+    event: 'The group stops and looks at what it just did.',
     observation: 'This is the part that does not happen alone.',
+    accent: false,
   },
 ]
 
-const practices = [
-  { n: '01', text: 'Say what you actually think, without pretending to speak for everyone.' },
-  {
-    n: '02',
-    text: 'Name the precise point of difference instead of opposing an entire person.',
-  },
-  { n: '03', text: 'Represent someone else’s view accurately before you answer it.' },
-  { n: '04', text: 'Notice your own reaction and stay in the room anyway.' },
-  {
-    n: '05',
-    text: 'Tell the difference between understanding someone and agreeing with them.',
-  },
-  { n: '06', text: 'Reach a decision without erasing what is still unresolved.' },
+const norms = [
+  { n: '01', text: 'Speak for yourself, not for the room.' },
+  { n: '02', text: 'Say what you felt, not whether it was justified.' },
+  { n: '03', text: 'Check the story you are telling yourself about someone.' },
+  { n: '04', text: 'Ask before you give advice.' },
+  { n: '05', text: 'Describe where something landed, not what it proves about the person.' },
+  { n: '06', text: 'What is said here stays here. That one is not negotiable.' },
 ]
+
+const stimuli = ['Marriage', 'Parent to child', 'Child to parent', 'Employee to employer']
 
 export default function Home() {
   return (
     <>
-      {/* Hero — Start here */}
       <section className="border-b border-rule bg-ground py-14 lg:pb-20 lg:pt-24">
         <div className="container-custom">
           <div className="rail">
             <p className="rail-label">Start here</p>
             <div>
-              <h1 className="max-w-[15ch] font-serif text-[44px] leading-[0.96] tracking-[-0.015em] text-ink min-[480px]:text-[56px] lg:text-[104px]">
-                What am I <em className="italic text-accent">actually</em> like to think with?
+              <h1 className="max-w-[20ch] font-serif text-[44px] leading-[0.96] tracking-[-0.015em] text-ink min-[480px]:text-[56px] lg:text-[88px]">
+                Most people spend the first few weeks deciding whether to speak.
               </h1>
 
               <div className="mt-11 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
-                <p className="max-w-[44ch] font-serif text-[19px] leading-[1.55] text-ink-soft lg:text-[23px]">
-                  You want to learn about yourself and others. We organize virtual meetings of
-                  six to eight members, where the goal is an environment that encourages
-                  learning about ourselves and others, experimentation with new behaviors, and
-                  interpersonal freedom.
+                <p className="max-w-[46ch] font-serif text-[19px] leading-[1.55] text-ink-soft lg:text-[23px]">
+                  That is allowed here, and it is not wasted time. Six to eight people meet by
+                  video for ninety minutes, week after week, and study the one thing none of us
+                  can see on our own: what we are actually like with other people.
                 </p>
                 <p className="border-l border-rule pl-6 pt-1.5 font-sans text-[14px] leading-[1.75] text-muted">
-                  No curriculum to get through. No agreement to arrive at. A recurring group, a
-                  facilitator who keeps the inquiry open, and whatever the six of you turn out
-                  to be like together.
+                  No curriculum to get through. No agreement to arrive at. The group chooses
+                  what it will look at, and nobody is hurried.
                 </p>
               </div>
 
@@ -129,213 +94,116 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 01 — The individual */}
       <section className="section-padding border-b border-rule bg-paper">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">01 — The individual</p>
+            <p className="rail-label">01 — What the group agrees on</p>
             <div>
-              <p className="max-w-[52ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
-                You are the one thing in the room you cannot see from the outside.
+              <p className="max-w-[50ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
+                The first thing you do together is choose a relationship to look at.
               </p>
               <div className="mt-8 flex max-w-[66ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
                 <p>
-                  You already have positions, reactions, a rhythm of speaking, and a particular
-                  way of going quiet. You have been doing all of it for years. Almost none of it
-                  is visible to you, because you are the one doing it.
+                  Marriage. A parent and a child. A child and a parent. An employee and an
+                  employer. It can arrive as a text, a topic, or a skill you want to get better
+                  at, but it is always a relationship, and the six of you agree on it before
+                  anything else happens.
                 </p>
                 <p>
-                  Reading about it changes nothing. One person’s feedback is easy to file away.
-                  What actually moves is watching it happen, live, among people curious enough
-                  to say what they noticed and unattached enough to be honest about it.
+                  Then you react to it, and to each other, out loud, as it happens. Those
+                  reactions are the curriculum. Within twenty minutes the text has stopped being
+                  the subject and the room is the subject, which is the point.
                 </p>
-                <p>
-                  So the work starts with you and your own difference of opinion. The group is
-                  how you get to see it.
-                </p>
+              </div>
+              <div className="mt-10 grid grid-cols-2 gap-px border border-rule bg-rule md:grid-cols-4">
+                {stimuli.map((label) => (
+                  <div key={label} className="bg-ground p-5">
+                    <p className="font-sans text-[11px] uppercase tracking-[0.16em] text-accent">
+                      {label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 02 — Open questions */}
-      <section className="section-padding border-b border-rule bg-ground">
-        <div className="container-custom">
-          <div className="rail">
-            <p className="rail-label">02 — Open questions</p>
-            <div>
-              <p className="max-w-[52ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
-                These are the questions a group keeps returning to. None of them have a settled
-                answer.
-              </p>
-              <ul className="mt-10">
-                {questions.map((question) => (
-                  <li
-                    key={question.n}
-                    className="grid grid-cols-[44px_1fr] items-baseline gap-2 border-t border-rule py-[22px] lg:grid-cols-[64px_1fr]"
-                  >
-                    <span className="font-sans text-[12px] tracking-[0.14em] text-accent">
-                      {question.n}
-                    </span>
-                    <span className="font-serif text-[24px] italic leading-[1.35] text-ink lg:text-[29px]">
-                      {question.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 03 — The laboratory */}
       <section className="border-b border-rule-dark bg-ink py-14 text-paper lg:py-24">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">03 — The laboratory</p>
+            <p className="rail-label">02 — One hour of one group</p>
             <div>
-              <h2 className="max-w-[26ch] font-serif text-[36px] leading-[1.08] tracking-[-0.01em] text-paper lg:text-[56px]">
-                A group of six is the smallest place where all of it shows.
+              <h2 className="max-w-[26ch] font-serif text-[36px] leading-[1.08] tracking-[-0.01em] text-paper lg:text-[52px]">
+                Ninety minutes, and nothing we brought in from outside.
               </h2>
-              <p className="mt-7 max-w-[58ch] font-serif text-[19px] leading-[1.62] text-onink lg:text-[21px]">
-                Between two people, a disagreement looks like a contest. Add a third and the
-                structure appears: someone agrees for a different reason, someone waits, a
-                majority forms, and the person left in the minority decides whether it is still
-                worth saying. Nothing has to be invented. The group is already producing the
-                material.
-              </p>
-              <ul className="mt-10 lg:mt-[52px]">
-                {lab.map((item) => (
-                  <li
-                    key={item.title}
-                    className="grid items-baseline gap-2 border-t border-rule-dark py-6 lg:grid-cols-[190px_1fr] lg:gap-8"
-                  >
-                    <span className="font-sans text-[12px] uppercase tracking-[0.18em] text-accent-light">
-                      {item.title}
-                    </span>
-                    <span className="max-w-[60ch] font-serif text-[19px] leading-[1.55] text-onink-strong lg:text-[22px]">
-                      {item.body}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 04 — A session */}
-      <section className="section-padding border-b border-rule bg-paper">
-        <div className="container-custom">
-          <div className="rail">
-            <p className="rail-label">04 — A session</p>
-            <div>
-              <p className="max-w-[44ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
-                Ninety minutes. No exercise, no material we brought in. A note from one hour of
-                one group:
-              </p>
-
-              <div className="mt-9 border border-rule bg-ground">
+              <div className="mt-11 border border-rule-dark">
                 {sessionNotes.map((note) => (
                   <div
                     key={note.time}
-                    className="grid items-baseline gap-x-7 gap-y-1 border-b border-rule-warm px-6 py-5 last:border-b-0 lg:grid-cols-[80px_1fr_1fr] lg:px-7"
+                    className="grid items-baseline gap-x-7 gap-y-1 border-b border-[#262825] px-7 py-5 last:border-b-0 lg:grid-cols-[88px_1fr_1fr]"
                   >
                     <span className="font-sans text-[12px] tracking-[0.08em] text-faint">
                       {note.time}
                     </span>
-                    <span className="font-serif text-[19px] leading-[1.5] text-ink lg:text-[20px]">
+                    <span
+                      className={`font-serif text-[20px] leading-[1.5] ${note.accent ? 'text-accent-light' : 'text-paper'}`}
+                    >
                       {note.event}
                     </span>
-                    <span className="pl-4 font-sans text-[13.5px] leading-[1.65] text-muted lg:pl-0">
+                    <span className="pl-4 font-sans text-[13.5px] leading-[1.65] text-onink lg:pl-0">
                       {note.observation}
                     </span>
                   </div>
                 ))}
               </div>
-
-              <p className="mt-7 max-w-[60ch] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
-                The question the facilitator is holding the whole time is not what the group
-                should decide. It is how each person is communicating a difference of opinion
-                right now, and what that is doing to everyone else.
+              <p className="mt-8 max-w-[58ch] font-serif text-[19px] leading-[1.62] text-onink lg:text-[21px]">
+                Nobody is asked what the group should decide. The question being held is how
+                each person is handling a difference right now, and what that is doing to
+                everyone else in the room.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 05 — Problems and struggles */}
       <section className="section-padding border-b border-rule bg-ground">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">05 — Problems and struggles</p>
+            <p className="rail-label">03 — What is asked of you</p>
             <div>
-              <p className="max-w-[52ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
-                The most unconventional thing asked of you here is to stop trying to get rid of
-                the problem.
-              </p>
-              <div className="mt-8 flex max-w-[66ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
-                <p>
-                  The ordinary instinct with a struggle is to solve it quickly or route around
-                  it. That instinct is reasonable and it works often enough. It also throws away
-                  the one thing the struggle was carrying: information about where you are not
-                  looking.
-                </p>
-                <p>
-                  A disagreement that keeps coming back, a conversation the group keeps not
-                  having, the moment you go quiet and cannot say why — none of these are
-                  obstacles standing in front of the work. They are the work pointing at itself.
-                </p>
-                <p>
-                  So the struggle becomes the path. Data to read, and a teacher telling you
-                  where to look and what to ask next.
-                </p>
-              </div>
-              <p className="mt-9 max-w-[46ch] border-l border-accent pl-6 font-serif text-[22px] italic leading-[1.4] text-ink lg:text-[26px]">
-                Nothing has to be fixed before the inquiry can start. The difficulty is where it
-                starts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 06 — What changes */}
-      <section className="section-padding border-b border-rule bg-paper">
-        <div className="container-custom">
-          <div className="rail">
-            <p className="rail-label">06 — What changes</p>
-            <div>
-              <p className="max-w-[44ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
-                Not a technique for winning agreement. A wider range of things you are able to
-                do with people.
+              <p className="max-w-[50ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
+                Say what you are thinking and feeling at the time. That is the whole
+                instruction.
               </p>
               <ul className="mt-10 grid md:grid-cols-2 md:gap-x-14">
-                {practices.map((practice) => (
+                {norms.map((norm) => (
                   <li
-                    key={practice.n}
+                    key={norm.n}
                     className="grid grid-cols-[44px_1fr] items-baseline gap-2 border-t border-rule py-5"
                   >
                     <span className="font-sans text-[12px] tracking-[0.12em] text-accent">
-                      {practice.n}
+                      {norm.n}
                     </span>
                     <span className="font-serif text-[19px] leading-[1.5] text-ink-soft lg:text-[21px]">
-                      {practice.text}
+                      {norm.text}
                     </span>
                   </li>
                 ))}
               </ul>
+              <p className="mt-9 max-w-[56ch] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
+                You are not required to have a clean sentence ready. Half a thought, said early,
+                is more useful to the group than a finished one nobody hears.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 07 — Facilitation */}
-      <section className="section-padding border-b border-rule bg-ground">
+      <section className="section-padding border-b border-rule bg-paper">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">07 — Facilitation</p>
+            <p className="rail-label">04 — Facilitation</p>
             <div className="grid items-start gap-10 lg:grid-cols-[280px_1fr] lg:gap-12">
               <Image
                 src="/images/elie-schulman.jpg"
@@ -347,23 +215,31 @@ export default function Home() {
               />
               <div>
                 <h2 className="max-w-[26ch] font-serif text-[36px] leading-[1.1] tracking-[-0.01em] text-ink lg:text-[44px]">
-                  Elie Schulman does not resolve the group’s differences for it.
+                  Elie Schulman sat in a group for two years without speaking.
                 </h2>
                 <div className="mt-7 flex max-w-[56ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
                   <p>
-                    His work is to protect the conditions in which a group can meet its
-                    differences and stay curious about them a little longer than is comfortable
-                    — including the ones nobody planned to raise.
+                    He was twenty-two, the youngest in the room by thirty years, and he went
+                    every Monday at 7:45 and said nothing for a hundred sessions. Nobody dragged
+                    him out of it. The group stayed, week after week, and left the door open
+                    until he found his own way in.
                   </p>
                   <p>
-                    He listens for what was said, what was avoided, and what the group is doing
-                    with a difference as it appears. He is responsible for the inquiry. You stay
-                    responsible for your positions, your choices, and your relationships.
+                    So he will not call on you, hurry you, or supply your sentence. His work is
+                    the process — the patterns, the pace, the container — and he keeps it open a
+                    little longer than is comfortable. Your positions, choices and relationships
+                    stay yours.
                   </p>
                 </div>
+                <p className="mt-7 max-w-[44ch] border-l border-accent pl-6 font-serif text-[24px] italic leading-[1.4] text-ink">
+                  A bashful person cannot learn, nor can an impatient person teach.
+                </p>
+                <p className="mt-2.5 pl-[25px] font-sans text-[11px] uppercase tracking-[0.18em] text-faint">
+                  Pirkei Avot 2:6
+                </p>
                 <Link
                   href="/about"
-                  className="mt-7 inline-block border-b border-rule pb-0.5 font-sans text-[14px] text-accent transition-colors duration-150 hover:border-accent-hover hover:text-accent-hover"
+                  className="mt-7 inline-block border-b border-rule pb-0.5 font-sans text-[14px] text-accent transition-colors duration-150 hover:text-accent-hover"
                 >
                   More about Elie
                 </Link>
@@ -373,102 +249,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 08 — Ways to join */}
-      <section className="section-padding border-b border-rule bg-paper">
-        <div className="container-custom">
-          <div className="rail">
-            <p className="rail-label">08 — Ways to join</p>
-            <div className="grid gap-12 md:grid-cols-2 md:gap-14">
-              <div className="border-t-2 border-ink pt-6">
-                <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-accent">
-                  Open cohort
-                </p>
-                <h2 className="mt-4 font-serif text-[28px] leading-[1.22] text-ink lg:text-[32px]">
-                  You join six or seven people you have never met.
-                </h2>
-                <p className="mt-4 font-serif text-[19px] leading-[1.6] text-ink-soft lg:text-[20px]">
-                  No shared employer, no shared history, no stake in each other’s next
-                  promotion. Nothing you try has to be managed for the rest of the week, which
-                  is precisely what makes trying anything possible.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-block border-b border-rule pb-0.5 font-sans text-[14px] text-accent transition-colors duration-150 hover:border-accent-hover hover:text-accent-hover"
-                >
-                  Schedule a consultation
-                </Link>
-              </div>
-
-              <div className="border-t-2 border-ink pt-6">
-                <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-accent">
-                  Private group
-                </p>
-                <h2 className="mt-4 font-serif text-[28px] leading-[1.22] text-ink lg:text-[32px]">
-                  Or you bring the group you are already in.
-                </h2>
-                <p className="mt-4 font-serif text-[19px] leading-[1.6] text-ink-soft lg:text-[20px]">
-                  A team, a leadership group, a board, a faculty. The differences are live and
-                  the consequences are real, so the work is making what already happens between
-                  you examinable instead of only survivable.
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-6 inline-block border-b border-rule pb-0.5 font-sans text-[14px] text-accent transition-colors duration-150 hover:border-accent-hover hover:text-accent-hover"
-                >
-                  Discuss a private group
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 09 — What is at stake */}
       <section className="section-padding border-b border-rule bg-ground">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">09 — What is at stake</p>
+            <p className="rail-label">05 — Ways to join</p>
             <div>
-              <h2 className="max-w-[24ch] font-serif text-[36px] leading-[1.1] tracking-[-0.01em] text-ink lg:text-[52px]">
-                “The important thing is to connect.”
-              </h2>
-              <p className="mt-5 font-sans text-[12px] uppercase tracking-[0.18em] text-faint">
-                E.M. Forster
-              </p>
-              <div className="mt-8 flex max-w-[62ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
-                <p>
-                  Forster wrote it about people kept apart by class, temperament, and a shortage
-                  of imagination for each other’s lives.
-                </p>
-                <p>
-                  The failure he named is not dramatic. It is ordinary. Two people talk and
-                  something does not carry across. A group decides and one person was never
-                  actually reached. People sit beside each other for years without being known.
-                </p>
-                <p>
-                  Nothing has caused more suffering over the millennia than the inability to do
-                  that one thing. Not the differences themselves — the failure to make contact
-                  across them.
-                </p>
+              <div className="grid gap-12 md:grid-cols-2 md:gap-14">
+                <div className="border-t-2 border-ink pt-6">
+                  <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-accent">
+                    Open cohort
+                  </p>
+                  <h2 className="mt-4 font-serif text-[28px] leading-[1.22] text-ink lg:text-[32px]">
+                    Six or seven people you have never met.
+                  </h2>
+                  <p className="mt-4 font-serif text-[19px] leading-[1.6] text-ink-soft lg:text-[20px]">
+                    No shared employer, no shared history, no stake in each other&apos;s next
+                    promotion. Nothing you try in the room has to be managed for the rest of the
+                    week, which is what makes trying anything possible.
+                  </p>
+                </div>
+                <div className="border-t-2 border-ink pt-6">
+                  <p className="font-sans text-[11px] uppercase tracking-[0.18em] text-accent">
+                    Private group
+                  </p>
+                  <h2 className="mt-4 font-serif text-[28px] leading-[1.22] text-ink lg:text-[32px]">
+                    Or the group you are already in.
+                  </h2>
+                  <p className="mt-4 font-serif text-[19px] leading-[1.6] text-ink-soft lg:text-[20px]">
+                    A team, a leadership group, a board, a faculty. The differences are live and
+                    the consequences are real, so the work is making what already happens
+                    between you examinable instead of only survivable.
+                  </p>
+                </div>
               </div>
-              <p className="mt-9 max-w-[40ch] font-serif text-[26px] leading-[1.3] text-ink lg:text-[30px]">
-                That is what the group is for. Not agreement. Contact.
+              <div className="mt-12">
+                <CohortTable />
+              </div>
+              <p className="mt-5 font-sans text-[12.5px] tracking-[0.04em] text-faint">
+                Everyone speaks with Elie for thirty minutes before joining a group.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 10 — Begin */}
       <section className="bg-accent py-14 text-accent-on lg:py-[104px]">
         <div className="container-custom">
           <div className="rail">
-            <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-accent-pale">
-              10 — Begin
-            </p>
+            <p className="rail-label text-accent-pale">06 — Begin</p>
             <div>
-              <h2 className="max-w-[20ch] font-serif text-[36px] leading-[1.05] tracking-[-0.015em] text-accent-on lg:text-[64px]">
-                What would you want to find out about yourself, if a group could show you?
+              <h2 className="max-w-[22ch] font-serif text-[36px] leading-[1.05] tracking-[-0.015em] lg:text-[60px]">
+                If it takes you a while to speak, that is allowed here.
               </h2>
               <p className="mt-7 max-w-[52ch] font-serif text-[19px] leading-[1.62] text-accent-prose lg:text-[21px]">
                 Thirty minutes with Elie: what you are curious about, what keeps recurring, and
