@@ -40,9 +40,10 @@ export default function PrivacyPage() {
             </p>
             <h2 className="pt-4 text-2xl font-bold text-primary-900">Service providers</h2>
             <p>
-              The website may rely on service providers for hosting, email, analytics, or
-              related functions. Those providers may process limited information as necessary to
-              provide their services.
+              The website may rely on service providers for hosting, email, analytics,
+              scheduling, or related functions. Consultation times are booked through Calendly,
+              which may sync with Google Calendar. Those providers may process limited
+              information as necessary to provide their services.
             </p>
             <h2 className="pt-4 text-2xl font-bold text-primary-900">Contact</h2>
             <p>

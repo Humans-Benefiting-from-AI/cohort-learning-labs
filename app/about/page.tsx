@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
+import ConsultationLink from '@/components/ConsultationLink'
 
 export const metadata: Metadata = {
   title: 'Elie Schulman | Cohort Learning Labs',
@@ -183,12 +183,9 @@ export default function AboutPage() {
                 Thirty minutes with Elie: what you are curious about, what keeps recurring, and
                 which cohort is the right place to look at it.
               </p>
-              <Link
-                href="/contact"
-                className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]"
-              >
+              <ConsultationLink className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]">
                 Schedule a 30-minute consultation
-              </Link>
+              </ConsultationLink>
             </div>
           </div>
         </div>
