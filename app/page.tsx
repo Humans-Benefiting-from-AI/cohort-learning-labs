@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import CohortTable from '@/components/CohortTable'
+import ConsultationLink from '@/components/ConsultationLink'
 
 const sessionNotes = [
   {
@@ -71,12 +72,9 @@ export default function Home() {
               </div>
 
               <div className="mt-12 flex flex-wrap items-center gap-5">
-                <Link
-                  href="/contact"
-                  className="bg-accent px-7 py-[15px] font-sans text-[14px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover"
-                >
+                <ConsultationLink className="bg-accent px-7 py-[15px] font-sans text-[14px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover">
                   Schedule a 30-minute consultation
-                </Link>
+                </ConsultationLink>
                 <Link
                   href="/services"
                   className="border-b border-[#b9b1a2] pb-0.5 font-sans text-[14px] text-ink-muted transition-colors duration-150 hover:text-accent-hover"
@@ -305,12 +303,9 @@ export default function Home() {
                 Thirty minutes with Elie: what you are curious about, what keeps recurring, and
                 whether an open cohort or a private group is the right place to look at it.
               </p>
-              <Link
-                href="/contact"
-                className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]"
-              >
+              <ConsultationLink className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]">
                 Schedule a 30-minute consultation
-              </Link>
+              </ConsultationLink>
             </div>
           </div>
         </div>

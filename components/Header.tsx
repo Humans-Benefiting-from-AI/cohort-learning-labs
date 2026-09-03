@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
+import ConsultationLink from '@/components/ConsultationLink'
 import Mark from '@/components/Mark'
 import { headerRoutes } from '@/lib/routes'
 
@@ -36,12 +37,9 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="border-b border-accent pb-[3px] font-sans text-[13px] tracking-[0.02em] text-accent transition-colors duration-150 hover:border-accent-hover hover:text-accent-hover"
-            >
+            <ConsultationLink className="border-b border-accent pb-[3px] font-sans text-[13px] tracking-[0.02em] text-accent transition-colors duration-150 hover:border-accent-hover hover:text-accent-hover">
               Schedule a consultation
-            </Link>
+            </ConsultationLink>
           </div>
 
           <button
@@ -80,13 +78,12 @@ export default function Header() {
                   </Link>
                 ))}
                 <div className="px-4 pt-4">
-                  <Link
-                    href="/contact"
+                  <ConsultationLink
                     className="block w-full bg-accent px-4 py-3 text-center font-sans text-[15px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Schedule a consultation
-                  </Link>
+                  </ConsultationLink>
                 </div>
               </div>
             </motion.div>

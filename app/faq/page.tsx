@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import ConsultationLink from '@/components/ConsultationLink'
 
 export const metadata: Metadata = {
   title: 'FAQ | Cohort Learning Labs',
@@ -71,11 +71,11 @@ const groups = [
       ],
       [
         'Can I bring my own team?',
-        'Yes, as a private group. The differences in an intact team are live and the consequences real, which makes the work different from an open cohort — more careful, and often more consequential. Say so when you write.',
+        'Yes, as a private group. The differences in an intact team are live and the consequences real, which makes the work different from an open cohort — more careful, and often more consequential. Say so when you book the consultation.',
       ],
       [
         'Is there an application?',
-        'A short note about what you are curious about, then thirty minutes with Elie. Not everyone is placed. Composition matters more here than filling a seat, and being turned down is usually about the fit of a particular group rather than about you.',
+        'Pick an open time on the consultation calendar, then thirty minutes with Elie. Not everyone is placed. Composition matters more here than filling a seat, and being turned down is usually about the fit of a particular group rather than about you.',
       ],
     ],
   },
@@ -138,12 +138,9 @@ export default function FaqPage() {
                 Thirty minutes with Elie, no obligation either way. Half of that conversation is
                 usually him working out whether this is the right room for you at all.
               </p>
-              <Link
-                href="/contact"
-                className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]"
-              >
+              <ConsultationLink className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]">
                 Schedule a 30-minute consultation
-              </Link>
+              </ConsultationLink>
             </div>
           </div>
         </div>
