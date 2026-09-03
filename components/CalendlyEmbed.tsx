@@ -62,7 +62,12 @@ function loadCalendly(): Promise<CalendlyApi> {
     script.addEventListener('load', finish, { once: true })
     script.addEventListener(
       'error',
-      () => reject(new Error('Calendly script failed to load')),
+      () => {
+        // Drop the dead tag so a later loadCalendly() can create a fresh one
+        // and actually retry the fetch instead of reusing the failed script.
+        script.remove()
+        reject(new Error('Calendly script failed to load'))
+      },
       { once: true }
     )
     document.body.appendChild(script)
