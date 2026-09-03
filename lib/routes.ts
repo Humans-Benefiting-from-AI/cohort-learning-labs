@@ -22,25 +22,9 @@ export interface SiteRoute {
 
 export const siteRoutes: SiteRoute[] = [
   { name: 'Home', href: '/', priority: 1 },
-  {
-    name: 'The question',
-    href: '/the-question',
-    inHeader: true,
-    inFooter: true,
-    priority: 0.9,
-  },
   { name: 'A session', href: '/services', inHeader: true, inFooter: true, priority: 0.9 },
-  {
-    name: 'Ways to join',
-    href: '/where-it-applies',
-    inHeader: true,
-    inFooter: true,
-    priority: 0.9,
-  },
-  { name: 'Elie Schulman', href: '/about', inHeader: true, inFooter: true, priority: 0.8 },
-  { name: 'Writing', href: '/writing', inFooter: true, priority: 0.6 },
-  { name: 'FAQ', href: '/faq', inFooter: true, priority: 0.6 },
-  { name: 'Engagements', href: '/pricing', priority: 0.6 },
+  { name: 'Elie Schulman', href: '/about', inHeader: true, inFooter: true, priority: 0.9 },
+  { name: 'FAQ', href: '/faq', inHeader: true, inFooter: true, priority: 0.7 },
   { name: 'Start a conversation', href: '/contact', priority: 0.7 },
   { name: 'Privacy', href: '/privacy', priority: 0.3 },
 ]
