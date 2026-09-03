@@ -1,7 +1,7 @@
 {
   "name": "cohort-learning-labs",
   "version": "1.0.0",
-  "description": "Website for Cohort Learning Labs",
+  "description": "Marketing site for Cohort Learning Labs, virtual T-groups facilitated by Elie Schulman",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

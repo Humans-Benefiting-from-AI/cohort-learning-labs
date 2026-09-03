@@ -379,7 +379,7 @@ export default function ServicesPage() {
             <p className="rail-label text-accent-pale">08 — Begin</p>
             <div>
               <h2 className="max-w-[22ch] font-serif text-[36px] leading-[1.05] tracking-[-0.015em] lg:text-[60px]">
-                The next cohorts start in October.
+                The next cohorts start in October 2026.
               </h2>
               <p className="mt-7 max-w-[52ch] font-serif text-[19px] leading-[1.62] text-accent-prose lg:text-[21px]">
                 Thirty minutes with Elie first, always: what you are curious about, what keeps
