@@ -14,8 +14,7 @@ const DEFAULT_CALENDLY_URL =
 // Empty and whitespace-only values must fall through: `??` only treats
 // null/undefined as missing, so a copied `.env.local.example` or a blank
 // Vercel var would skip the embed and show the email fallback instead.
-export const CALENDLY_URL =
-  process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || DEFAULT_CALENDLY_URL
+export const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || DEFAULT_CALENDLY_URL
 
 export const consultationHref = '/contact#book'
 
