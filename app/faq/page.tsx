@@ -67,7 +67,7 @@ const groups = [
       ],
       [
         'What does it cost?',
-        'The fee is quoted in the thirty-minute consultation. Private groups are quoted after a conversation about scope.',
+        'Open cohorts are $199 per member per month, listed beside the start date on the home page. Private groups are quoted after a conversation about scope.',
       ],
       [
         'Can I bring my own team?',

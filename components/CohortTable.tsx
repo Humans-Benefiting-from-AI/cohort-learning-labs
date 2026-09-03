@@ -9,8 +9,8 @@ export default function CohortTable({ showApply = true }: { showApply?: boolean 
           key={cohort.id}
           className={
             showApply
-              ? 'grid items-baseline gap-x-[14px] gap-y-2 border-b border-rule-warm px-5 py-5 last:border-b-0 lg:grid-cols-[minmax(130px,1fr)_148px_66px_84px_64px]'
-              : 'grid items-baseline gap-x-[14px] gap-y-2 border-b border-rule-warm px-5 py-5 last:border-b-0 lg:grid-cols-[minmax(130px,1fr)_148px_66px_84px]'
+              ? 'grid items-baseline gap-x-[14px] gap-y-2 border-b border-rule-warm px-5 py-5 last:border-b-0 lg:grid-cols-[minmax(130px,1fr)_148px_66px_100px_64px]'
+              : 'grid items-baseline gap-x-[14px] gap-y-2 border-b border-rule-warm px-5 py-5 last:border-b-0 lg:grid-cols-[minmax(130px,1fr)_148px_66px_100px]'
           }
         >
           <span className="font-serif text-[19px] leading-[1.4] text-ink">{cohort.when}</span>

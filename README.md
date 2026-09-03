@@ -27,7 +27,7 @@ Legacy paths permanently redirect (HTTP 308) rather than 404, so crawlers treat 
 
 `/writing` stays a redirect. Published writing is at [elieschulman.com](https://elieschulman.com), not on this site. Newsletter APIs are not implemented. Consultations are booked through a Calendly embed on `/contact#book`; email remains a fallback.
 
-Cohort dates, remaining seats, and prices live in `lib/cohorts.ts`. Until a monthly fee is published, the table says the fee is quoted in the consultation.
+Cohort dates, remaining seats, and prices live in `lib/cohorts.ts`. Open cohorts are $199 per member per month; private groups are quoted.
 
 ## Local development
 

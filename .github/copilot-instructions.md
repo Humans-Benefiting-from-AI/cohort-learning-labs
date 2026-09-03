@@ -71,4 +71,4 @@ Slot availability lives in Calendly (Google Calendar connected on that event). D
 
 ## Voice
 
-Plain, concrete copy. Recreate wording from the design handoff rather than inventing marketing language. Cohort table dates, seats, and prices in `lib/cohorts.ts` are operational data — edit that file, not hardcoded page copy. Do not invent a dollar amount; until a fee is published, the table says Quoted. Writing lives at elieschulman.com, not on this site.
+Plain, concrete copy. Recreate wording from the design handoff rather than inventing marketing language. Cohort table dates, seats, and prices in `lib/cohorts.ts` are operational data — edit that file, not hardcoded page copy. Open cohorts are $199 per member per month; private groups stay Quoted. Writing lives at elieschulman.com, not on this site.
