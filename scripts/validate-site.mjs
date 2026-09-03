@@ -44,6 +44,24 @@ for (const contained of ['/our-approach', '/values']) {
   }
 }
 
+// Retired URLs must issue a permanent redirect (308), not redirect()'s 307.
+// A temporary redirect leaves the old path as canonical, so crawlers keep it.
+const retiredRedirects = [
+  ['app/the-question/page.tsx', '/services'],
+  ['app/pricing/page.tsx', '/contact'],
+  ['app/where-it-applies/page.tsx', '/'],
+  ['app/writing/page.tsx', '/'],
+  ['app/illustrative-engagement/page.tsx', '/'],
+  ['app/about-elie/page.tsx', '/about'],
+  ['app/testimonials/page.tsx', '/about'],
+]
+for (const [file, destination] of retiredRedirects) {
+  const source = read(file)
+  if (!source.includes('permanentRedirect(') || !source.includes(`'${destination}'`)) {
+    fail(`${file} must permanently redirect to ${destination}`)
+  }
+}
+
 // Keyboard users need the skip link and its target to survive every redesign.
 if (!layout.includes('href="#main-content"') || !layout.includes('id="main-content"')) {
   fail('the skip link and its semantic main target must remain present')

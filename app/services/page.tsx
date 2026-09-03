@@ -163,7 +163,7 @@ export default function HowItWorksPage() {
             </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/pricing"
+                href="/contact"
                 className="inline-flex rounded-md border border-primary-300 bg-white px-7 py-3 font-semibold text-primary-900 hover:bg-primary-100"
               >
                 Explore Engagements
