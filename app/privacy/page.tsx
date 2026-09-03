@@ -21,7 +21,7 @@ export default function PrivacyPage() {
               Information you choose to provide
             </h2>
             <p>
-              If you contact Cohort Learning Labs or subscribe to writing, the site may receive
+              If you contact Cohort Learning Labs or book a consultation, the site may receive
               information such as your name, email address, organization, role, group size, and
               the message you provide.
             </p>
@@ -35,8 +35,8 @@ export default function PrivacyPage() {
             </h2>
             <p>
               Information may be used to respond to your inquiry, evaluate whether an engagement
-              may be appropriate, schedule or administer a conversation, send writing you
-              requested, and maintain the website and its communications.
+              may be appropriate, schedule or administer a conversation, and maintain the
+              website and its communications.
             </p>
             <h2 className="pt-4 text-2xl font-bold text-primary-900">Service providers</h2>
             <p>

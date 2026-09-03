@@ -72,6 +72,14 @@ export default function Footer() {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://elieschulman.com"
+                  className="font-sans text-[13.5px] transition-colors duration-150 hover:text-accent-light"
+                >
+                  Writing at elieschulman.com
+                </a>
+              </li>
               <li className="max-w-[30ch] pt-1 font-sans text-[13.5px] leading-[1.6] text-faint">
                 Beit Shemesh, Israel · groups meet by video, worldwide
               </li>

@@ -20,7 +20,12 @@ export default function AboutPage() {
                 For about two years, I did not open my mouth.
               </h1>
               <p className="mt-8 font-sans text-[12.5px] tracking-[0.06em] text-faint">
-                Elie Schulman, in conversation with David Bashevkin · 18Forty
+                <a
+                  href="https://18forty.org/podcast/elie-schulman-does-therapy-work-a-patients-journey/"
+                  className="border-b border-rule pb-0.5 transition-colors duration-150 hover:text-accent-hover"
+                >
+                  Elie Schulman, in conversation with David Bashevkin · 18Forty
+                </a>
               </p>
               <div className="mt-11 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
                 <p className="max-w-[46ch] font-serif text-[19px] leading-[1.55] text-ink-soft lg:text-[23px]">
@@ -54,7 +59,10 @@ export default function AboutPage() {
                 priority
               />
               <div>
-                <blockquote className="max-w-[56ch] font-serif text-[26px] leading-[1.45] text-ink">
+                <blockquote
+                  cite="https://18forty.org/podcast/elie-schulman-does-therapy-work-a-patients-journey/"
+                  className="max-w-[56ch] font-serif text-[26px] leading-[1.45] text-ink"
+                >
                   “So me, for example, for about two years, I did not open my mouth. I went
                   dutifully every Monday morning at 7:45. I was a very anxious self-critical
                   person, and I would sit there, it’s 90 minute group, I would sit there for an
@@ -63,7 +71,10 @@ export default function AboutPage() {
                   would turn to me and say, ‘Elie, what’s going on?’ And I would just start
                   crying at the end.”
                 </blockquote>
-                <blockquote className="mt-8 max-w-[56ch] border-l border-accent pl-6 font-serif text-[21px] leading-[1.62] text-ink-soft">
+                <blockquote
+                  cite="https://18forty.org/podcast/elie-schulman-does-therapy-work-a-patients-journey/"
+                  className="mt-8 max-w-[56ch] border-l border-accent pl-6 font-serif text-[21px] leading-[1.62] text-ink-soft"
+                >
                   “It was like I had just been spending an hour and 20 minutes just like
                   ruminating in my head, ‘Should I jump in now? Should I jump in? Oh, is that a
                   good thing to say? Is it not a good thing to say?’ Literally just doing that
@@ -83,12 +94,18 @@ export default function AboutPage() {
               <h2 className="max-w-[24ch] font-serif text-[36px] leading-[1.08] tracking-[-0.01em] text-paper lg:text-[52px]">
                 Nobody dragged him out of it. Three of them kept asking.
               </h2>
-              <blockquote className="mt-8 max-w-[58ch] font-serif text-[21px] leading-[1.62] text-onink-strong">
+              <blockquote
+                cite="https://18forty.org/podcast/elie-schulman-does-therapy-work-a-patients-journey/"
+                className="mt-8 max-w-[58ch] font-serif text-[21px] leading-[1.62] text-onink-strong"
+              >
                 “It was three people … who at the end of every group would say, ‘Elie, do you
                 have anything to add about this,’ or, ‘What’s going on?’ That’s how for a period
                 of time, I would just then spill my after the fact reactions.”
               </blockquote>
-              <blockquote className="mt-7 max-w-[58ch] font-serif text-[21px] leading-[1.62] text-onink">
+              <blockquote
+                cite="https://18forty.org/podcast/elie-schulman-does-therapy-work-a-patients-journey/"
+                className="mt-7 max-w-[58ch] font-serif text-[21px] leading-[1.62] text-onink"
+              >
                 “I would basically give a historical recollection of what I had experienced,
                 which was my way in, and I would get various feedback and then the group would
                 break for the week and then I’d repeat the same thing again next week. And until
