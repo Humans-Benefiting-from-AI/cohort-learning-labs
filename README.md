@@ -51,7 +51,7 @@ npm run build
 
 ## Deployment
 
-Copy `.env.local.example` to `.env.local`. Set `NEXT_PUBLIC_CALENDLY_URL` to the 30-minute Calendly event (and the same variable in Vercel for production). Connect that event to Google Calendar in Calendly so only free slots appear.
+Consultations book through [Calendly](https://calendly.com/andrea-schulman-coaching/consultation-with-elie). Override that URL with `NEXT_PUBLIC_CALENDLY_URL` in `.env.local` or Vercel if it changes. Connect the event to Google Calendar in Calendly so only free slots appear.
 
 The GitHub repository is connected to Vercel. Pull requests may receive automatic preview deployments. Changes merged to `main` are deployed through the connected production workflow.
 

@@ -5,10 +5,15 @@
  * Calendly event so busy times never appear as open. The site only embeds
  * the event URL; it does not talk to Google directly.
  *
- * Set NEXT_PUBLIC_CALENDLY_URL in .env.local and in Vercel, e.g.
- * https://calendly.com/your-handle/30min
+ * Override with NEXT_PUBLIC_CALENDLY_URL in .env.local or Vercel if the
+ * event URL changes.
  */
-export const CALENDLY_URL = (process.env.NEXT_PUBLIC_CALENDLY_URL ?? '').trim()
+const DEFAULT_CALENDLY_URL =
+  'https://calendly.com/andrea-schulman-coaching/consultation-with-elie'
+
+export const CALENDLY_URL = (
+  process.env.NEXT_PUBLIC_CALENDLY_URL ?? DEFAULT_CALENDLY_URL
+).trim()
 
 export const consultationHref = '/contact#book'
 
