@@ -24,14 +24,14 @@ There is no unit or e2e test runner.
 
 `lib/routes.ts` is the public route inventory. Header nav, footer page list, and `app/sitemap.ts` all read it. Adding or renaming a public page is one entry there, plus `app/<path>/page.tsx`.
 
-| Role | Where |
-| --- | --- |
-| Shell | `app/layout.tsx` — EB Garamond + Space Grotesk, skip link to `#main-content`, `Header`, `Footer` |
-| Consultation CTAs | `components/ConsultationLink.tsx` → `/contact#book` |
-| Booking widget | `components/CalendlyEmbed.tsx` + `lib/booking.ts` |
-| Cohort dates/seats/prices | `lib/cohorts.ts` → `components/CohortTable.tsx` |
-| Structural invariants | `scripts/validate-site.mjs` (`npm run check`) |
-| Design prototypes (not production) | `design_handoff_site_redesign/designs/*.dc.html` |
+| Role                               | Where                                                                                            |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Shell                              | `app/layout.tsx` — EB Garamond + Space Grotesk, skip link to `#main-content`, `Header`, `Footer` |
+| Consultation CTAs                  | `components/ConsultationLink.tsx` → `/contact#book`                                              |
+| Booking widget                     | `components/CalendlyEmbed.tsx` + `lib/booking.ts`                                                |
+| Cohort dates/seats/prices          | `lib/cohorts.ts` → `components/CohortTable.tsx`                                                  |
+| Structural invariants              | `scripts/validate-site.mjs` (`npm run check`)                                                    |
+| Design prototypes (not production) | `design_handoff_site_redesign/designs/*.dc.html`                                                 |
 
 Five public pages: `/`, `/services` (A session), `/about` (Elie Schulman), `/faq`, `/contact` (Start a conversation), plus `/privacy`. The site’s job is to filter for the right member, not to maximise signups.
 
