@@ -162,7 +162,7 @@ Use a responsive grid rather than fixed pixel tracks. The prototype settled on `
 Deliberately almost none. No accordions on the FAQ (all answers visible; better for scanning and for search), no carousels, no scroll-triggered animation, no modals.
 
 - Links and buttons: `transition-colors duration-150` only, matching the existing site.
-- Header mobile menu: unchanged (`framer-motion` height/opacity, 0.15s).
+- Header mobile menu: no animation library. Escape closes it and returns focus to the toggle. Opening it moves focus to the first link and keeps Tab inside the navigation.
 - Focus states: unchanged — `:focus-visible` gets `ring-2 ring-accent ring-offset-2` from `globals.css`.
 - The `prefers-reduced-motion` block in `globals.css` stays.
 

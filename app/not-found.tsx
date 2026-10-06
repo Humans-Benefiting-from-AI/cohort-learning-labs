@@ -2,30 +2,32 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <section className="section-padding bg-primary-50">
+    <section className="section-padding border-b border-rule bg-ground">
       <div className="container-custom">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow">404</p>
-          <h1 className="text-4xl font-bold text-primary-900 md:text-6xl">
-            This page is not here.
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-primary-700">
-            The question you were following may have moved. Return to the central inquiry or
-            begin again from the homepage.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/"
-              className="inline-flex rounded-md bg-accent px-7 py-3 font-semibold text-white hover:bg-accent-hover"
-            >
-              Return Home
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex rounded-md border border-primary-300 bg-white px-7 py-3 font-semibold text-primary-900 hover:bg-primary-100"
-            >
-              Explore the Question
-            </Link>
+        <div className="rail">
+          <p className="rail-label">404</p>
+          <div>
+            <h1 className="max-w-[14ch] font-serif text-[44px] leading-[0.96] tracking-[-0.015em] text-ink min-[480px]:text-[56px] lg:text-[72px]">
+              This page is not here.
+            </h1>
+            <p className="mt-8 max-w-[42ch] font-serif text-[19px] leading-[1.55] text-ink-soft lg:text-[23px]">
+              The page you were following may have moved. Return home, or read what a session is
+              like.
+            </p>
+            <div className="mt-12 flex flex-wrap items-center gap-5">
+              <Link
+                href="/"
+                className="bg-accent px-7 py-[15px] font-sans text-[14px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover"
+              >
+                Return home
+              </Link>
+              <Link
+                href="/services"
+                className="border-b border-[#b9b1a2] pb-0.5 font-sans text-[14px] text-ink-muted transition-colors duration-150 hover:text-accent-hover"
+              >
+                A session
+              </Link>
+            </div>
           </div>
         </div>
       </div>

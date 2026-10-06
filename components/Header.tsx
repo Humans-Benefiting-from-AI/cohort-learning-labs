@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
@@ -8,15 +8,49 @@ import ConsultationLink from '@/components/ConsultationLink'
 import Mark from '@/components/Mark'
 import { headerRoutes } from '@/lib/routes'
 
+function visibleFocusable(root: HTMLElement) {
+  return Array.from(
+    root.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+  ).filter((element) => element.getClientRects().length > 0)
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const toggleRef = useRef<HTMLButtonElement>(null)
+  const navRef = useRef<HTMLElement>(null)
   const pathname = usePathname()
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const nav = navRef.current
+    if (!nav) return
+
+    document.getElementById('mobile-navigation')?.querySelector<HTMLElement>('a[href]')?.focus()
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return
+      const items = visibleFocusable(nav)
+      if (items.length === 0) return
+      const first = items[0]
+      const last = items[items.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [mobileMenuOpen])
 
   return (
     <header className="border-b border-rule bg-ground">
       <nav
+        ref={navRef}
         className="container-custom"
         aria-label="Primary navigation"
         onKeyDown={(event) => {
@@ -79,6 +113,9 @@ export default function Header() {
         <div
           id="mobile-navigation"
           hidden={!mobileMenuOpen}
+          role={mobileMenuOpen ? 'dialog' : undefined}
+          aria-modal={mobileMenuOpen || undefined}
+          aria-label={mobileMenuOpen ? 'Navigation menu' : undefined}
           className="border-t border-rule lg:hidden"
         >
           <div className="space-y-1 py-4">

@@ -46,22 +46,6 @@
     @apply font-sans text-[11px] uppercase tracking-[0.2em] text-faint;
   }
 
-  .eyebrow {
-    @apply mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-accent;
-  }
-
-  .prose-copy {
-    @apply space-y-5 text-lg leading-8 text-primary-700;
-  }
-
-  .question-mark {
-    @apply border-l-4 border-accent bg-primary-50 px-6 py-7 text-2xl font-semibold leading-relaxed text-primary-900 md:px-9 md:text-3xl;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
-  }
-
   .skip-link {
     @apply fixed left-4 top-4 z-50 -translate-y-24 bg-ink px-4 py-3 font-sans font-medium text-paper transition-transform;
   }

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import IntroductionLink from '@/components/IntroductionLink'
 import { cohorts, OPEN_COHORT_PRICE } from '@/lib/cohorts'
 import { bookingHref, type CampaignParams } from '@/lib/campaign'
 
 export const metadata: Metadata = {
   title: 'Four sessions to explore how we disagree | Cohort Learning Labs',
-  description:
-    'Four weekly 90-minute online sessions with Elie Schulman. 6–8 participants. $500 USD total per person. See dates, expectations, and how to join.',
+  description: `Four weekly 90-minute online sessions with Elie Schulman. Six to eight participants. ${OPEN_COHORT_PRICE} per person. See dates, expectations, and how to join.`,
   alternates: { canonical: '/cohorts' },
 }
 
@@ -35,7 +35,7 @@ const steps = [
   ],
   [
     'Confirm your place',
-    'After you agree to join, Elie sends payment instructions for the $500 total fee and confirms your place and video joining details.',
+    `After you agree to join, Elie sends payment instructions for the ${OPEN_COHORT_PRICE} fee and confirms your place and video joining details.`,
   ],
 ]
 
@@ -60,8 +60,8 @@ export default async function CohortsPage({
                 anyone feels it. Here, we slow those moments down and explore them together.
               </p>
               <p className="mt-7 font-sans text-sm leading-relaxed text-ink">
-                Four weekly 90-minute sessions · 6–8 participants · {OPEN_COHORT_PRICE} per
-                person · Online with Elie Schulman
+                Four weekly 90-minute sessions · six to eight participants · {OPEN_COHORT_PRICE}{' '}
+                per person · Online with Elie Schulman
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-6">
                 <Link
@@ -70,9 +70,9 @@ export default async function CohortsPage({
                 >
                   Book a 30-minute conversation
                 </Link>
-                <Link href="/introduction" className="font-sans text-sm text-accent underline">
+                <IntroductionLink className="font-sans text-sm text-accent underline">
                   Try a free introduction first
-                </Link>
+                </IntroductionLink>
               </div>
             </div>
           </div>

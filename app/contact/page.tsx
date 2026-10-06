@@ -3,6 +3,7 @@ import CalendlyEmbed from '@/components/CalendlyEmbed'
 import CohortTable from '@/components/CohortTable'
 import { CALENDLY_URL } from '@/lib/booking'
 import { campaignQuery, type CampaignParams } from '@/lib/campaign'
+import { OPEN_COHORT_PRICE } from '@/lib/cohorts'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
@@ -27,7 +28,7 @@ const steps = [
   {
     n: '03',
     title: 'A cohort, or not yet',
-    body: 'If you both decide to proceed, Elie confirms the group, dates, attendance and cancellation terms, and sends the payment instructions. Pay the $500 total fee after that agreement; joining details follow confirmation.',
+    body: `If you both decide to proceed, Elie confirms the group, dates, attendance and cancellation terms, and sends the payment instructions. Pay the ${OPEN_COHORT_PRICE} fee after that agreement; joining details follow confirmation.`,
   },
 ]
 
@@ -83,22 +84,7 @@ export default async function ContactPage({
           <div className="rail">
             <p className="rail-label">01 — Book a time</p>
             <div>
-              {CALENDLY_URL ? (
-                <CalendlyEmbed url={bookingUrl.toString()} />
-              ) : (
-                <div className="border border-rule bg-ground px-7 py-10">
-                  <p className="max-w-[46ch] font-serif text-[19px] leading-[1.62] text-ink-soft">
-                    Write a few lines and Elie will send the times that are open. A paragraph is
-                    plenty.
-                  </p>
-                  <a
-                    href={mailto}
-                    className="mt-8 inline-block bg-accent px-7 py-[15px] font-sans text-[14px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover"
-                  >
-                    elie@cohortlearninglabs.org
-                  </a>
-                </div>
-              )}
+              <CalendlyEmbed url={bookingUrl.toString()} />
               <p className="mt-5 font-sans text-[12.5px] tracking-[0.04em] text-faint">
                 Prefer email?{' '}
                 <a
