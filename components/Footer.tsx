@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Linkedin } from 'lucide-react'
+import { IntroductionFooterLink } from '@/components/IntroductionLink'
 import Mark from '@/components/Mark'
 import { footerRoutes } from '@/lib/routes'
 
@@ -28,16 +29,20 @@ export default function Footer() {
               Pages
             </h2>
             <ul className="mt-6 space-y-3">
-              {footerRoutes.map((page) => (
-                <li key={page.name}>
-                  <Link
-                    href={page.href}
-                    className="font-sans text-[13.5px] transition-colors duration-150 hover:text-accent-light"
-                  >
-                    {page.name}
-                  </Link>
-                </li>
-              ))}
+              {footerRoutes.map((page) =>
+                page.href === '/introduction' ? (
+                  <IntroductionFooterLink key={page.href} name={page.name} />
+                ) : (
+                  <li key={page.href}>
+                    <Link
+                      href={page.href}
+                      className="font-sans text-[13.5px] transition-colors duration-150 hover:text-accent-light"
+                    >
+                      {page.name}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 

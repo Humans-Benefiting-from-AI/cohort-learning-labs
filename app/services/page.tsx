@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ConsultationLink from '@/components/ConsultationLink'
+import { groupNorms, sessionLine, sessionMoments } from '@/lib/session'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/services' },
@@ -43,48 +44,6 @@ const arc = [
     title: 'How we learned it',
     body: 'The group looks at its own hour, and each person names one thing to practise.',
   },
-]
-
-const hourNotes = [
-  {
-    time: '00:12',
-    text: 'Two members read the same paragraph in opposite ways. One found it manipulative. One found it moving.',
-    accent: false,
-  },
-  {
-    time: '00:19',
-    text: 'One of them apologises for disagreeing, before anyone has objected.',
-    accent: false,
-  },
-  {
-    time: '00:28',
-    text: 'Nine seconds in which nobody speaks. Nobody fills it.',
-    accent: true,
-  },
-  {
-    time: '00:37',
-    text: 'The member who has not spoken yet says the thing the room was circling.',
-    accent: false,
-  },
-  {
-    time: '00:44',
-    text: 'Someone tells her what it was like to hear it from her, of all people.',
-    accent: false,
-  },
-  {
-    time: '01:14',
-    text: 'The group stops and looks at what it just did.',
-    accent: false,
-  },
-]
-
-const norms = [
-  'Speak for yourself, not for the room.',
-  'Say what you felt, not whether it was justified.',
-  'Check the story you are telling yourself about someone before you act on it.',
-  'Ask before you give advice.',
-  'Describe where something landed, rather than what it proves about the person.',
-  'What is said here stays here. That one is not negotiable.',
 ]
 
 const questions = [
@@ -130,7 +89,7 @@ export default function ServicesPage() {
             <p className="rail-label">01 — Session zero</p>
             <div>
               <p className="max-w-[50ch] font-serif text-[26px] font-medium leading-[1.4] text-ink lg:text-[30px]">
-                Before anything else, the six of you agree on what you will react to.
+                Before anything else, the six to eight of you agree on what you will react to.
               </p>
               <div className="mt-8 flex max-w-[66ch] flex-col gap-[22px] font-serif text-[19px] leading-[1.62] text-ink-soft lg:text-[21px]">
                 <p>
@@ -210,7 +169,7 @@ export default function ServicesPage() {
                 An illustrative exchange in a session.
               </h2>
               <div className="mt-11 flex max-w-[62ch] flex-col gap-[26px]">
-                {hourNotes.map((note) => (
+                {sessionMoments.map((note) => (
                   <div
                     key={note.time}
                     className="grid grid-cols-[72px_1fr] items-baseline gap-x-6"
@@ -221,7 +180,7 @@ export default function ServicesPage() {
                     <span
                       className={`font-serif text-[22px] leading-[1.5] ${note.accent ? 'text-accent-light' : 'text-paper'}`}
                     >
-                      {note.text}
+                      {sessionLine(note)}
                     </span>
                   </div>
                 ))}
@@ -246,7 +205,7 @@ export default function ServicesPage() {
                 whole instruction.
               </p>
               <ul className="mt-10">
-                {norms.map((text, index) => (
+                {groupNorms.map((text, index) => (
                   <li
                     key={text}
                     className="grid grid-cols-[64px_1fr] items-baseline gap-2 border-t border-rule py-[22px]"

@@ -3,53 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CohortTable from '@/components/CohortTable'
 import ConsultationLink from '@/components/ConsultationLink'
+import IntroductionLink from '@/components/IntroductionLink'
 import { OPEN_COHORT_PRICE } from '@/lib/cohorts'
+import { groupNorms, homeSessionMoments } from '@/lib/session'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
-
-const sessionNotes = [
-  {
-    time: '00:12',
-    event: 'Two members read the same paragraph in opposite ways.',
-    observation: 'One found it manipulative. One found it moving.',
-    accent: false,
-  },
-  {
-    time: '00:19',
-    event: 'One of them apologises for disagreeing.',
-    observation: 'The apology arrives before anyone objected.',
-    accent: false,
-  },
-  {
-    time: '00:28',
-    event: 'Nine seconds in which nobody speaks.',
-    observation: 'The facilitator does not fill it.',
-    accent: true,
-  },
-  {
-    time: '00:37',
-    event: 'Someone says what the room was circling.',
-    observation: 'It is the person who had not spoken yet.',
-    accent: false,
-  },
-  {
-    time: '01:14',
-    event: 'The group stops and looks at what it just did.',
-    observation: 'This is the part that does not happen alone.',
-    accent: false,
-  },
-]
-
-const norms = [
-  { n: '01', text: 'Speak for yourself, not for the room.' },
-  { n: '02', text: 'Say what you felt, not whether it was justified.' },
-  { n: '03', text: 'Check the story you are telling yourself about someone.' },
-  { n: '04', text: 'Ask before you give advice.' },
-  { n: '05', text: 'Describe where something landed, not what it proves about the person.' },
-  { n: '06', text: 'What is said here stays here. That one is not negotiable.' },
-]
 
 const stimuli = ['Partners', 'Parents and children', 'Friends', 'Colleagues']
 
@@ -156,7 +116,7 @@ export default function Home() {
                 An illustrative session, showing the kinds of moments a group might explore.
               </p>
               <div className="mt-8 border border-rule-dark">
-                {sessionNotes.map((note) => (
+                {homeSessionMoments.map((note) => (
                   <div
                     key={note.time}
                     className="grid items-baseline gap-x-7 gap-y-1 border-b border-[#262825] px-7 py-5 last:border-b-0 lg:grid-cols-[88px_1fr_1fr]"
@@ -195,16 +155,16 @@ export default function Home() {
                 instruction.
               </p>
               <ul className="mt-10 grid md:grid-cols-2 md:gap-x-14">
-                {norms.map((norm) => (
+                {groupNorms.map((text, index) => (
                   <li
-                    key={norm.n}
+                    key={text}
                     className="grid grid-cols-[44px_1fr] items-baseline gap-2 border-t border-rule py-5"
                   >
                     <span className="font-sans text-[12px] tracking-[0.12em] text-accent">
-                      {norm.n}
+                      {String(index + 1).padStart(2, '0')}
                     </span>
                     <span className="font-serif text-[19px] leading-[1.5] text-ink-soft lg:text-[21px]">
-                      {norm.text}
+                      {text}
                     </span>
                   </li>
                 ))}
@@ -281,7 +241,7 @@ export default function Home() {
                     Open cohort
                   </p>
                   <h2 className="mt-4 font-serif text-[28px] leading-[1.22] text-ink lg:text-[32px]">
-                    Six or seven people you have never met.
+                    Six to eight people you have never met.
                   </h2>
                   <p className="mt-4 font-serif text-[19px] leading-[1.6] text-ink-soft lg:text-[20px]">
                     No shared employer, no shared history, no stake in each other&apos;s next
@@ -310,11 +270,12 @@ export default function Home() {
                     See all four dates and how to join
                   </Link>
                 </p>
-                <p className="mt-4 font-sans text-sm">
-                  <Link href="/introduction" className="text-accent underline">
-                    Try a free 45-minute introduction on 8 October
-                  </Link>
-                </p>
+                <IntroductionLink
+                  className="text-accent underline"
+                  paragraphClassName="mt-4 font-sans text-sm"
+                >
+                  Try a free 45-minute introduction on 8 October
+                </IntroductionLink>
               </div>
               <p className="mt-5 font-sans text-[12.5px] tracking-[0.04em] text-faint">
                 Everyone speaks with Elie for thirty minutes before joining a group.

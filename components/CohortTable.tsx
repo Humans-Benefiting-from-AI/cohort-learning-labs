@@ -15,11 +15,7 @@ export default function CohortTable({ showApply = true }: { showApply?: boolean 
         >
           <span className="font-serif text-[19px] leading-[1.4] text-ink">{cohort.when}</span>
           <span className="font-sans text-[13.5px] text-muted">{cohort.duration}</span>
-          <span
-            className={`font-sans text-[13.5px] ${cohort.seatsScarce ? 'text-accent' : 'text-muted'}`}
-          >
-            {cohort.seats}
-          </span>
+          <span className="font-sans text-[13.5px] text-muted">{cohort.seats}</span>
           <span className="font-sans text-[13.5px] text-muted">{cohort.price}</span>
           {showApply ? (
             <ConsultationLink className="w-fit border-b border-rule pb-0.5 font-sans text-[13.5px] text-accent transition-colors duration-150 hover:text-accent-hover">

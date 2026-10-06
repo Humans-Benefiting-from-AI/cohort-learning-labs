@@ -84,4 +84,4 @@ groups are quoted. Consultation remains the first step before joining.
 
 ## October enrollment campaign
 
-`/cohorts` contains dates, expectations and the enrollment sequence. `/introduction` describes the October 8 free introduction and email RSVP. Tuesday meets from 19:00–20:30 Israel time on October 13, 20, 27 and November 3. See `docs/campaign-2026-09-07.md`. Campaign tags are forwarded to Calendly; the enrollment tracker is private and manually updated.
+`/cohorts` contains dates, expectations and the enrollment sequence. `/introduction` describes the October 8 free introduction and email RSVP until 19:45 Israel time that day. After that the page says the introduction has passed, search engines are asked not to index it, and it leaves the sitemap; the homepage, cohorts page, and footer stop linking to it. Tuesday meets from 19:00–20:30 Israel time on October 13, 20, 27 and November 3. See `docs/campaign-2026-09-07.md`. Campaign tags are forwarded to Calendly; the enrollment tracker is private and manually updated.

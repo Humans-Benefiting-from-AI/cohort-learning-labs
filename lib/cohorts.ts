@@ -3,7 +3,6 @@ export interface Cohort {
   when: string
   duration: string
   seats: string
-  seatsScarce?: boolean
   price: string
   ctaLabel: string
   dates?: string[]
