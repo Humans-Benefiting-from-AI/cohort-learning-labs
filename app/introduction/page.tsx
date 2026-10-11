@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { connection } from 'next/server'
 import ConsultationLink from '@/components/ConsultationLink'
-import { OPEN_COHORT_PRICE } from '@/lib/cohorts'
+import { WaitlistButton, WhenEnrollment } from '@/components/enrollment'
+import { enrollmentClock, hasOpenEnrollment, OPEN_COHORT_PRICE } from '@/lib/cohorts'
 import { introduction, isIntroductionOpen } from '@/lib/introduction'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -11,8 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!isIntroductionOpen()) {
     return {
       title: 'Introduction | Cohort Learning Labs',
-      description:
-        'The free introduction on 8 October 2026 has ended. October cohorts are still forming.',
+      description: hasOpenEnrollment()
+        ? 'The free introduction on 8 October 2026 has ended. October cohorts are still forming.'
+        : 'The free introduction on 8 October 2026 has ended. Those cohorts have started and are closed to new members.',
       alternates: { canonical: '/introduction' },
       robots: { index: false, follow: true },
     }
@@ -28,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function IntroductionPage() {
   await connection()
-  if (!isIntroductionOpen()) return <IntroductionClosed />
+  if (!isIntroductionOpen()) return <IntroductionClosed serverNow={enrollmentClock()} />
   return <IntroductionOpen />
 }
 
@@ -95,7 +97,7 @@ function IntroductionOpen() {
   )
 }
 
-function IntroductionClosed() {
+function IntroductionClosed({ serverNow }: { serverNow: number }) {
   return (
     <section className="border-b border-rule bg-ground py-14 lg:pb-20 lg:pt-24">
       <div className="container-custom">
@@ -105,21 +107,35 @@ function IntroductionClosed() {
             <h1 className="max-w-[16ch] font-serif text-[44px] leading-[0.96] tracking-[-0.015em] text-ink min-[480px]:text-[56px] lg:text-[72px]">
               This introduction has passed.
             </h1>
-            <p className="mt-8 max-w-[46ch] font-serif text-[19px] leading-[1.55] text-ink-soft lg:text-[23px]">
-              The free session on Thursday, 8 October 2026 has ended. October cohorts are still
-              forming. A thirty-minute conversation with Elie is how you join.
-            </p>
-            <div className="mt-12 flex flex-wrap items-center gap-5">
-              <Link
-                href="/cohorts"
-                className="bg-accent px-7 py-[15px] font-sans text-[14px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover"
-              >
-                See the October cohorts
-              </Link>
-              <ConsultationLink className="border-b border-[#b9b1a2] pb-0.5 font-sans text-[14px] text-ink-muted transition-colors duration-150 hover:text-accent-hover">
-                Schedule a consultation
-              </ConsultationLink>
-            </div>
+            <WhenEnrollment serverNow={serverNow} phase="open">
+              <p className="mt-8 max-w-[46ch] font-serif text-[19px] leading-[1.55] text-ink-soft lg:text-[23px]">
+                The free session on Thursday, 8 October 2026 has ended. October cohorts are
+                still forming. A thirty-minute conversation with Elie is how you join.
+              </p>
+              <div className="mt-12 flex flex-wrap items-center gap-5">
+                <Link
+                  href="/cohorts"
+                  className="bg-accent px-7 py-[15px] font-sans text-[14px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover"
+                >
+                  See the October cohorts
+                </Link>
+                <ConsultationLink className="border-b border-[#b9b1a2] pb-0.5 font-sans text-[14px] text-ink-muted transition-colors duration-150 hover:text-accent-hover">
+                  Schedule a consultation
+                </ConsultationLink>
+              </div>
+            </WhenEnrollment>
+            <WhenEnrollment serverNow={serverNow} phase="closed">
+              <p className="mt-8 max-w-[46ch] font-serif text-[19px] leading-[1.55] text-ink-soft lg:text-[23px]">
+                The free session on Thursday, 8 October 2026 has ended. Those cohorts have
+                started and are closed to new members.
+              </p>
+              <div className="mt-12 flex flex-wrap items-center gap-5">
+                <WaitlistButton className="bg-accent px-7 py-[15px] font-sans text-[14px] font-medium text-accent-on transition-colors duration-150 hover:bg-accent-hover" />
+                <ConsultationLink className="border-b border-[#b9b1a2] pb-0.5 font-sans text-[14px] text-ink-muted transition-colors duration-150 hover:text-accent-hover">
+                  Schedule a consultation
+                </ConsultationLink>
+              </div>
+            </WhenEnrollment>
           </div>
         </div>
       </div>

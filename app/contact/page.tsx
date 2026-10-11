@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import CalendlyEmbed from '@/components/CalendlyEmbed'
 import CohortTable from '@/components/CohortTable'
+import { CohortsFormingLabel, WaitlistNote } from '@/components/enrollment'
 import { CALENDLY_URL } from '@/lib/booking'
 import { campaignQuery, type CampaignParams } from '@/lib/campaign'
-import { OPEN_COHORT_PRICE } from '@/lib/cohorts'
+import { enrollmentClock, OPEN_COHORT_PRICE } from '@/lib/cohorts'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
@@ -38,6 +39,7 @@ export default async function ContactPage({
   searchParams: Promise<CampaignParams>
 }) {
   const tags = campaignQuery(await searchParams)
+  const serverNow = enrollmentClock()
   const bookingUrl = new URL(CALENDLY_URL)
   new URLSearchParams(tags).forEach((value, key) => bookingUrl.searchParams.set(key, value))
   return (
@@ -128,9 +130,12 @@ export default async function ContactPage({
       <section className="section-padding border-b border-rule bg-paper">
         <div className="container-custom">
           <div className="rail">
-            <p className="rail-label">03 — Cohorts forming</p>
+            <p className="rail-label">
+              <CohortsFormingLabel serverNow={serverNow} />
+            </p>
             <div>
-              <CohortTable showApply={false} />
+              <CohortTable showApply={false} serverNow={serverNow} />
+              <WaitlistNote serverNow={serverNow} className="mt-6 font-sans text-sm" />
               <p className="mt-5 font-sans text-[12.5px] tracking-[0.04em] text-faint">
                 Groups meet by video. Elie is based in Beit Shemesh, Israel; members join from
                 wherever they are.

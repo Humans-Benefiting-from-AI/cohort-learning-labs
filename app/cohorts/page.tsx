@@ -1,7 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import {
+  EnrollmentLabel,
+  WaitlistButton,
+  WaitlistNote,
+  WhenCohortOpen,
+  WhenEnrollment,
+} from '@/components/enrollment'
 import IntroductionLink from '@/components/IntroductionLink'
-import { cohorts, OPEN_COHORT_PRICE } from '@/lib/cohorts'
+import {
+  COHORT_STARTED_NOTE,
+  cohorts,
+  enrollmentClock,
+  isScheduledCohort,
+  OPEN_COHORT_PRICE,
+} from '@/lib/cohorts'
 import { bookingHref, type CampaignParams } from '@/lib/campaign'
 
 export const metadata: Metadata = {
@@ -45,6 +58,7 @@ export default async function CohortsPage({
   searchParams: Promise<CampaignParams>
 }) {
   const href = bookingHref(await searchParams)
+  const serverNow = enrollmentClock()
   return (
     <>
       <section className="border-b border-rule bg-ground py-14 lg:py-24">
@@ -63,17 +77,30 @@ export default async function CohortsPage({
                 Four weekly 90-minute sessions · six to eight participants · {OPEN_COHORT_PRICE}{' '}
                 per person · Online with Elie Schulman
               </p>
-              <div className="mt-9 flex flex-wrap items-center gap-6">
-                <Link
-                  href={href}
-                  className="bg-accent px-7 py-4 font-sans text-sm text-accent-on"
-                >
-                  Book a 30-minute conversation
-                </Link>
-                <IntroductionLink className="font-sans text-sm text-accent underline">
-                  Try a free introduction first
-                </IntroductionLink>
-              </div>
+              <WhenEnrollment serverNow={serverNow} phase="open">
+                <div className="mt-9 flex flex-wrap items-center gap-6">
+                  <Link
+                    href={href}
+                    className="bg-accent px-7 py-4 font-sans text-sm text-accent-on"
+                  >
+                    Book a 30-minute conversation
+                  </Link>
+                  <IntroductionLink className="font-sans text-sm text-accent underline">
+                    Try a free introduction first
+                  </IntroductionLink>
+                </div>
+              </WhenEnrollment>
+              <WhenEnrollment serverNow={serverNow} phase="closed">
+                <p className="mt-9 max-w-[55ch] font-sans text-sm leading-relaxed">
+                  These groups have started, and they are closed to new members.
+                </p>
+                <div className="mt-6 flex flex-wrap items-center gap-6">
+                  <WaitlistButton className="bg-accent px-7 py-4 font-sans text-sm text-accent-on" />
+                  <Link href={href} className="font-sans text-sm text-accent underline">
+                    Discuss a private group
+                  </Link>
+                </div>
+              </WhenEnrollment>
             </div>
           </div>
         </div>
@@ -138,38 +165,57 @@ export default async function CohortsPage({
             <div>
               <h2 className="font-serif text-3xl">Choose a time you can return to.</h2>
               <div className="mt-8 grid gap-6 md:grid-cols-2">
-                {cohorts
-                  .filter((c) => c.id !== 'private')
-                  .map((cohort) => (
-                    <article key={cohort.id} className="border border-rule bg-ground p-6">
-                      <h3 className="font-serif text-2xl">{cohort.when}</h3>
-                      <p className="mt-4 font-sans text-sm font-medium text-accent">
-                        {cohort.seats}
+                {cohorts.filter(isScheduledCohort).map((cohort) => (
+                  <article key={cohort.id} className="border border-rule bg-ground p-6">
+                    <h3 className="font-serif text-2xl">{cohort.when}</h3>
+                    <p className="mt-4 font-sans text-sm font-medium">
+                      <EnrollmentLabel
+                        startsAt={cohort.startsAt}
+                        serverNow={serverNow}
+                        cohortId={cohort.id}
+                        openClassName="text-accent"
+                        closedClassName="text-muted"
+                      />
+                    </p>
+                    <p className="mt-4 font-serif text-lg leading-relaxed">
+                      {cohort.dates?.join(' · ')} 2026
+                    </p>
+                    <p className="mt-4 font-sans text-sm leading-relaxed">
+                      {cohort.scheduleStatus}
+                    </p>
+                    <p className="mt-4 font-sans text-sm">
+                      {cohort.price} per person for all four sessions.
+                    </p>
+                    {cohort.id === 'thursday-eastern' && (
+                      <p className="mt-4 font-sans text-sm leading-relaxed text-muted">
+                        In Israel: 15:30 on 15 and 22 October; 14:30 on 29 October; 15:30 on 5
+                        November. The group stays at 08:30 US Eastern when clocks change.
                       </p>
-                      <p className="mt-4 font-serif text-lg leading-relaxed">
-                        {cohort.dates?.join(' · ')} 2026
-                      </p>
-                      <p className="mt-4 font-sans text-sm leading-relaxed">
-                        {cohort.scheduleStatus}
-                      </p>
-                      <p className="mt-4 font-sans text-sm">
-                        {cohort.price} per person for all four sessions.
-                      </p>
-                      {cohort.id === 'thursday-eastern' && (
-                        <p className="mt-4 font-sans text-sm leading-relaxed text-muted">
-                          In Israel: 15:30 on 15 and 22 October; 14:30 on 29 October; 15:30 on 5
-                          November. The group stays at 08:30 US Eastern when clocks change.
+                    )}
+                    <WhenCohortOpen
+                      startsAt={cohort.startsAt}
+                      serverNow={serverNow}
+                      open={
+                        <Link
+                          href={href}
+                          className="mt-6 inline-block font-sans text-sm text-accent underline"
+                        >
+                          Book a conversation about this group
+                        </Link>
+                      }
+                      closed={
+                        <p className="mt-6 font-sans text-sm leading-relaxed text-muted">
+                          {COHORT_STARTED_NOTE}
                         </p>
-                      )}
-                      <Link
-                        href={href}
-                        className="mt-6 inline-block font-sans text-sm text-accent underline"
-                      >
-                        Book a conversation about this group
-                      </Link>
-                    </article>
-                  ))}
+                      }
+                    />
+                  </article>
+                ))}
               </div>
+              <WaitlistNote
+                serverNow={serverNow}
+                className="mt-7 max-w-[65ch] font-sans text-sm leading-relaxed"
+              />
               <p className="mt-7 max-w-[65ch] font-serif text-lg leading-relaxed">
                 Plan to attend all four meetings from a private place. Let Elie know about any
                 anticipated absence before joining. Sessions are not recorded. Members agree to
@@ -202,12 +248,17 @@ export default async function CohortsPage({
                   </li>
                 ))}
               </ol>
-              <Link
-                href={href}
-                className="mt-9 inline-block bg-accent px-7 py-4 font-sans text-sm text-accent-on"
-              >
-                Book a 30-minute conversation
-              </Link>
+              <WhenEnrollment serverNow={serverNow} phase="open">
+                <Link
+                  href={href}
+                  className="mt-9 inline-block bg-accent px-7 py-4 font-sans text-sm text-accent-on"
+                >
+                  Book a 30-minute conversation
+                </Link>
+              </WhenEnrollment>
+              <WhenEnrollment serverNow={serverNow} phase="closed">
+                <WaitlistButton className="mt-9 inline-block bg-accent px-7 py-4 font-sans text-sm text-accent-on" />
+              </WhenEnrollment>
               <p className="mt-6 font-sans text-sm">
                 <Link href="/faq" className="text-accent underline">
                   Questions about speaking, confidentiality, or the commitment?

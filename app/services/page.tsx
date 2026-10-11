@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ConsultationLink from '@/components/ConsultationLink'
+import { NextCohortsHeading, WaitlistButton, WhenEnrollment } from '@/components/enrollment'
+import { enrollmentClock } from '@/lib/cohorts'
 import { groupNorms, sessionLine, sessionMoments } from '@/lib/session'
 
 export const metadata: Metadata = {
@@ -56,6 +58,7 @@ const questions = [
 ]
 
 export default function ServicesPage() {
+  const serverNow = enrollmentClock()
   return (
     <>
       <section className="border-b border-rule bg-ground py-14 lg:pb-20 lg:pt-24">
@@ -338,16 +341,31 @@ export default function ServicesPage() {
           <div className="rail">
             <p className="rail-label text-accent-pale">08 — Begin</p>
             <div>
-              <h2 className="max-w-[22ch] font-serif text-[36px] leading-[1.05] tracking-[-0.015em] lg:text-[60px]">
-                The next cohorts start in October 2026.
-              </h2>
-              <p className="mt-7 max-w-[52ch] font-serif text-[19px] leading-[1.62] text-accent-prose lg:text-[21px]">
-                Thirty minutes with Elie first, always: what you are curious about, what keeps
-                recurring, and which group is the right place to look at it.
-              </p>
-              <ConsultationLink className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]">
-                Book a 30-minute conversation
-              </ConsultationLink>
+              <NextCohortsHeading
+                serverNow={serverNow}
+                className="max-w-[22ch] font-serif text-[36px] leading-[1.05] tracking-[-0.015em] lg:text-[60px]"
+              />
+              <WhenEnrollment serverNow={serverNow} phase="open">
+                <p className="mt-7 max-w-[52ch] font-serif text-[19px] leading-[1.62] text-accent-prose lg:text-[21px]">
+                  Thirty minutes with Elie first, always: what you are curious about, what keeps
+                  recurring, and which group is the right place to look at it.
+                </p>
+                <ConsultationLink className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]">
+                  Book a 30-minute conversation
+                </ConsultationLink>
+              </WhenEnrollment>
+              <WhenEnrollment serverNow={serverNow} phase="closed">
+                <p className="mt-7 max-w-[52ch] font-serif text-[19px] leading-[1.62] text-accent-prose lg:text-[21px]">
+                  Membership closes when a group begins. Join the waitlist for the next round. A
+                  private group still begins with a conversation.
+                </p>
+                <WaitlistButton className="mt-10 inline-block bg-accent-on px-[30px] py-4 font-sans text-[14px] font-medium text-accent transition-colors duration-150 hover:bg-[#efe6dd]" />
+                <p className="mt-6 font-sans text-[14px] text-accent-prose">
+                  <ConsultationLink className="border-b border-current pb-0.5">
+                    Discuss a private group
+                  </ConsultationLink>
+                </p>
+              </WhenEnrollment>
             </div>
           </div>
         </div>
