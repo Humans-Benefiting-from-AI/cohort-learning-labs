@@ -67,6 +67,64 @@ if (!layout.includes('href="#main-content"') || !layout.includes('id="main-conte
   fail('the skip link and its semantic main target must remain present')
 }
 
+// Scheduled cohorts close at a real instant. The ISO strings are the source
+// of truth; these checks fail if a start is edited onto the wrong clock time
+// or enrollment is hardcoded open again.
+const cohortsSource = read('lib/cohorts.ts')
+if (/seats:\s*'Open'/.test(cohortsSource)) {
+  fail("lib/cohorts.ts must not hardcode seats: 'Open'; derive it from startsAt")
+}
+if (!/return now < Date\.parse\(startsAt\)/.test(cohortsSource)) {
+  fail('enrollment must close at startsAt (now < startsAt)')
+}
+
+function cohortBlock(id) {
+  const after = cohortsSource.split(`id: '${id}'`)[1]
+  if (!after) {
+    fail(`lib/cohorts.ts is missing cohort ${id}`)
+    return ''
+  }
+  return after.split(/id: '/)[0]
+}
+
+function expectLocal(id, tz, hour, minute, day) {
+  const block = cohortBlock(id)
+  const iso = block.match(/startsAt: '([^']+)'/)?.[1]
+  if (!iso) {
+    fail(`${id} is missing startsAt`)
+    return
+  }
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: tz,
+    hour: '2-digit',
+    minute: '2-digit',
+    day: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(new Date(iso))
+  const get = (type) => parts.find((part) => part.type === type)?.value
+  if (get('hour') !== hour || get('minute') !== minute || get('day') !== day) {
+    fail(
+      `${id} startsAt ${iso} should be ${hour}:${minute} on day ${day} in ${tz}, got day ${get('day')} ${get('hour')}:${get('minute')}`
+    )
+  }
+}
+
+expectLocal('tuesday-israel', 'Asia/Jerusalem', '19', '00', '13')
+expectLocal('thursday-eastern', 'America/New_York', '08', '30', '15')
+
+const tuesdayAt = Date.parse(
+  cohortBlock('tuesday-israel').match(/startsAt: '([^']+)'/)?.[1] ?? ''
+)
+const thursdayAt = Date.parse(
+  cohortBlock('thursday-eastern').match(/startsAt: '([^']+)'/)?.[1] ?? ''
+)
+if (Number.isNaN(tuesdayAt) || Number.isNaN(thursdayAt)) {
+  fail('cohort startsAt values must be valid instants')
+}
+if (!(thursdayAt > tuesdayAt)) {
+  fail('thursday cohort should start after the tuesday cohort')
+}
+
 if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join('\n'))
   process.exit(1)

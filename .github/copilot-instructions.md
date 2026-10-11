@@ -24,16 +24,16 @@ There is no unit or e2e test runner.
 
 `lib/routes.ts` is the public route inventory. Header nav, footer page list, and `app/sitemap.ts` all read it. Adding or renaming a public page is one entry there, plus `app/<path>/page.tsx`.
 
-| Role                               | Where                                                                                            |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Shell                              | `app/layout.tsx` — EB Garamond + Space Grotesk, skip link to `#main-content`, `Header`, `Footer` |
-| Consultation CTAs                  | `components/ConsultationLink.tsx` → `/contact#book`                                              |
-| Booking widget                     | `components/CalendlyEmbed.tsx` + `lib/booking.ts`                                                |
-| Cohort dates/seats/prices          | `lib/cohorts.ts` → `components/CohortTable.tsx`                                                  |
-| Illustrative session and norms     | `lib/session.ts` — homepage and `/services`                                                      |
-| Introduction sunset                | `lib/introduction.ts` — `INTRODUCTION_ENDS_AT`                                                   |
-| Structural invariants              | `scripts/validate-site.mjs` (`npm run check`)                                                    |
-| Design prototypes (not production) | `design_handoff_site_redesign/designs/*.dc.html`                                                 |
+| Role                                 | Where                                                                                            |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| Shell                                | `app/layout.tsx` — EB Garamond + Space Grotesk, skip link to `#main-content`, `Header`, `Footer` |
+| Consultation CTAs                    | `components/ConsultationLink.tsx` → `/contact#book`                                              |
+| Booking widget                       | `components/CalendlyEmbed.tsx` + `lib/booking.ts`                                                |
+| Cohort dates, start instants, prices | `lib/cohorts.ts` → `components/CohortTable.tsx`, `components/enrollment.tsx`                     |
+| Illustrative session and norms       | `lib/session.ts` — homepage and `/services`                                                      |
+| Introduction sunset                  | `lib/introduction.ts` — `INTRODUCTION_ENDS_AT`                                                   |
+| Structural invariants                | `scripts/validate-site.mjs` (`npm run check`)                                                    |
+| Design prototypes (not production)   | `design_handoff_site_redesign/designs/*.dc.html`                                                 |
 
 Public pages: `/`, `/cohorts` (Join a cohort), `/introduction` (free introduction), `/services` (A session), `/about` (Elie Schulman), `/faq`, `/contact` (Start a conversation), plus `/privacy`. The site’s job is to filter for the right member, not to maximise signups.
 
@@ -75,4 +75,4 @@ Slot availability lives in Calendly (Google Calendar connected on that event). D
 
 ## Voice
 
-Plain, concrete copy. Recreate wording from the design handoff rather than inventing marketing language. Cohort table dates, seats, and prices in `lib/cohorts.ts` are operational data — edit that file, not hardcoded page copy. Open cohorts are four weekly 90-minute sessions for $500 USD total per member as a one-time package; private groups stay Quoted. `OPEN_COHORT_PRICE` is the only price string: the table, homepage, FAQ, cohorts page, contact page, and introduction page all read it. Open cohorts are six to eight people — do not write “six or seven” or “the six of you.” The illustrative session and the six norms live in `lib/session.ts` and are shared by the homepage and `/services`. Writing lives at elieschulman.com, not on this site. The mobile menu is not animated: Escape closes it and returns focus to the toggle; opening it moves focus to the first link and traps Tab inside the navigation.
+Plain, concrete copy. Recreate wording from the design handoff rather than inventing marketing language. Cohort dates, start instants, and prices in `lib/cohorts.ts` are operational data — edit that file, not hardcoded page copy. Do not store `seats: 'Open'`. A scheduled cohort is open while `now < startsAt`, then the label is `Started` and the join link becomes “Closed to new members”. `components/enrollment.tsx` reads the browser clock so a cached page flips at that instant without `connection()`. When none are open, the listings use the waitlist mailto; do not invent the next round’s dates or price. Open cohorts are four weekly 90-minute sessions for $500 USD total per member as a one-time package; private groups stay Quoted. `OPEN_COHORT_PRICE` is the only price string: the table, homepage, FAQ, cohorts page, contact page, and introduction page all read it. Open cohorts are six to eight people — do not write “six or seven” or “the six of you.” The illustrative session and the six norms live in `lib/session.ts` and are shared by the homepage and `/services`. Writing lives at elieschulman.com, not on this site. The mobile menu is not animated: Escape closes it and returns focus to the toggle; opening it moves focus to the first link and traps Tab inside the navigation.

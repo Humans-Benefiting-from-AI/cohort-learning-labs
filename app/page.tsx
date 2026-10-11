@@ -3,8 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CohortTable from '@/components/CohortTable'
 import ConsultationLink from '@/components/ConsultationLink'
+import { WaitlistNote } from '@/components/enrollment'
 import IntroductionLink from '@/components/IntroductionLink'
-import { OPEN_COHORT_PRICE } from '@/lib/cohorts'
+import { enrollmentClock, OPEN_COHORT_PRICE } from '@/lib/cohorts'
 import { groupNorms, homeSessionMoments } from '@/lib/session'
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 const stimuli = ['Partners', 'Parents and children', 'Friends', 'Colleagues']
 
 export default function Home() {
+  const serverNow = enrollmentClock()
   return (
     <>
       <section className="border-b border-rule bg-ground py-14 lg:pb-20 lg:pt-24">
@@ -264,7 +266,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-12">
-                <CohortTable />
+                <CohortTable serverNow={serverNow} />
+                <WaitlistNote serverNow={serverNow} className="mt-6 font-sans text-sm" />
                 <p className="mt-6 font-sans text-sm">
                   <Link href="/cohorts" className="text-accent underline">
                     See all four dates and how to join

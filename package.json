@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "node scripts/validate-site.mjs"
+    "check": "node scripts/validate-site.mjs && node scripts/cohort-enrollment.test.mjs"
   },
   "author": "",
   "license": "ISC",

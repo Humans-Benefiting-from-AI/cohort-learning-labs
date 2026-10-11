@@ -27,7 +27,7 @@ Legacy paths permanently redirect (HTTP 308) rather than 404, so crawlers treat 
 
 `/writing` stays a redirect. Published writing is at [elieschulman.com](https://elieschulman.com), not on this site. Newsletter APIs are not implemented. Consultations are booked through a Calendly embed on `/contact#book`; email remains a fallback.
 
-Cohort dates, remaining seats, and prices live in `lib/cohorts.ts`. Open cohorts are four weekly 90-minute sessions for $500 USD total per member, paid as a one-time package; private groups are quoted.
+Cohort dates, start instants, and prices live in `lib/cohorts.ts`. A scheduled cohort is open until its first session begins (`startsAt`), then the site shows it as started and closed to new members. The pages compare that instant with the clock in the browser, so a cached or statically rendered page still flips at the start without making every route dynamic. When none are open, those listings link to a waitlist email (`mailto:elie@cohortlearninglabs.org`) instead of a join link. The next round’s dates and price are not invented on the site. Open cohorts are four weekly 90-minute sessions for $500 USD total per member, paid as a one-time package; private groups are quoted.
 
 ## Local development
 
