@@ -58,8 +58,12 @@ export default function SessionTimeline({ moments }: { moments: SessionMoment[] 
     })
     resize.observe(list)
 
+    // Animate only for readers who have not reached the section yet. If it is already on
+    // screen when the script loads (a deep link, restored scroll), keep the finished state
+    // rather than visibly retracting it.
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (reduce.matches) return () => resize.disconnect()
+    const alreadyReached = list.getBoundingClientRect().top < window.innerHeight * 0.72
+    if (reduce.matches || alreadyReached) return () => resize.disconnect()
 
     // Map raw scroll progress to line length, flattening one stretch at the silent moment.
     const lineFor = (raw: number) => {
