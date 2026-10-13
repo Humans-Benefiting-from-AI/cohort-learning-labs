@@ -53,6 +53,30 @@
   .skip-link:focus {
     @apply translate-y-0;
   }
+
+  /* Homepage session timeline (components/SessionTimeline.tsx). Without the armed flag, which
+     only script sets, everything shows in its finished state. */
+  .session-timeline[data-armed='true'] .session-timeline-fill {
+    transform: scaleY(0);
+  }
+
+  .session-timeline-moment {
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .session-timeline-dot {
+    transition: background-color 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .session-timeline[data-armed='true'] .session-timeline-moment[data-lit='false'] {
+    @apply opacity-30;
+  }
+
+  .session-timeline[data-armed='true']
+    .session-timeline-moment[data-lit='false']
+    .session-timeline-dot {
+    @apply bg-ink;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
