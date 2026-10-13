@@ -49,8 +49,13 @@ export default function SessionTimeline({ moments }: { moments: SessionMoment[] 
       hold = silentIndex >= 0 ? (stops[silentIndex] ?? -1) : -1
     }
 
+    // Re-runs the scroll position after layout changes; replaced once motion is armed.
+    let schedule = () => {}
     measure()
-    const resize = new ResizeObserver(measure)
+    const resize = new ResizeObserver(() => {
+      measure()
+      schedule()
+    })
     resize.observe(list)
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -66,33 +71,41 @@ export default function SessionTimeline({ moments }: { moments: SessionMoment[] 
       return (raw - SILENCE_HOLD) / moving
     }
 
+    // The line only grows, like the lit moments: scrolling back up never retracts it.
+    let reached = 0
     let frame = 0
     const update = () => {
       frame = 0
+      if (reached >= 1) return
       const rect = list.getBoundingClientRect()
       const viewport = window.innerHeight
       // Starts as the list rises past 72% of the viewport; ends as its foot reaches the middle.
       const raw = clamp((viewport * 0.72 - rect.top) / (rect.height + viewport * 0.22))
-      const line = clamp(lineFor(raw))
-      fill.style.transform = `scaleY(${line})`
+      reached = Math.max(reached, clamp(lineFor(raw)))
+      fill.style.transform = `scaleY(${reached})`
       rows.forEach((row, index) => {
-        if (row.dataset.lit !== 'true' && line >= (stops[index] ?? 0) - 0.002) {
+        if (row.dataset.lit !== 'true' && reached >= (stops[index] ?? 0) - 0.002) {
           row.dataset.lit = 'true'
         }
       })
-      if (line >= 1) window.removeEventListener('scroll', onScroll)
+      if (reached >= 1) stop()
     }
-    const onScroll = () => {
+    schedule = () => {
       if (!frame) frame = requestAnimationFrame(update)
+    }
+    const stop = () => {
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
     }
 
     rows.forEach((row) => (row.dataset.lit = 'false'))
     list.dataset.armed = 'true'
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
     update()
-    window.addEventListener('scroll', onScroll, { passive: true })
 
     return () => {
-      window.removeEventListener('scroll', onScroll)
+      stop()
       cancelAnimationFrame(frame)
       resize.disconnect()
     }
