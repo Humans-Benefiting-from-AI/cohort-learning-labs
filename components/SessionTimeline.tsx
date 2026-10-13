@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import type { SessionMoment } from '@/lib/session'
 
 /**
@@ -10,7 +10,9 @@ import type { SessionMoment } from '@/lib/session'
  * At the silent moment (the one marked `accent`) the line stops for a stretch of scroll before
  * it moves on, so the reader waits through the silence too.
  *
- * Server render and reduced motion both show the finished state: full line, every moment lit.
+ * No JavaScript and reduced motion show the finished state: full line, every moment lit.
+ * With scripting enabled the line stays collapsed until scroll progress is applied, so
+ * hydration cannot paint that finished line and then retract it.
  */
 
 /** Share of the scroll range during which the line holds at the silent moment. */
@@ -23,7 +25,7 @@ export default function SessionTimeline({ moments }: { moments: SessionMoment[] 
   const spineRef = useRef<HTMLSpanElement>(null)
   const fillRef = useRef<HTMLSpanElement>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const list = listRef.current
     const spine = spineRef.current
     const fill = fillRef.current
@@ -98,11 +100,15 @@ export default function SessionTimeline({ moments }: { moments: SessionMoment[] 
       window.removeEventListener('resize', schedule)
     }
 
-    rows.forEach((row) => (row.dataset.lit = 'false'))
-    list.dataset.armed = 'true'
     window.addEventListener('scroll', schedule, { passive: true })
     window.addEventListener('resize', schedule)
+    // Sample scroll before the unlit and armed flags. Those flags collapse the finished
+    // fallback; the length written here is the one that should paint.
     update()
+    rows.forEach((row) => {
+      if (row.dataset.lit !== 'true') row.dataset.lit = 'false'
+    })
+    list.dataset.armed = 'true'
 
     return () => {
       stop()
