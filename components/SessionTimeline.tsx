@@ -103,7 +103,7 @@ export default function SessionTimeline({ moments }: { moments: SessionMoment[] 
       <span
         ref={spineRef}
         aria-hidden="true"
-        className="absolute left-[15px] top-8 w-px bg-rule-dark"
+        className="absolute bottom-9 left-[15px] top-7 w-px bg-rule-dark lg:top-9"
       >
         <span
           ref={fillRef}
