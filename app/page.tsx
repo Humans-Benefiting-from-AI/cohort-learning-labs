@@ -5,6 +5,7 @@ import CohortTable from '@/components/CohortTable'
 import ConsultationLink from '@/components/ConsultationLink'
 import { WaitlistNote } from '@/components/enrollment'
 import IntroductionLink from '@/components/IntroductionLink'
+import SessionTimeline from '@/components/SessionTimeline'
 import { enrollmentClock, OPEN_COHORT_PRICE } from '@/lib/cohorts'
 import { groupNorms, homeSessionMoments } from '@/lib/session'
 
@@ -117,26 +118,7 @@ export default function Home() {
               <p className="mt-5 max-w-[58ch] font-sans text-[14px] leading-relaxed text-onink">
                 An illustrative session, showing the kinds of moments a group might explore.
               </p>
-              <div className="mt-8 border border-rule-dark">
-                {homeSessionMoments.map((note) => (
-                  <div
-                    key={note.time}
-                    className="grid items-baseline gap-x-7 gap-y-1 border-b border-[#262825] px-7 py-5 last:border-b-0 lg:grid-cols-[88px_1fr_1fr]"
-                  >
-                    <span className="font-sans text-[12px] tracking-[0.08em] text-faint">
-                      {note.time}
-                    </span>
-                    <span
-                      className={`font-serif text-[20px] leading-[1.5] ${note.accent ? 'text-accent-light' : 'text-paper'}`}
-                    >
-                      {note.event}
-                    </span>
-                    <span className="pl-4 font-sans text-[13.5px] leading-[1.65] text-onink lg:pl-0">
-                      {note.observation}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <SessionTimeline moments={homeSessionMoments} />
               <p className="mt-8 max-w-[58ch] font-serif text-[19px] leading-[1.62] text-onink lg:text-[21px]">
                 Nobody is asked what the group should decide. The question being held is how
                 each person is handling a difference right now, and what that is doing to
