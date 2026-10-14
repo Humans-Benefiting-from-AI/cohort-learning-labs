@@ -1,3 +1,8 @@
+> **Retired 2026-10-14.** cohortlearninglabs.org now serves
+> [Humans-Benefiting-from-AI/cohort-learning-labs-site](https://github.com/Humans-Benefiting-from-AI/cohort-learning-labs-site)
+> (local: `~/Projects/cohort-learning-labs-site`). This Next.js site is kept read-only for reference;
+> its copy was carried into the new site. Do not deploy from here.
+
 # Cohort Learning Labs
 
 Cohort Learning Labs helps professional teams adopt AI thoughtfully through collaborative learning, practical implementation, and responsible human oversight.
